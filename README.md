@@ -26,8 +26,7 @@
 - Accelerate AEC innovation,
 - Underpin academic research,
 - Support Civil Engineering education,
-- Attract a like-minded community of Engineers,
-- Provide a stable platform for higher-level language bindings.
+- Attract a like-minded community of Engineers.
 
 ## Documentation
 
@@ -50,20 +49,20 @@ Please visit [docs.gazelle.sh](https://docs.gazelle.sh) to learn more.
 </p>
 
 <p align="justify">
-  We are always on the lookout for new contributors to help: 
+  I am always on the lookout for new contributors to help: 
 </p>
 
 - Propose design improvements,
-- Develop and maintain the engine, 
-- Enhance our testing and performance suite,
+- Develop and maintain the project, 
+- Enhance the testing and performance suite,
 - Verify algorithmic correctness.
 
 ## Errata
 
 <p align="justify">
-  Gazelle aspires to achieve the highest standards of professional rigour. We consider Civil Engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, our team are human and mistakes <em>are</em> possible. 
+  Gazelle aspires to achieve the highest standards of professional rigour. I consider Civil Engineering software to be safety critical. I strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, I am human and mistakes <em>are</em> possible. 
 </p>
 
 <p align="justify">
-  We recommend that all users carefully review the code, tests and documentation. Please submit error reports and suggestions for improvement via <a href="https://github.com/jamesbayley/gazelle/issues" target="_blank">GitHub Issues</a>. For anyone who would like to attempt a fix or improvement, we would encourage you to review our <a href="#contributing">Contributing</a> guidance and submit a Pull Request.
+  I recommend that all users carefully review the code, tests and documentation. Please submit error reports and suggestions for improvement via <a href="https://github.com/jamesbayley/gazelle/issues" target="_blank">GitHub Issues</a>. For anyone who would like to attempt a fix or improvement, I would encourage you to review the <a href="#contributing">Contributing</a> guidance and submit a Pull Request.
 </p>
