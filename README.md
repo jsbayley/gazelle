@@ -3,11 +3,11 @@
   <h1>Gazelle</h1>
   <p>🦌 PowerShell for Civil Engineers. 💨</p>
 
-  [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/gazellekit/gazelle)
-  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/gazellekit/gazelle/blob/main/.github/CODE_OF_CONDUCT.md)
+  [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/jamesbayley/gazelle)
+  [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/jamesbayley/gazelle/blob/main/.github/CODE_OF_CONDUCT.md)
   
   [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-00add8)](https://choosealicense.com/licenses/agpl-3.0/)
-  [![CI](https://github.com/gazellekit/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/gazellekit/gazelle/actions/workflows/ci.yml)
+  [![CI](https://github.com/jamesbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jamesbayley/gazelle/actions/workflows/ci.yml)
   
   [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/en-us/)
   [![PowerShell](https://img.shields.io/badge/PowerShell-7.4.6-012456)](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.4)
@@ -46,7 +46,7 @@ Please visit [docs.gazelle.sh](https://docs.gazelle.sh) to learn more.
 ## Contributing
 
 <p align="justify">
-  For those interested in helping to build <a href="https://github.com/gazellekit/gazelle" target="_blank">Gazelle</a>, please ⭐️ and 'watch' this repository so that you can track its progress in real-time.
+  For those interested in helping to build <a href="https://github.com/jamesbayley/gazelle" target="_blank">Gazelle</a>, please ⭐️ and 'watch' this repository so that you can track its progress in real-time.
 </p>
 
 <p align="justify">
@@ -65,5 +65,5 @@ Please visit [docs.gazelle.sh](https://docs.gazelle.sh) to learn more.
 </p>
 
 <p align="justify">
-  We recommend that all users carefully review the code, tests and documentation. Please submit error reports and suggestions for improvement via <a href="https://github.com/gazellekit/gazelle/issues" target="_blank">GitHub Issues</a>. For anyone who would like to attempt a fix or improvement, we would encourage you to review our <a href="#contributing">Contributing</a> guidance and submit a Pull Request.
+  We recommend that all users carefully review the code, tests and documentation. Please submit error reports and suggestions for improvement via <a href="https://github.com/jamesbayley/gazelle/issues" target="_blank">GitHub Issues</a>. For anyone who would like to attempt a fix or improvement, we would encourage you to review our <a href="#contributing">Contributing</a> guidance and submit a Pull Request.
 </p>
