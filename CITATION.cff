@@ -7,9 +7,9 @@ type: software
 authors:
   - given-names: James
     family-names: Bayley
-repository-code: 'https://github.com/gazellekit/gazelle'
+repository-code: 'https://github.com/jamesbayley/gazelle'
 abstract: >-
-  A fast engine for civil engineers.
+  Fast engine for civil engineers.
 keywords:
   - Civil Engineering
   - Structural Engineering
