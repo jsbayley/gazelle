@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./.github/assets/gazelle.png" width="100px" height="100px" />
   <h1>Gazelle</h1>
-  <p>🦌 Fast Engine for Civil Engineers. 💨</p>
+  <p>A modern, cross-platform toolchain for structural engineering.</p>
 
   [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/jamesbayley/gazelle)
   [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/jamesbayley/gazelle/blob/main/.github/CODE_OF_CONDUCT.md)
@@ -24,7 +24,7 @@
 
 - Accelerate AEC innovation,
 - Underpin academic research,
-- Support Civil Engineering education,
+- Support Structural Engineering education,
 - Attract a like-minded community of Engineers,
 - Provide a stable platform for higher-level language bindings.
 
