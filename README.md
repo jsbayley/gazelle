@@ -16,8 +16,8 @@
 
 - [Project Goals](#project-goals)
 - [Documentation](#documentation)
-- [Open Source](#open-source)
 - [Contributing](#contributing)
+- [Open Source](#open-source)
 - [Errata](#errata)
 
 ## Project Goals
@@ -31,7 +31,11 @@
 
 ## Documentation
 
-Visit the [docs](./DOCS.md) to learn more.
+Visit our [docs](./DOCS.md) to learn more.
+
+## Contributing
+
+See our [guidance](./CONTRIBUTING.md) on how to contribute.
 
 ## Open Source
 
@@ -42,21 +46,6 @@ Visit the [docs](./DOCS.md) to learn more.
 <p align="justify">
   Gazelle is proudly open source.
 </p>
-
-## Contributing
-
-<p align="justify">
-  For those interested in helping to build <a href="https://github.com/jamesbayley/gazelle" target="_blank">Gazelle</a>, please ⭐️ and 'watch' this repository so that you can track its progress in real-time.
-</p>
-
-<p align="justify">
-  We are always on the lookout for new contributors to help: 
-</p>
-
-- Propose design improvements,
-- Develop and maintain the engine, 
-- Enhance our testing and performance suite,
-- Verify algorithmic correctness.
 
 ## Errata
 
