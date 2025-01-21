@@ -30,7 +30,7 @@
 
 ## Documentation
 
-Please visit [docs.gazelle.sh](https://docs.gazelle.sh) to learn more.
+Please visit [DOCS.md](./DOCS.md) to learn more.
 
 ## Open Source
 
@@ -39,7 +39,7 @@ Please visit [docs.gazelle.sh](https://docs.gazelle.sh) to learn more.
 </p>
 
 <p align="justify">
-  Gazelle is proudly open-source.
+  Gazelle is proudly open source.
 </p>
 
 ## Contributing
