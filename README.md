@@ -26,11 +26,12 @@
 - Underpin academic research,
 - Support Structural Engineering education,
 - Attract a like-minded community of Engineers,
-- Provide a stable platform for higher-level language bindings.
+- Provide a stable platform for high-level language bindings,
+- Propose a modern interpretation on the structural engineering toolchain.
 
 ## Documentation
 
-Please visit [DOCS.md](./DOCS.md) to learn more.
+Visit the [docs](./DOCS.md) to learn more.
 
 ## Open Source
 
