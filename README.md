@@ -14,20 +14,10 @@
 
 ## Table of Contents
 
-- [Project Goals](#project-goals)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 - [Open Source](#open-source)
 - [Errata](#errata)
-
-## Project Goals
-
-- Accelerate AEC innovation,
-- Underpin academic research,
-- Support Structural Engineering education,
-- Attract a like-minded community of Engineers,
-- Provide a stable platform for high-level language bindings,
-- Propose a modern interpretation on the structural engineering toolchain.
 
 ## Documentation
 
@@ -40,19 +30,15 @@ See our [guidance](./CONTRIBUTING.md) on how to contribute.
 ## Open Source
 
 <p align="justify">
-  Engineers accept phenomenal responsibility when dedicating their lives to improve our built environment. However, the vast majority of professional engineering software is, regrettably, closed source and proprietary. This is unfair and must change. Engineers should be offered the respect and freedom to inspect, validate and influence the algorithms used to design our buildings and bridges. 
+  Engineers accept phenomenal responsibility when dedicating their lives to improving our built environment. However, the vast majority of professional engineering software is, regrettably, closed source and proprietary. This is unfair and must change. Engineers should be offered the respect and freedom to inspect, validate and influence the algorithms used to design our buildings and bridges. 
 </p>
 
 <p align="justify">
-  Gazelle is proudly open source.
+  Gazelle is proudly <a href="./LICENSE" target="_blank">open source</a>.
 </p>
 
 ## Errata
 
 <p align="justify">
-  Gazelle aspires to achieve the highest standards of professional rigour. We consider Civil Engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, our team are human and mistakes <em>are</em> possible. 
-</p>
-
-<p align="justify">
-  We recommend that all users carefully review the code, tests and documentation. Please submit error reports and suggestions for improvement via <a href="https://github.com/jamesbayley/gazelle/issues" target="_blank">GitHub Issues</a>. For anyone who would like to attempt a fix or improvement, we would encourage you to review our <a href="#contributing">Contributing</a> guidance and submit a Pull Request.
+  We consider civil engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, we are human and mistakes are possible. Please submit error reports and suggestions for improvement via <a href="https://github.com/jamesbayley/gazelle/issues" target="_blank">GitHub Issues</a>.
 </p>
