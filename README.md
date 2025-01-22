@@ -15,7 +15,7 @@
 ## Table of Contents
 
 - [Documentation](#documentation)
-- [Contributing](#contributing)
+- [Get Involved](#get-involved)
 - [Open Source](#open-source)
 - [Errata](#errata)
 
@@ -23,9 +23,9 @@
 
 Visit our [docs](./DOCS.md) to learn more.
 
-## Contributing
+## Get Involved
 
-See our [guidance](./CONTRIBUTING.md) on how to contribute.
+See our guidance on [how to get involved](./CONTRIBUTING.md).
 
 ## Open Source
 
