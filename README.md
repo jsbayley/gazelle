@@ -9,7 +9,7 @@
   [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-00add8)](https://choosealicense.com/licenses/agpl-3.0/)
   [![CI](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml)
   
-  [![Rust](https://img.shields.io/badge/Rust-1.83.0-ce412b?logo=rust)](https://www.rust-lang.org)
+  [![Rust](https://img.shields.io/badge/Rust-1.84.0-ce412b?logo=rust)](https://www.rust-lang.org)
 </div>
 
 ## Table of Contents
