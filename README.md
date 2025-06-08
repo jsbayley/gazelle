@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./.github/assets/gazelle.png" width="100px" height="100px" />
   <h1>Gazelle™</h1>
-  <p>🦌 A Fast Engine for Structural Engineers. 💨</p>
+  <p>🦌 A Fast Engine for Structural Engineering. 💨</p>
   
   [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/jsbayley/gazelle)
   [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/jsbayley/gazelle/blob/main/.github/CODE_OF_CONDUCT.md)
