@@ -1,0 +1,165 @@
+{
+  "nodes": {
+    "1": {
+      "id": 1,
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "constraints": []
+    },
+    "0": {
+      "id": 0,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "constraints": []
+    },
+    "2": {
+      "id": 2,
+      "x": 0.5,
+      "y": 1.0,
+      "z": 0.0,
+      "constraints": []
+    }
+  },
+  "elements": {
+    "1": {
+      "id": 1,
+      "element_type": "Truss2D",
+      "nodes": [
+        1,
+        2
+      ],
+      "material_id": 0,
+      "properties": {
+        "area": 0.01,
+        "inertia_y": null,
+        "inertia_z": null,
+        "torsional_constant": null,
+        "thickness": null,
+        "width": null,
+        "height": null
+      }
+    },
+    "0": {
+      "id": 0,
+      "element_type": "Truss2D",
+      "nodes": [
+        0,
+        1
+      ],
+      "material_id": 0,
+      "properties": {
+        "area": 0.01,
+        "inertia_y": null,
+        "inertia_z": null,
+        "torsional_constant": null,
+        "thickness": null,
+        "width": null,
+        "height": null
+      }
+    },
+    "2": {
+      "id": 2,
+      "element_type": "Truss2D",
+      "nodes": [
+        2,
+        0
+      ],
+      "material_id": 0,
+      "properties": {
+        "area": 0.01,
+        "inertia_y": null,
+        "inertia_z": null,
+        "torsional_constant": null,
+        "thickness": null,
+        "width": null,
+        "height": null
+      }
+    }
+  },
+  "materials": {
+    "0": {
+      "id": 0,
+      "name": "Steel",
+      "material_type": "LinearElastic",
+      "properties": {
+        "young_modulus": 200000000000.0,
+        "poisson_ratio": 0.3,
+        "density": 7850.0,
+        "yield_strength": 250000000.0,
+        "ultimate_strength": 400000000.0,
+        "thermal_expansion": 0.000012,
+        "damping_ratio": null
+      }
+    }
+  },
+  "loads": [
+    {
+      "id": 0,
+      "load_type": {
+        "NodalForce": {
+          "node_id": 2,
+          "dof": "Uy",
+          "magnitude": -1000.0
+        }
+      },
+      "load_case": "Live",
+      "factor": 1.0
+    }
+  ],
+  "constraints": [
+    {
+      "id": 0,
+      "constraint_type": {
+        "NodalConstraint": {
+          "node_id": 0,
+          "constraints": [
+            [
+              "Ux",
+              0.0
+            ],
+            [
+              "Uy",
+              0.0
+            ],
+            [
+              "Uz",
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": 1,
+      "constraint_type": {
+        "NodalConstraint": {
+          "node_id": 1,
+          "constraints": [
+            [
+              "Ux",
+              0.0
+            ],
+            [
+              "Uy",
+              0.0
+            ],
+            [
+              "Uz",
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "analysis_settings": {
+    "tolerance": 1e-6,
+    "max_iterations": 100,
+    "solver_type": "Direct",
+    "eigen_modes": null,
+    "time_step": null,
+    "duration": null
+  }
+}
