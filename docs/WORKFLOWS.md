@@ -5,20 +5,41 @@ This document provides visual workflows for common Gazelle usage patterns.
 ## User Journey: First Analysis
 
 ```mermaid
-journey
-    title My First Structural Analysis with Gazelle
-    section Getting Started
-      Install Gazelle: 5: Me
-      Start daemon: 4: Me
-      Create model: 3: Me
-    section Running Analysis
-      Upload model: 4: Me
-      Run analysis: 5: Me, Gazelle
-      Get results: 5: Me, Gazelle
-    section Understanding Results
-      View displacements: 4: Me
-      Check stresses: 4: Me
-      Export to CAD: 3: Me
+graph LR
+    subgraph "Getting Started 🚀"
+        Install[Install Gazelle<br/>⭐⭐⭐⭐⭐]
+        Daemon[Start daemon<br/>⭐⭐⭐⭐]
+        Model[Create model<br/>⭐⭐⭐]
+    end
+    
+    subgraph "Running Analysis 🔬"
+        Upload[Upload model<br/>⭐⭐⭐⭐]
+        Analyze[Run analysis<br/>⭐⭐⭐⭐⭐]
+        Results[Get results<br/>⭐⭐⭐⭐⭐]
+    end
+    
+    subgraph "Understanding Results 📊"
+        Displace[View displacements<br/>⭐⭐⭐⭐]
+        Stress[Check stresses<br/>⭐⭐⭐⭐]
+        Export[Export to CAD<br/>⭐⭐⭐]
+    end
+    
+    Install --> Daemon
+    Daemon --> Model
+    Model --> Upload
+    Upload --> Analyze
+    Analyze --> Results
+    Results --> Displace
+    Displace --> Stress
+    Stress --> Export
+    
+    classDef start fill:#e1f5fe
+    classDef analysis fill:#e8f5e8
+    classDef results fill:#fff3e0
+    
+    class Install,Daemon,Model start
+    class Upload,Analyze,Results analysis
+    class Displace,Stress,Export results
 ```
 
 ## CLI Usage Flow
@@ -66,62 +87,72 @@ sequenceDiagram
 ## Multi-Client Architecture
 
 ```mermaid
-C4Context
-    title Gazelle Multi-Client System Context
+graph TB
+    subgraph "Users"
+        Engineer[Structural Engineer<br/>Creates and analyzes models]
+        Student[Engineering Student<br/>Learning structural analysis]
+        Researcher[Academic Researcher<br/>Developing new methods]
+    end
     
-    Person(engineer, "Structural Engineer", "Creates and analyzes structural models")
-    Person(student, "Engineering Student", "Learning structural analysis")
-    Person(researcher, "Academic Researcher", "Developing new analysis methods")
+    subgraph "Gazelle System"
+        Core[Gazelle Engine<br/>Fast structural analysis daemon]
+    end
     
-    System(gazelle, "Gazelle Engine", "Fast structural analysis daemon")
+    subgraph "External Systems"
+        CAD[CAD Software<br/>AutoCAD, Rhino, etc.]
+        FEA[FEA Tools<br/>Existing analysis software]  
+        Cloud[Cloud Services<br/>AWS, Azure, GCP]
+    end
     
-    System_Ext(cad, "CAD Software", "AutoCAD, Rhino, etc.")
-    System_Ext(fea, "FEA Tools", "Existing analysis software")
-    System_Ext(cloud, "Cloud Services", "AWS, Azure, GCP")
+    Engineer -->|CLI, Python| Core
+    Student -->|Jupyter notebooks| Core
+    Researcher -->|API, custom tools| Core
     
-    Rel(engineer, gazelle, "Uses", "CLI, Python")
-    Rel(student, gazelle, "Uses", "Jupyter notebooks")
-    Rel(researcher, gazelle, "Uses", "API, custom tools")
+    Core <-->|Import/Export<br/>DXF, STEP| CAD
+    Core <-->|Compare<br/>Results validation| FEA
+    Core -->|Deploy<br/>Container services| Cloud
     
-    BiRel(gazelle, cad, "Import/Export", "DXF, STEP")
-    BiRel(gazelle, fea, "Compare", "Results validation")
-    Rel(gazelle, cloud, "Deploy", "Container services")
+    classDef user fill:#e1f5fe
+    classDef system fill:#e8f5e8
+    classDef external fill:#fff3e0
+    
+    class Engineer,Student,Researcher user
+    class Core system
+    class CAD,FEA,Cloud external
 ```
 
 ## Development Workflow
 
 ```mermaid
-gitgraph
-    commit id: "Initial commit"
-    branch feature/materials
-    checkout feature/materials
-    commit id: "Add concrete materials"
-    commit id: "Add steel materials"
-    checkout main
-    merge feature/materials
+graph TD
+    Start([Initial commit]) --> Materials[Feature: Materials]
+    Materials --> ConcreteMat[Add concrete materials]
+    ConcreteMat --> SteelMat[Add steel materials]
+    SteelMat --> MergeMat[Merge to main]
     
-    branch feature/analysis
-    checkout feature/analysis
-    commit id: "Implement modal analysis"
-    commit id: "Add nonlinear solver"
-    checkout main
-    merge feature/analysis
+    Start --> Analysis[Feature: Analysis]
+    Analysis --> Modal[Implement modal analysis]
+    Modal --> Nonlinear[Add nonlinear solver]
+    Nonlinear --> MergeAnal[Merge to main]
     
-    branch feature/python-bindings
-    checkout feature/python-bindings
-    commit id: "PyO3 integration"
-    commit id: "Python test suite"
-    checkout main
-    merge feature/python-bindings
+    MergeMat --> Python[Feature: Python bindings]
+    MergeAnal --> Python
+    Python --> PyO3[PyO3 integration]
+    PyO3 --> PyTests[Python test suite]
+    PyTests --> MergePy[Merge to main]
     
-    commit id: "Release v1.0.0"
+    MergePy --> Release[Release v1.0.0]
+    Release --> Hotfix[Hotfix: Stability]
+    Hotfix --> Fix[Fix convergence issue]
+    Fix --> Patch[Release v1.0.1]
     
-    branch hotfix/stability
-    checkout hotfix/stability
-    commit id: "Fix convergence issue"
-    checkout main
-    merge hotfix/stability
-    commit id: "Release v1.0.1"
+    classDef feature fill:#e1f5fe
+    classDef commit fill:#e8f5e8
+    classDef release fill:#ffebee
+    
+    class Materials,Analysis,Python,Hotfix feature
+    class ConcreteMat,SteelMat,Modal,Nonlinear,PyO3,PyTests,Fix commit
+    class Release,Patch release
 ```
 
 ## Testing Strategy

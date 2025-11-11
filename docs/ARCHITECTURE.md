@@ -398,38 +398,33 @@ graph LR
 ## Development Roadmap
 
 ```mermaid
-gantt
+timeline
     title Gazelle Development Roadmap
-    dateFormat  YYYY-MM-DD
-    section Foundation
-    Core Engine Implementation     :done, core, 2024-01-01, 2024-06-01
-    Type Safety System            :done, types, 2024-04-01, 2024-07-01
-    Test Suite & Validation       :done, tests, 2024-05-01, 2024-08-01
     
-    section Architecture
-    Daemon Service Design         :done, daemon-design, 2024-07-01, 2024-09-01
-    HTTP API Implementation       :active, http, 2024-09-01, 2024-12-01
-    Session Management           :active, sessions, 2024-10-01, 2024-12-01
+    2024 Q1-Q2 : Foundation Phase
+                : Core Engine Implementation ✅
+                : Type Safety System ✅
+                : Test Suite & Validation ✅
     
-    section Ecosystem
-    Python Bindings             :python, 2024-11-01, 2025-02-01
-    CLI Enhancement              :cli, 2024-12-01, 2025-01-01
-    Web Interface                :web, 2025-01-01, 2025-04-01
+    2024 Q3-Q4 : Architecture Phase  
+                : Daemon Service Design ✅
+                : HTTP API Implementation 🚧
+                : Session Management 🚧
     
-    section Materials
-    Steel Materials Library      :steel, 2025-02-01, 2025-05-01
-    Design Code Plugins          :plugins, 2025-03-01, 2025-07-01
-    Advanced Concrete Models     :concrete-adv, 2025-04-01, 2025-08-01
+    2025 Q1    : Ecosystem Phase
+                : Python Bindings 📋
+                : CLI Enhancement 📋
+                : Web Interface 📋
     
-    section Analysis
-    Nonlinear Analysis           :nonlinear, 2025-05-01, 2025-09-01
-    Dynamic Analysis Enhancement :dynamic, 2025-06-01, 2025-10-01
-    Performance Optimization     :perf, 2025-07-01, 2025-11-01
+    2025 Q2-Q3 : Materials Phase
+                : Steel Materials Library 📋
+                : Design Code Plugins 📋
+                : Advanced Concrete Models 📋
     
-    section Community
-    Documentation & Tutorials    :docs, 2024-11-01, 2025-01-01
-    Example Library              :examples, 2025-01-01, 2025-03-01
-    Community Tools              :community, 2025-02-01, 2025-06-01
+    2025 Q4    : Analysis Phase
+                : Nonlinear Analysis 📋
+                : Dynamic Analysis Enhancement 📋
+                : Performance Optimization 📋
 ```
 
 ---

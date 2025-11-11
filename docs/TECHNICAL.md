@@ -91,22 +91,34 @@ graph TB
 ## Performance Characteristics
 
 ```mermaid
-quadrantChart
-    title Gazelle Performance Positioning
-    x-axis Low Performance --> High Performance
-    y-axis Low Safety --> High Safety
+graph TB
+    subgraph "Fast & Safe"
+        Gazelle[🦌 Gazelle<br/>High Perf + High Safety]
+    end
     
-    quadrant-1 Fast & Safe
-    quadrant-2 Safe but Slow
-    quadrant-3 Risky & Slow
-    quadrant-4 Fast but Risky
+    subgraph "Safe but Slow"
+        ANSYS[ANSYS<br/>Established + Reliable]
+        SAP[SAP2000<br/>Industry Standard]
+    end
     
-    Gazelle: [0.9, 0.95]
-    ANSYS: [0.7, 0.8]
-    SAP2000: [0.6, 0.7]
-    OpenSees: [0.5, 0.6]
-    FrameWorks: [0.3, 0.4]
-    Excel: [0.1, 0.2]
+    subgraph "Fast but Risky"
+        OpenSees[OpenSees<br/>Academic + Flexible]
+    end
+    
+    subgraph "Risky & Slow"
+        FrameWorks[FrameWorks<br/>Legacy Systems]
+        Excel[Excel<br/>Spreadsheet Analysis]
+    end
+    
+    classDef optimal fill:#e8f5e8
+    classDef safe fill:#e1f5fe
+    classDef fast fill:#fff3e0
+    classDef risky fill:#ffebee
+    
+    class Gazelle optimal
+    class ANSYS,SAP safe
+    class OpenSees fast
+    class FrameWorks,Excel risky
 ```
 
 ## Dependency Graph
@@ -210,11 +222,22 @@ pie title Memory Usage Breakdown
 ```
 
 ```mermaid
-xychart-beta
-    title "Analysis Performance vs Problem Size"
-    x-axis [100, 500, 1000, 5000, 10000]
-    y-axis "Time (seconds)" 0 --> 60
-    line [0.1, 0.8, 2.1, 12.5, 35.2]
+graph LR
+    subgraph "Performance Scaling"
+        P1[100 DOFs<br/>0.1s]
+        P2[500 DOFs<br/>0.8s] 
+        P3[1K DOFs<br/>2.1s]
+        P4[5K DOFs<br/>12.5s]
+        P5[10K DOFs<br/>35.2s]
+    end
+    
+    P1 --> P2
+    P2 --> P3 
+    P3 --> P4
+    P4 --> P5
+    
+    classDef perf fill:#e8f5e8
+    class P1,P2,P3,P4,P5 perf
 ```
 
 ## Security Model

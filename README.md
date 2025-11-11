@@ -2,17 +2,19 @@
   <img src="./.github/assets/gazelle.png" width="100px" height="100px" />
   <h1>Gazelle™</h1>
   <p>🦌 A Fast Engine for Structural Engineering 💨</p>
-  <p><em>Fast • Stable • Reliable • Transparent • Cross-platform • Extensible</em></p>
+  <p>Fast • Stable • Reliable • Transparent • Cross-platform • Extensible</p>
   
   [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/jsbayley/gazelle)
   [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://github.com/jsbayley/gazelle/blob/main/.github/CODE_OF_CONDUCT.md)
-
   [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-00add8)](https://choosealicense.com/licenses/agpl-3.0/)
   [![CI](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml)
 
   [![Rust](https://img.shields.io/badge/Rust-1.87.0-ce412b?logo=rust)](https://www.rust-lang.org)
   [![Python](https://img.shields.io/badge/Python-3.9+-4584b6?logo=python&logoColor=f5f5f5)](https://www.python.org)
   [![Daemon](https://img.shields.io/badge/Daemon-HTTP%2FgRPC-green)](https://localhost:3000)
+  
+
+
 </div>
 
 ---
@@ -30,6 +32,17 @@ Gazelle is a **fast engine for structural engineering** that empowers innovation
 - **🎯 Great DX** - Developer-friendly APIs and "batteries included"
 - **🐍 Python Ready** - First-class Python bindings out of the box
 - **🔧 Extensible** - Plugin architecture for design codes and elements
+
+---
+
+## 📚 Table of Contents
+
+- [Installation](#installation)
+- [Documentation](#documentation) 
+- [Examples](#examples)
+- [Get Involved](#get-involved)
+- [Open Source Philosophy](#open-source-philosophy)
+- [Safety & Errata](#safety--errata)
 
 ---
 
@@ -146,15 +159,6 @@ curl -X POST http://localhost:3000/sessions \
 - **Benchmark suite** for performance regression detection
 
 ---
-
-## 📚 Table of Contents
-
-- [Installation](#installation)
-- [Documentation](#documentation) 
-- [Examples](#examples)
-- [Get Involved](#get-involved)
-- [Open Source Philosophy](#open-source-philosophy)
-- [Safety & Errata](#safety--errata)
 
 ## 🔧 Installation
 
