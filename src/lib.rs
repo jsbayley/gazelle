@@ -16,15 +16,28 @@
 //! 
 //! ```rust
 //! use gazelle::prelude::*;
+//! use gazelle::analysis::Analysis;
 //! 
 //! // Create a simple truss model
 //! let mut model = Model::new();
-//! model.add_node(Node::new(0, 0.0, 0.0, 0.0));
-//! model.add_node(Node::new(1, 1.0, 0.0, 0.0));
-//! // ... add elements, constraints, loads
+//! model.add_node(Node::new(0, 0.0, 0.0, 0.0)).unwrap();
+//! model.add_node(Node::new(1, 1.0, 0.0, 0.0)).unwrap();
+//! 
+//! // Add material
+//! let steel = Material::steel(0, "Steel".to_string());
+//! model.add_material(steel).unwrap();
+//! 
+//! // Add element
+//! let props = ElementProperties::truss(0.01);
+//! model.add_element(Element::new(0, ElementType::Truss2D, vec![0, 1], 0, props)).unwrap();
+//! 
+//! // Add constraints and loads
+//! model.add_constraint(Constraint::fixed_support(0, 0));
+//! model.add_load(Load::nodal_force(0, 1, Dof::Ux, 1000.0, "Load".to_string()));
 //! 
 //! // Perform analysis
-//! let results = model.static_analysis()?;
+//! let analysis = Analysis::new(model);
+//! let results = analysis.static_analysis().unwrap();
 //! ```
 
 pub mod prelude;

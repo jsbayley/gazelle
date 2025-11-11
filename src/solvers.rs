@@ -382,8 +382,6 @@ impl StaticSolver {
 
     /// Apply automatic constraints to uncoupled DOFs to prevent matrix singularity
     fn apply_automatic_constraints(&self, k: &mut DMatrix<f64>, f: &mut DVector<f64>) -> Result<()> {
-        println!("Checking for uncoupled DOFs...");
-        
         let penalty_factor = 1e12;
         let mut auto_constraints = 0;
         
@@ -408,14 +406,16 @@ impl StaticSolver {
             
             // If DOF is uncoupled, apply constraint
             if !has_connection {
-                println!("Applying automatic constraint to uncoupled DOF {}", i);
+                info!("Applying automatic constraint to uncoupled DOF {}", i);
                 k[(i, i)] = penalty_factor;
                 f[i] = 0.0; // Constrain to zero displacement
                 auto_constraints += 1;
             }
         }
         
-        println!("Applied {} automatic constraints", auto_constraints);
+        if auto_constraints > 0 {
+            info!("Applied {} automatic constraints to prevent singularity", auto_constraints);
+        }
         Ok(())
     }
 }
