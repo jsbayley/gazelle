@@ -46,7 +46,7 @@ rand = "0.8"
 clap = { version = "4.4", features = ["derive"] }
 
 # Python bindings
-pyo3 = { version = "0.20", features = ["extension-module"], optional = true }
+pyo3 = { version = "0.24", features = ["extension-module"], optional = true }
 
 # Logging
 log = "0.4"
