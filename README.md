@@ -281,10 +281,6 @@ Gazelle is proudly <a href="./LICENSE" target="_blank"><strong>AGPL-3.0 licensed
 
 ## ⚠️ Safety & Errata
 
-<div align="center">
-<strong>🏗️ SAFETY CRITICAL SOFTWARE 🏗️</strong>
-</div>
-
 <p align="justify">
 We consider structural engineering software to be <strong>safety critical</strong>. Human lives depend on the accuracy of structural calculations. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation.
 </p>
