@@ -3,6 +3,7 @@
     "bierner.markdown-preview-github-styles",
     "bierner.markdown-mermaid",
     "charliermarsh.ruff",
+    "docker.docker",
     "github.copilot",
     "github.vscode-github-actions",
     "grapecity.gc-excelviewer",
