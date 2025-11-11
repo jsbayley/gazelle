@@ -66,7 +66,7 @@ impl ModelIO {
         match format {
             FileFormat::Json => {
                 serde_json::from_str(contents)
-                    .map_err(|e| GazelleError::SerializationError(e))
+                    .map_err(|e| GazelleError::SerializationError(e.to_string()))
             }
             FileFormat::Yaml => {
                 serde_yaml::from_str(contents)
@@ -83,7 +83,7 @@ impl ModelIO {
         match format {
             FileFormat::Json => {
                 serde_json::to_string_pretty(model)
-                    .map_err(|e| GazelleError::SerializationError(e))
+                    .map_err(|e| GazelleError::SerializationError(e.to_string()))
             }
             FileFormat::Yaml => {
                 serde_yaml::to_string(model)

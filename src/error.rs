@@ -30,7 +30,7 @@ pub enum GazelleError {
     IoError(#[from] std::io::Error),
     
     #[error("Serialization error: {0}")]
-    SerializationError(#[from] serde_json::Error),
+    SerializationError(String),
     
     #[error("YAML error: {0}")]
     YamlError(#[from] serde_yaml::Error),
@@ -41,6 +41,23 @@ pub enum GazelleError {
     
     #[error("Validation error: {0}")]
     ValidationError(String),
+    
+    #[error("Resource not found: {0}")]
+    NotFound(String),
+}
+
+// Implement conversion from serde_json::Error to GazelleError
+impl From<serde_json::Error> for GazelleError {
+    fn from(err: serde_json::Error) -> Self {
+        GazelleError::SerializationError(err.to_string())
+    }
+}
+
+// Implement conversion from ConcreteError to GazelleError  
+impl From<crate::concrete::ConcreteError> for GazelleError {
+    fn from(err: crate::concrete::ConcreteError) -> Self {
+        GazelleError::ValidationError(err.to_string())
+    }
 }
 
 /// Result type for Gazelle operations

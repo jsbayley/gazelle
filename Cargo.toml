@@ -2,12 +2,15 @@
 name = "gazelle"
 version = "0.0.1"
 edition = "2021"
-authors = ["Your Name <your.email@example.com>"]
-description = "A high-performance structural analysis engine"
+authors = ["James S. Bayley <jsbayley@users.noreply.github.com>"]
+description = "🦌 The Linux for Structural Engineers - Fast, safe, extensible structural analysis engine with type-safe units and daemon architecture"
 license = "AGPL-3.0"
 repository = "https://github.com/jsbayley/gazelle"
-keywords = ["structural", "analysis", "engineering", "finite-element", "performance"]
-categories = ["science", "mathematics", "simulation"]
+documentation = "https://docs.rs/gazelle"
+readme = "README.md"
+homepage = "https://github.com/jsbayley/gazelle"
+keywords = ["structural", "analysis", "engineering", "finite-element", "daemon"]
+categories = ["science", "mathematics", "simulation", "web-programming::http-server"]
 
 [lib]
 name = "gazelle"
@@ -52,6 +55,12 @@ env_logger = "0.10"
 # Performance utilities
 criterion = { version = "0.5", optional = true }
 
+# Async runtime and HTTP server (for daemon)
+tokio = { version = "1.0", features = ["full"], optional = true }
+warp = { version = "0.3", optional = true }
+uuid = { version = "1.0", features = ["v4"], optional = true }
+chrono = { version = "0.4", features = ["serde"], optional = true }
+
 [dev-dependencies]
 criterion = { version = "0.5", features = ["html_reports"] }
 proptest = "1.4"
@@ -61,5 +70,6 @@ approx = "0.5"
 default = []
 python = ["pyo3"]
 benchmarks = ["criterion"]
+daemon = ["tokio", "warp", "uuid", "chrono"]
 
 

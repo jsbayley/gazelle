@@ -190,7 +190,7 @@ impl AnalysisResults {
     /// Export results to different formats
     pub fn export_to_json(&self) -> Result<String> {
         serde_json::to_string_pretty(self)
-            .map_err(|e| GazelleError::SerializationError(e))
+            .map_err(|e| GazelleError::SerializationError(e.to_string()))
     }
 
     pub fn export_to_yaml(&self) -> Result<String> {
