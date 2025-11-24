@@ -583,6 +583,6 @@ Gazelle is licensed under [AGPL-3.0](./LICENSE) to ensure it remains free and op
 ---
 
 <div align="center">
-  <p><strong>🦌 Built with ❤️ for the global engineering community</strong></p>
+  <p>Built with ❤️ for the global engineering community</p>
   <p><em>Fast • Stable • Reliable • Transparent • Cross-platform • Extensible</em></p>
 </div>

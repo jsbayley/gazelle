@@ -14,12 +14,6 @@
   "files.exclude": {
     "**/.git": false,
     "**/bin": false,
-    "target/": false,
-    "poetry.lock": true,
-    "**/__pycache__": true,
-    "**/.pytest_cache": true,
-    "**/*.so": true,
-    ".venv": false
   },
   
   "git.autofetch": true,
@@ -33,23 +27,11 @@
     "markdown": false
   },
 
-  "powershell.powerShellDefaultVersion": "PowerShell",
-  "powershell.integratedConsole.showOnStartup": false,
-  "powershell.suppressAdditionalExeNotFoundWarning": false,
-
-  "python.analysis.autoFormatStrings": true,
-  "python.defaultInterpreterPath": ".venv/bin/python",
-  "python.languageServer": "Pylance",
-  "python.testing.pytestEnabled": true,
-  "python.testing.pytestPath": "pytest",
-
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "always",
-      "source.fixAll": "explicit"
-    }
+  "go.gopath": "/go",
+  "go.useLanguageServer": true,
+  "go.languageServerFlags": ["-rpc.trace"],
+  "gopls": { 
+    "ui.semanticTokens": true 
   },
 
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Fira Code', Menlo, Monaco, Consolas",

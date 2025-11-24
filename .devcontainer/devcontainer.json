@@ -4,34 +4,20 @@
 	"build": { "dockerfile": "Dockerfile" },
 	"privileged": true,
 	"features": {
-		"ghcr.io/devcontainers/features/git:1": { "version": "2.50.0" },
-		"ghcr.io/devcontainers/features/github-cli:1": { "version": "2.76.0" },
-    "ghcr.io/devcontainers/features/rust:1": { "version": "1.89.0" },
-    "ghcr.io/devcontainers/features/powershell:1": { "version": "7.5.2" },
-    "ghcr.io/devcontainers/features/python:1": { 
-			"version": "3.13.7",
-			"toolsToInstall": "pipx, poetry",
-			"installTools": true,
-			"optimize": false,
-			"enableShared": false
-		}
+		"ghcr.io/devcontainers/features/git:1": { "version": "2.52.0" }
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"bierner.markdown-preview-github-styles",
         "bierner.markdown-mermaid",
-        "charliermarsh.ruff",
         "docker.docker",
 				"github.copilot",
 				"github.vscode-github-actions",
+        "golang.go",
 				"grapecity.gc-excelviewer",
 				"ms-azuretools.vscode-docker",
-        "ms-python.python",
-				"ms-python.vscode-pylance",
-        "ms-vscode.powershell",
         "redhat.vscode-xml",
-        "rust-lang.rust-analyzer",
 				"tamasfe.even-better-toml"
 			]
 		}
