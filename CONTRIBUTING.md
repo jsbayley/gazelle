@@ -6,3 +6,10 @@ We are always on the lookout for new contributors to help:
 - Develop and maintain the engine, 
 - Enhance our testing and performance suite,
 - Verify algorithmic correctness.
+
+---
+
+<div align="center">
+  <p><strong>Built with ❤️ for the global engineering community</strong></p>
+  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+</div>
