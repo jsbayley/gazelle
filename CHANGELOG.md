@@ -4,8 +4,6 @@
   <p><small>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> and adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</small></p>
 </div>
 
-
-
 ---
 
 <div align="center">
