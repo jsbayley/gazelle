@@ -214,33 +214,52 @@ function detectPlatform() {
     if (userAgent.includes('windows')) {
         platform = 'windows';
     } else if (userAgent.includes('mac')) {
-        // Detect Apple Silicon vs Intel Mac
-        platform = userAgent.includes('arm') ? 'macos-arm64' : 'macos-intel';
+        // More robust Apple Silicon detection
+        // Check for ARM architecture indicators
+        if (userAgent.includes('arm') || 
+            navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) {
+            // Apple Silicon Macs report MacIntel but have touch points
+            platform = 'macos-arm64';
+        } else {
+            // Intel Macs
+            platform = 'macos-intel';
+        }
     }
     
     // Highlight the detected platform
     const platformCard = document.querySelector(`[data-platform="${platform}"]`);
     if (platformCard) {
         platformCard.style.order = '-1';
-        platformCard.style.border = '2px solid #00ADD8';
-        platformCard.style.background = 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)';
+        platformCard.style.border = '2px solid var(--accent-blue)';
+        
+        // Theme-aware background highlighting
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const highlightBg = isDark 
+            ? 'linear-gradient(135deg, rgba(0, 173, 216, 0.1) 0%, rgba(0, 153, 199, 0.1) 100%)'
+            : 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)';
+        
+        platformCard.style.background = highlightBg;
         
         // Add "recommended" badge
         const badge = document.createElement('div');
+        badge.className = 'recommended-badge';
         badge.style.cssText = `
             position: absolute;
             top: -1px;
             right: -1px;
-            background: linear-gradient(135deg, #00ADD8 0%, #0099c7 100%);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-hover) 100%);
             color: white;
             padding: 0.25rem 0.75rem;
             font-size: 0.75rem;
             font-weight: 600;
-            border-radius: 0 14px 0 14px;
+            border-radius: 0 12px 0 12px;
+            z-index: 10;
         `;
         badge.textContent = 'RECOMMENDED';
         platformCard.style.position = 'relative';
         platformCard.appendChild(badge);
+        
+        console.log(`Detected platform: ${platform}`);
     }
 }
 
@@ -251,6 +270,28 @@ function updateFileSizes() {
         if (sizeElement) {
             sizeElement.textContent = `~${downloads[platform].size}`;
         }
+    });
+}
+
+// Test download availability
+function testDownloadAvailability() {
+    Object.keys(downloads).forEach(platform => {
+        const download = downloads[platform];
+        fetch(download.url, { method: 'HEAD' })
+            .then(response => {
+                const button = document.querySelector(`[data-platform="${platform}"] .btn-download`);
+                if (!response.ok && button) {
+                    button.style.opacity = '0.7';
+                    button.title = 'Download will be available soon';
+                }
+            })
+            .catch(() => {
+                const button = document.querySelector(`[data-platform="${platform}"] .btn-download`);
+                if (button) {
+                    button.style.opacity = '0.7';
+                    button.title = 'Download will be available soon';
+                }
+            });
     });
 }
 
@@ -338,6 +379,19 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
     updateThemeIcon();
     updateHeaderColors();
+    updateRecommendedStyling();
+}
+
+function updateRecommendedStyling() {
+    const recommendedCard = document.querySelector('.recommended-badge')?.parentElement;
+    if (recommendedCard) {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const highlightBg = isDark 
+            ? 'linear-gradient(135deg, rgba(0, 173, 216, 0.1) 0%, rgba(0, 153, 199, 0.1) 100%)'
+            : 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)';
+        
+        recommendedCard.style.background = highlightBg;
+    }
 }
 
 function updateThemeIcon() {
@@ -396,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     detectPlatform();
     updateFileSizes();
+    testDownloadAvailability();
     initHeaderScroll();
     initScrollAnimations();
     

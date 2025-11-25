@@ -209,7 +209,7 @@ p {
 .nav-wrapper {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav {
@@ -780,28 +780,23 @@ p {
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 6rem 0 4rem;
+/* Medium Tablet - Just before mobile menu activation */
+@media (max-width: 900px) {
+    .nav {
+        gap: 1.5rem;
     }
     
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .download-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .nav-link {
+        font-size: 0.9rem;
     }
     
     .logo h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
-    
+}
+
+/* Mobile Navigation - Tablet and Mobile */
+@media (max-width: 768px) {
     .hamburger-menu {
         display: flex;
     }
@@ -842,6 +837,30 @@ p {
     .theme-toggle {
         width: 36px;
         height: 36px;
+    }
+}
+
+/* Small Mobile Specific */
+@media (max-width: 480px) {
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .download-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.1rem;
     }
     
     .footer-links {
