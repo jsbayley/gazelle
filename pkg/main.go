@@ -2,8 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
+
+	"github.com/jsbayley/gazelle/internal/cmd"
 )
 
 func main() {
-	fmt.Println("🦌 Go, Gazelle! 💨")
+	if err := cmd.Execute(); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
 }
