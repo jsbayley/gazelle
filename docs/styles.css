@@ -160,7 +160,7 @@ p {
 
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-primary);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     position: fixed;
@@ -169,6 +169,7 @@ p {
     right: 0;
     z-index: 100;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow-light);
 }
 
 [data-theme="dark"] .header {
@@ -685,7 +686,8 @@ p {
     }
     
     .header .container {
-        padding: 1rem;
+        padding: 0.75rem 1rem;
+        min-height: 60px;
     }
     
     .nav {
@@ -758,7 +760,22 @@ p {
     }
     
     .logo h1 {
-        display: none;
+        font-size: 1.2rem;
+    }
+    
+    .nav {
+        gap: 0.75rem;
+    }
+    
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        margin-left: 0.5rem;
     }
     
     .footer-links {
@@ -769,10 +786,6 @@ p {
     .footer-tagline {
         font-size: 0.8rem;
         line-height: 1.4;
-    }
-    
-    .nav {
-        display: none;
     }
 }
 
