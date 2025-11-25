@@ -364,6 +364,24 @@ function updateHeaderColors() {
     }
 }
 
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    nav.classList.toggle('mobile-open');
+    hamburger.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+function closeMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    nav.classList.remove('mobile-open');
+    hamburger.classList.remove('active');
+}
+
 // Listen for system theme changes
 window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
     if (!localStorage.getItem('theme')) {
@@ -381,6 +399,23 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initScrollAnimations();
     
+    // Add mobile menu close functionality to nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger-menu');
+        
+        if (nav.classList.contains('mobile-open') && 
+            !nav.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
     // Add keyboard shortcuts
     document.addEventListener('keydown', function(e) {
         // Ctrl/Cmd + K to focus search (if implemented)
@@ -389,9 +424,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Focus search if available
         }
         
-        // Escape to close notifications
+        // Escape to close notifications or mobile menu
         if (e.key === 'Escape') {
             document.querySelectorAll('.notification').forEach(n => n.remove());
+            closeMobileMenu();
         }
     });
 });
