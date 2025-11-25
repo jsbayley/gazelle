@@ -1,588 +1,320 @@
-# 🦌 Gazelle Documentation
+# Documentation
 
-> *Complete guide to the fast engine for structural engineering*
+Gazelle is a **community-led** project designed to:
 
-Welcome to Gazelle - **a fast, cross-platform structural analysis engine**. This documentation will guide you from installation to advanced usage, helping you leverage Gazelle's type-safe, daemon-based architecture for your structural analysis needs.
+- 🚀 Accelerate AEC innovation,
+- 📚 Underpin academic research,
+- 🔄 Offer a modern toolchain interpretation,
+- 🎓 Support Structural Engineering education, and
+- 🫱🏻‍🫲🏾 Connect like-minded Engineers.
 
-## 🎯 Mission Statement
-
-Gazelle is an **open-source, community-led project** designed to:
-
-- **🚀 Accelerate AEC innovation** through modern software architecture
-- **📚 Underpin academic research** with transparent, auditable algorithms  
-- **🎓 Support Structural Engineering education** with accessible tooling
-- **🤝 Attract like-minded Engineers** to build the future together
-- **🔌 Provide stable platform** for high-level language bindings
-- **🔄 Propose modern interpretation** of structural engineering toolchain
-
----
-
-## 🚀 Quick Navigation
-
-- [**🔧 Installation**](#-installation) - Get up and running
-- [**⚡ Quick Start**](#-quick-start) - Your first analysis in minutes  
-- [**🏗️ Architecture**](#-architecture) - Understanding the daemon model
-- [**🐍 Python Bindings**](#-python-bindings) - Using Gazelle from Python
-- [**🔬 Type-Safe Engineering**](#-type-safe-engineering) - Units and safety
-- [**🏢 Materials Library**](#-materials-library) - Real engineering materials
-- [**📊 Analysis Types**](#-analysis-types) - Static, modal, and dynamic
-- [**🔌 Extensibility**](#-extensibility) - Plugins and custom elements
-
----
-
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
-- **Rust** 1.70+ (for building from source)
-- **Python** 3.8+ (for Python bindings - optional)
-- **Git** (for cloning the repository)
+- Go 1.25 or later
 
-### From Source (Recommended)
+### Build from source
 ```bash
-# Clone the repository
-git clone https://github.com/jsbayley/gazelle
+git clone https://github.com/jsbayley/gazelle.git
 cd gazelle
-
-# Build with daemon support
-cargo build --release --features daemon
-
-# Install CLI globally
-cargo install --path . --features daemon
-
-# Verify installation
-gazelle --version
+go build -o gz ./pkg/main.go
 ```
 
-### Development Setup
+## CLI Usage
+
+The `gz` command provides the primary interface for creating, validating, and analyzing structural models.
+
+### Available Commands
+
 ```bash
-# Clone with dev container support
-git clone https://github.com/jsbayley/gazelle
-cd gazelle
-
-# Open in VS Code with dev container (recommended)
-code .
-
-# Or build locally with all features
-cargo build --features "daemon,python,benchmarks"
+gz create [file]     # Create new structural models
+gz info [file]       # Display model information
+gz validate [file]   # Check model integrity
+gz analyze [file]    # Perform structural analysis
 ```
 
----
+### Global Flags
 
-## ⚡ Quick Start
+- `--verbose, -v`: Enable verbose logging
+- `--config`: Specify configuration file
+- `--help, -h`: Show help information
 
-### 1. Start the Daemon
+## Model Creation
+
+### Basic Syntax
 ```bash
-# Start Gazelle service (runs on localhost:3000 by default)
-gazelle daemon start
-
-# In another terminal, verify it's running
-curl http://localhost:3000/status
+gz create [output-file] --example [type] [options]
 ```
 
-### 2. Create Your First Model
+### Available Examples
+
+#### Truss Structure
 ```bash
-# Create a simple truss model
-gazelle create truss \
-  --span 10.0 \
-  --height 3.0 \
-  --load 50.0 \
-  --output my_truss.json
-
-# Analyze it
-gazelle analyze my_truss.json --format json
+gz create truss.json --example truss --span 10.0 --height 4.0 --loads 25.0
 ```
 
-### 3. Use from Python (Coming Soon)
-```python
-import gazelle
+Creates a 3-node triangular truss with:
+- Span: 10.0 meters
+- Height: 4.0 meters  
+- Applied load: 25.0 kN (downward at apex)
+- Pin supports at base nodes
 
-# Connect to daemon
-gz = gazelle.Gazelle("localhost:3000")
-
-# Create and analyze a model
-model = gz.create_truss(span=10.0, load=50.0)
-results = gz.analyze(model, analysis_type="static")
-
-print(f"Max displacement: {results.max_displacement:.2f} mm")
-```
-
-### 4. Library Usage
-```rust
-use gazelle::prelude::*;
-
-// Type-safe model creation
-let mut model = Model::new();
-model.add_node(Node::new(0, 0.0, 0.0, 0.0))?;
-model.add_node(Node::new(1, 4000.0, 0.0, 0.0))?; // 4m span
-
-// Add steel material with type safety
-let steel = Material::steel(0, "S355".to_string());
-model.add_material(steel)?;
-
-// Add truss element
-let props = ElementProperties::truss(2500.0); // 25cm²
-model.add_element(Element::new(
-    0, ElementType::Truss2D, vec![0, 1], 0, props
-))?;
-
-// Add constraints and loads
-model.add_constraint(Constraint::fixed_support(0, 0))?;
-model.add_load(Load::nodal_force(0, 1, Dof::Ux, 10000.0, "Live".to_string()))?;
-
-// Analyze with type-safe results
-let results = Analysis::new(model).static_analysis()?;
-```
-
----
-
-## 🏗️ Architecture
-
-Gazelle follows a **daemon architecture** inspired by Docker - a persistent service that multiple clients can connect to:
-
-```
-┌─────────────────────┐    ┌─────────────────────┐    ┌─────────────────────┐
-│   Python Client    │    │    CLI Client       │    │    Web Interface    │
-│   gz.analyze(...)   │    │  gz daemon start    │    │  http://localhost   │
-└─────────┬───────────┘    └─────────┬───────────┘    └─────────┬───────────┘
-          │                          │                          │
-          └──────────────────────────┼──────────────────────────┘
-                                     │ HTTP/gRPC API
-                        ┌─────────────────────┐
-                        │   Gazelle Daemon    │
-                        │   localhost:3000    │
-                        │   Session Manager   │
-                        └─────────┬───────────┘
-                                  │
-                        ┌─────────────────────┐
-                        │   Analysis Engine   │
-                        │   Type-Safe Core    │
-                        │   Rust Performance  │
-                        └─────────────────────┘
-```
-
-### Key Benefits
-- **🔄 Persistent Sessions** - Keep analysis state between operations
-- **🌐 Multi-Client** - CLI, Python, web interfaces use same backend
-- **🚀 High Performance** - Rust core with optimized linear algebra
-- **🛡️ Type Safety** - Prevent unit mixing and engineering errors
-- **📈 Scalable** - Easy to deploy on servers or cloud platforms
-
-### REST API Endpoints
+#### Cantilever Beam
 ```bash
-# Session management
-POST   /sessions              # Create analysis session
-GET    /sessions              # List active sessions  
-GET    /sessions/{id}         # Get session details
-DELETE /sessions/{id}         # Delete session
-
-# Analysis operations
-POST   /sessions/{id}/analyze # Run analysis
-GET    /sessions/{id}/results # Get results
-
-# System status
-GET    /status                # Daemon status
-GET    /health               # Health check
+gz create beam.json --example cantilever --span 6.0 --loads 50.0
 ```
 
----
+Creates a 2-node cantilever beam with:
+- Length: 6.0 meters
+- Fixed support at base
+- Applied load: 50.0 kN (downward at tip)
 
-## 🔬 Type-Safe Engineering
-
-One of Gazelle's key innovations is **type-safe units of measure**, preventing the kind of unit mixing disasters that have plagued engineering software.
-
-### Units System
-```rust
-use gazelle::units::*;
-
-// Type-safe quantities prevent mixing errors
-let length = Length::new(4000.0);     // mm (millimeters)
-let force = Force::new(50.0);         // kN (kilonewtons)
-let age = Age::new(28.0);             // days
-
-// Operations preserve units
-let total_length = length + Length::new(2000.0); // ✅ Valid
-// let invalid = length + force; // ❌ Compile error!
+#### Portal Frame
+```bash
+gz create frame.json --example portal --span 12.0 --height 4.0 --loads 15.0,100.0
 ```
 
-### Semantic Area Types
-```rust
-// Prevent mixing cross-sectional area with surface area
-let cross_section = Area::cross_sectional(2500.0); // mm²
-let surface = Area::surface(5000.0);               // mm²
+Creates a 4-node portal frame with:
+- Span: 12.0 meters
+- Height: 4.0 meters
+- Wind load: 15.0 kN (horizontal)
+- Dead load: 100.0 kN (vertical)
+- Fixed supports at base
 
-// These are different types - prevents accidental mixing!
-assert_ne!(cross_section, surface);
-```
+### Creation Options
 
-### Stress and Material Properties
-```rust
-// Type-safe stress calculations
-let stress = Stress::new(25.0); // MPa
-println!("Stress: {} N/mm²", stress.n_per_mm2());
-println!("Stress: {} MPa", stress.mpa());
-```
+- `--span`: Horizontal dimension in meters
+- `--height`: Vertical dimension in meters  
+- `--loads`: Load values in kN (comma-separated for multiple loads)
 
----
-
-## 🏢 Materials Library
-
-Gazelle includes a comprehensive materials library based on real engineering standards.
-
-### Concrete Materials (Eurocode Compliant)
-```rust
-use gazelle::concrete::*;
-
-// Create type-safe concrete
-let concrete = Concrete::try_create(
-    CylinderStrength::Uk(UkConcreteGrade::Fck30),
-    Aggregate::Limestone,    // Affects elastic modulus
-    Cement::ClassN,          // Affects time-dependent properties
-    WeightClass::NormalWeight,
-    28.0                     // Age in days (validated!)
-)?;
-
-// Access engineering properties
-println!("fck: {} MPa", concrete.fck().value());        // 30.0
-println!("fcm: {} MPa", concrete.fcm().value());        // 38.0  
-println!("Ecm: {} MPa", concrete.ecm());                // 29,700 (limestone factor)
-println!("Density: {} kg/m³", concrete.density(true));  // 2500 (reinforced)
-```
-
-### Available Concrete Grades
-- **UK Grades**: Fck12 through Fck90
-- **Aggregates**: Basalt, Limestone, Sandstone, Quartzite  
-- **Cement Classes**: R, N, S (affect time-dependent properties)
-- **Time-Dependent**: Automatic strength evolution calculations
-
-### Steel Materials (Coming Soon)
-```rust
-// Planned steel materials
-let steel = Steel::try_create(
-    SteelGrade::S355,
-    SteelType::HotRolled,
-    Temperature::new(20.0) // °C
-)?;
-```
-
----
-
-## 📊 Analysis Types
-
-Gazelle supports multiple analysis types with a consistent API.
+## Model Analysis
 
 ### Static Analysis
-```rust
-let results = Analysis::new(model).static_analysis()?;
-
-// Access results
-println!("Max displacement: {:.2} mm", results.max_displacement());
-println!("Max stress: {:.2} MPa", results.max_stress());
-
-// Get nodal displacements
-for (node_id, displacement) in results.displacements() {
-    println!("Node {}: dx={:.2}, dy={:.2}", 
-             node_id, displacement.x, displacement.y);
-}
+```bash
+gz analyze model.json --type static --output results.json
 ```
+
+Performs linear static analysis and calculates:
+- Node displacements
+- Support reactions
+- Strain energy
+- Maximum displacement and reaction values
 
 ### Modal Analysis
-```rust
-let results = Analysis::new(model).modal_analysis(10)?; // 10 modes
-
-// Access modal properties
-for (i, mode) in results.modes().iter().enumerate() {
-    println!("Mode {}: f = {:.2} Hz, T = {:.2} s", 
-             i + 1, mode.frequency, mode.period);
-}
-```
-
-### Time History Analysis (Coming Soon)
-```rust
-let results = Analysis::new(model)
-    .time_history_analysis(0.01, 10.0)?; // dt=0.01s, duration=10s
-```
-
----
-
-## 🐍 Python Bindings
-
-Gazelle will provide first-class Python bindings for seamless integration with the Python ecosystem.
-
-### Planned Python API
-```python
-import gazelle
-
-# Connect to daemon
-gz = gazelle.Gazelle("localhost:3000")
-
-# Create models programmatically
-model = gz.Model()
-model.add_node(0, x=0, y=0, z=0)
-model.add_node(1, x=4000, y=0, z=0)
-
-# Add materials with validation
-steel = gz.materials.Steel.S355()
-model.add_material(steel)
-
-# Add elements
-truss = gz.elements.Truss2D(nodes=[0, 1], material=steel, area=2500.0)
-model.add_element(truss)
-
-# Add loads and constraints  
-model.add_fixed_support(0)
-model.add_load(1, fx=10000.0, load_case="Live")
-
-# Analyze
-results = gz.analyze(model, analysis_type="static")
-print(f"Max displacement: {results.max_displacement:.2f} mm")
-```
-
-### Jupyter Notebook Integration
-```python
-# Planned visualization support
-import gazelle
-import matplotlib.pyplot as plt
-
-gz = gazelle.Gazelle()
-model = gz.examples.simple_truss()
-results = gz.analyze(model)
-
-# Plot deformed shape
-gz.plot.deformed_shape(model, results, scale=100)
-plt.show()
-```
-
----
-
-## 🔌 Extensibility  
-
-Gazelle is designed for extensibility through plugins and custom elements.
-
-### Plugin Architecture (Planned)
-```rust
-// Custom design code plugin
-pub struct Eurocode2Plugin;
-
-impl DesignCodePlugin for Eurocode2Plugin {
-    fn design_concrete_beam(&self, geometry: &Geometry, loads: &Loads) -> DesignResult {
-        // Eurocode 2 implementation
-    }
-}
-
-// Register plugin
-gazelle.register_plugin(Box::new(Eurocode2Plugin));
-```
-
-### Custom Element Types
-```rust
-// Implement custom element behavior
-pub struct PlateElement {
-    nodes: Vec<usize>,
-    thickness: f64,
-}
-
-impl ElementBehavior for PlateElement {
-    fn stiffness_matrix(&self, nodes: &[Node]) -> Matrix<f64> {
-        // Plate stiffness implementation
-    }
-}
-```
-
----
-
-## 📚 Examples
-
-### Simple Truss Analysis
-Complete example of analyzing a Warren truss:
-
-```rust
-use gazelle::prelude::*;
-
-fn warren_truss_example() -> Result<()> {
-    let mut model = Model::new();
-    
-    // Add nodes for 5-panel Warren truss
-    for i in 0..6 {
-        let x = i as f64 * 2000.0; // 2m panels
-        model.add_node(Node::new(i, x, 0.0, 0.0))?;
-        model.add_node(Node::new(i + 6, x, 0.0, 0.0))?;
-    }
-    
-    // Add apex nodes
-    for i in 0..5 {
-        let x = (i as f64 + 0.5) * 2000.0;
-        let y = 2000.0; // 2m height
-        model.add_node(Node::new(i + 12, x, y, 0.0))?;
-    }
-    
-    // Add steel material
-    let steel = Material::steel(0, "S355".to_string());
-    model.add_material(steel)?;
-    
-    // Add truss elements
-    let props = ElementProperties::truss(1600.0); // 16cm²
-    
-    // Bottom chord
-    for i in 0..5 {
-        model.add_element(Element::new(
-            i, ElementType::Truss2D, vec![i, i + 1], 0, props.clone()
-        ))?;
-    }
-    
-    // Diagonals and verticals
-    // ... (element creation continues)
-    
-    // Add supports
-    model.add_constraint(Constraint::fixed_support(0, 0))?;
-    model.add_constraint(Constraint::roller_support_y(1, 5))?;
-    
-    // Add loads (distributed as point loads)
-    for i in 0..5 {
-        model.add_load(Load::nodal_force(
-            i, i + 12, Dof::Uy, -10000.0, "Dead + Live".to_string()
-        ))?;
-    }
-    
-    // Analyze
-    let results = Analysis::new(model).static_analysis()?;
-    
-    println!("Warren Truss Analysis Results:");
-    println!("Max displacement: {:.2} mm", results.max_displacement());
-    println!("Max stress: {:.2} MPa", results.max_stress());
-    
-    Ok(())
-}
-```
-
-### Concrete Column Design
-```rust
-use gazelle::prelude::*;
-use gazelle::concrete::*;
-
-fn concrete_column_example() -> Result<()> {
-    // Create high-strength concrete
-    let concrete = Concrete::try_create(
-        CylinderStrength::Uk(UkConcreteGrade::Fck40),
-        Aggregate::Basalt,      // High modulus aggregate
-        Cement::ClassR,         // Rapid hardening
-        WeightClass::NormalWeight,
-        28.0
-    )?;
-    
-    // Validate material properties
-    assert_eq!(concrete.fck().value(), 40.0);
-    assert!(concrete.ecm() > 40000.0); // Basalt gives higher modulus
-    
-    println!("✅ C40 Basalt Concrete Properties:");
-    println!("   fck: {} MPa", concrete.fck().value());
-    println!("   fcm: {} MPa", concrete.fcm().value());
-    println!("   Ecm: {} MPa", concrete.ecm());
-    println!("   Age-adjusted fcm: {} MPa", concrete.fcm_t().value());
-    
-    Ok(())
-}
-```
-
----
-
-## 🛠️ Advanced Usage
-
-### Custom Analysis Workflows
-```rust
-use gazelle::prelude::*;
-
-fn parametric_study() -> Result<()> {
-    // Study effect of span length on truss deflection
-    let spans = [8.0, 10.0, 12.0, 14.0, 16.0]; // meters
-    
-    for span in spans {
-        let model = create_truss_model(span * 1000.0)?; // Convert to mm
-        let results = Analysis::new(model).static_analysis()?;
-        
-        println!("Span: {}m, Max deflection: {:.2}mm, Deflection ratio: L/{:.0}", 
-                 span, 
-                 results.max_displacement(),
-                 (span * 1000.0) / results.max_displacement());
-    }
-    
-    Ok(())
-}
-```
-
-### Performance Optimization
-```rust
-// Enable parallel processing for large models
-use rayon::prelude::*;
-
-fn parallel_analysis(models: Vec<Model>) -> Vec<AnalysisResults> {
-    models.into_par_iter()
-        .map(|model| Analysis::new(model).static_analysis())
-        .collect::<Result<Vec<_>>>()
-        .unwrap()
-}
-```
-
----
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-#### Singular Matrix Errors
-```
-Error: Singular matrix encountered
-```
-**Solution**: Check for:
-- Unconstrained degrees of freedom
-- Duplicate nodes at same location  
-- Elements with zero stiffness
-- Missing material properties
-
-#### Unit Validation Errors  
-```
-Error: Invalid concrete age: Concrete age <= 0 days
-```
-**Solution**: Gazelle validates engineering inputs - ensure realistic values
-
-#### Connection Issues
-```
-Error: Connection refused (localhost:3000)
-```
-**Solution**: Start the daemon first:
 ```bash
-gazelle daemon start
+gz analyze model.json --type modal
 ```
 
----
+Performs eigenvalue analysis and determines:
+- Natural frequencies (Hz)
+- Mode shapes
+- Dynamic characteristics
 
-## 📖 API Reference
+### Analysis Options
 
-For complete API documentation, run:
+- `--type`: Analysis type (static, modal, dynamic)
+- `--output, -o`: Output file for results
+- `--solver`: Solver type (auto, cholesky, lu)
+- `--tolerance`: Convergence tolerance (default: 1e-9)
+- `--max-iterations`: Maximum solver iterations (default: 1000)
+
+## Model Validation
+
 ```bash
-cargo doc --open --features daemon
+gz validate model.json
 ```
 
-Or visit the [online documentation](https://docs.rs/gazelle) (coming soon).
+Performs comprehensive model checking:
+- Structural integrity verification
+- Node connectivity analysis
+- Constraint sufficiency checking
+- Load case validation
+- Material property verification
 
----
+## Model Information
 
-## 🤝 Contributing
+```bash
+gz info model.json
+```
 
-We welcome contributions! See our [Contributing Guide](./CONTRIBUTING.md) for:
-- Code style guidelines
-- Testing requirements  
-- Documentation standards
-- Pull request process
+Displays detailed model statistics:
+- Node count and coordinates
+- Element types and properties
+- Material definitions
+- Applied loads and constraints
+- Geometric bounds and dimensions
 
----
+## File Formats
 
-## 📜 License
+### Model Files
+Gazelle uses JSON format for structural models with the following structure:
 
-Gazelle is licensed under [AGPL-3.0](./LICENSE) to ensure it remains free and open source while preventing proprietary forks.
+```json
+{
+  "info": {
+    "name": "Model Name",
+    "description": "Model Description", 
+    "units": "SI",
+    "version": "1.0"
+  },
+  "nodes": {
+    "n1": {"id": "n1", "x": 0.0, "y": 0.0, "z": 0.0}
+  },
+  "elements": {
+    "e1": {
+      "id": "e1",
+      "type": "Truss2D",
+      "nodes": ["n1", "n2"],
+      "material": "steel",
+      "properties": {"area": 0.01}
+    }
+  },
+  "materials": {
+    "steel": {
+      "id": "steel",
+      "name": "Structural Steel",
+      "type": "Steel",
+      "elastic_modulus": 200e9,
+      "density": 7850,
+      "yield_strength": 355e6
+    }
+  },
+  "loads": {
+    "l1": {
+      "id": "l1",
+      "type": "Force",
+      "node": "n1",
+      "direction": "Fy", 
+      "magnitude": -10000.0
+    }
+  },
+  "constraints": {
+    "c1": {
+      "id": "c1",
+      "type": "Fixed",
+      "node": "n1",
+      "dof": ["Ux", "Uy", "Rz"]
+    }
+  }
+}
+```
+
+### Results Files
+Analysis results are saved in JSON format:
+
+```json
+{
+  "type": "static",
+  "converged": true,
+  "iterations": 1,
+  "max_displacement": 0.000025,
+  "max_reaction": 12500,
+  "strain_energy": 0.3125,
+  "displacements": {
+    "n1": [0, -0.000025, 0]
+  },
+  "reactions": {
+    "n1": [0, 12500, 0]
+  }
+}
+```
+
+## Worked Examples
+
+### Example 1: Simple Truss Analysis
+
+Create and analyze a 8m span truss with 30 kN load:
+
+```bash
+# Create model
+gz create example1.json --example truss --span 8.0 --height 3.0 --loads 30.0
+
+# Validate model  
+gz validate example1.json
+
+# Run static analysis
+gz analyze example1.json --type static --output example1_results.json
+
+# View results
+gz info example1.json
+```
+
+Expected results:
+- Maximum displacement: ~2.5e-5 m
+- Support reactions: ~15 kN each
+- Analysis time: <5 microseconds
+
+### Example 2: Cantilever Beam Design
+
+Design a 5m cantilever beam for 40 kN tip load:
+
+```bash
+# Create beam model
+gz create cantilever.json --example cantilever --span 5.0 --loads 40.0
+
+# Analyze deflection
+gz analyze cantilever.json --output cantilever_results.json
+
+# Check natural frequencies
+gz analyze cantilever.json --type modal
+```
+
+Expected results:
+- Tip deflection: ~6.0e-5 m
+- Fixed support reaction: 40 kN
+- First natural frequency: ~10 Hz
+
+### Example 3: Portal Frame Analysis
+
+Analyze a 10m x 4m portal frame with combined loading:
+
+```bash
+# Create frame with wind and dead loads
+gz create portal.json --example portal --span 10.0 --height 4.0 --loads 20.0,80.0
+
+# Perform comprehensive analysis
+gz validate portal.json
+gz analyze portal.json --type static --output portal_static.json
+gz analyze portal.json --type modal
+
+# Review model properties
+gz info portal.json
+```
+
+Expected results:
+- Maximum displacement: ~9.0e-5 m
+- Base reactions: Variable based on load distribution
+- Multiple natural frequencies: 10-25 Hz range
+
+## Performance Characteristics
+
+- Static analysis: 2-5 microseconds typical
+- Modal analysis: 2-4 microseconds typical
+- Model validation: <1 microsecond
+- Memory usage: Minimal for typical structural models
+- File I/O: JSON parsing optimized for engineering data
+
+## Units and Conventions
+
+- Length: meters (m)
+- Force: Newtons (N) 
+- Stress: Pascals (Pa)
+- Mass: kilograms (kg)
+- Time: seconds (s)
+- Frequency: Hertz (Hz)
+- Load input: kilonewtons (kN) - automatically converted to N
+
+## Error Handling
+
+Gazelle provides comprehensive error checking:
+- Model validation errors with specific diagnostic messages
+- Analysis convergence monitoring
+- File I/O error reporting with recovery suggestions
+- Type safety enforcement preventing common engineering mistakes
 
 ---
 
 <div align="center">
-  <p><strong>🦌 Built with ❤️ for the global engineering community</strong></p>
-  <p><em>Fast • Stable • Reliable • Transparent • Cross-platform • Extensible</em></p>
+  <p><strong>Built with ❤️ for the global engineering community</strong></p>
+  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
 </div>
