@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Gazelle</title>
+    <meta name="description" content="Complete documentation for Gazelle, the fast structural analysis engine. Installation, usage, examples, and API reference.">
+    <meta name="keywords" content="gazelle documentation, structural engineering, CLI, .NET, F#, analysis">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🦌</div>
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>Gazelle 💨</h1>
+                </a>
+            </div>
+            <div class="nav-wrapper">
+                <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <a href="index.html#download" class="nav-link">Download</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="docs.html" class="nav-link active">Docs</a>
+                    <a href="https://github.com/jsbayley/gazelle" class="nav-link" target="_blank">GitHub</a>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Documentation Content -->
+    <main class="docs-main">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="docs-sidebar">
+                    <nav class="docs-nav">
+                        <h3>Getting Started</h3>
+                        <ul>
+                            <li><a href="#overview" class="docs-nav-link">Overview</a></li>
+                            <li><a href="#installation" class="docs-nav-link">Installation</a></li>
+                            <li><a href="#cli-usage" class="docs-nav-link">CLI Usage</a></li>
+                        </ul>
+                        
+                        <h3>Features</h3>
+                        <ul>
+                            <li><a href="#model-creation" class="docs-nav-link">Model Creation</a></li>
+                            <li><a href="#analysis" class="docs-nav-link">Analysis</a></li>
+                            <li><a href="#validation" class="docs-nav-link">Validation</a></li>
+                        </ul>
+                        
+                        <h3>Reference</h3>
+                        <ul>
+                            <li><a href="#file-formats" class="docs-nav-link">File Formats</a></li>
+                            <li><a href="#examples" class="docs-nav-link">Examples</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <article class="docs-content">
+                    <div class="docs-header">
+                        <h1>Documentation</h1>
+                        <p class="docs-subtitle">Complete guide to using Gazelle for structural engineering analysis</p>
+                    </div>
+
+                    <section id="overview" class="docs-section">
+                        <h2>Overview</h2>
+                        <p>Gazelle is a <strong>community-led</strong> project designed to:</p>
+                        <ul>
+                            <li>🚀 Accelerate AEC innovation</li>
+                            <li>📚 Underpin academic research</li>
+                            <li>🔄 Offer a modern toolchain interpretation</li>
+                            <li>🎓 Support Structural Engineering education</li>
+                            <li>🫱🏻‍🫲🏾 Connect like-minded Engineers</li>
+                        </ul>
+                    </section>
+
+                    <section id="installation" class="docs-section">
+                        <h2>Installation</h2>
+                        
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>.NET 9 SDK or later</li>
+                            <li>F# support (included with .NET SDK)</li>
+                        </ul>
+
+                        <h3>Install from NuGet</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Add Gazelle to your project</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>dotnet add package Gazelle --version 0.0.3</code></pre>
+                        </div>
+
+                        <h3>Build from Source</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Clone and build</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>git clone https://github.com/jsbayley/gazelle.git
+cd gazelle
+dotnet build
+dotnet run --project src/main.fs</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="cli-usage" class="docs-section">
+                        <h2>CLI Usage</h2>
+                        <p>The <code>gz</code> command provides the primary interface for creating, validating, and analyzing structural models.</p>
+
+                        <h3>Available Commands</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Core commands</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz create [file]     # Create new structural models
+gz info [file]       # Display model information  
+gz validate [file]   # Check model integrity
+gz analyze [file]    # Perform structural analysis</code></pre>
+                        </div>
+
+                        <h3>Global Flags</h3>
+                        <ul>
+                            <li><code>--verbose, -v</code>: Enable verbose logging</li>
+                            <li><code>--config</code>: Specify configuration file</li>
+                            <li><code>--help, -h</code>: Show help information</li>
+                        </ul>
+                    </section>
+
+                    <section id="model-creation" class="docs-section">
+                        <h2>Model Creation</h2>
+                        
+                        <h3>Basic Syntax</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Create models with examples</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz create [output-file] --example [type] [options]</code></pre>
+                        </div>
+
+                        <h3>Available Examples</h3>
+                        
+                        <h4>Truss Structure</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">3-node triangular truss</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz create truss.json --example truss --span 10.0 --height 4.0 --loads 25.0</code></pre>
+                        </div>
+                        <p>Creates a truss with 10.0m span, 4.0m height, and 25.0 kN downward load at apex.</p>
+
+                        <h4>Cantilever Beam</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">2-node cantilever beam</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz create beam.json --example cantilever --span 6.0 --loads 50.0</code></pre>
+                        </div>
+                        <p>Creates a 6.0m cantilever with fixed support and 50.0 kN tip load.</p>
+
+                        <h4>Portal Frame</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">4-node portal frame</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz create frame.json --example portal --span 12.0 --height 4.0 --loads 15.0,100.0</code></pre>
+                        </div>
+                        <p>Creates a 12.0m x 4.0m portal frame with wind (15.0 kN) and dead loads (100.0 kN).</p>
+                    </section>
+
+                    <section id="analysis" class="docs-section">
+                        <h2>Model Analysis</h2>
+                        
+                        <h3>Static Analysis</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Linear static analysis</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz analyze model.json --type static --output results.json</code></pre>
+                        </div>
+                        <p>Performs linear static analysis calculating:</p>
+                        <ul>
+                            <li>Node displacements</li>
+                            <li>Support reactions</li>
+                            <li>Strain energy</li>
+                            <li>Maximum displacement and reaction values</li>
+                        </ul>
+
+                        <h3>Modal Analysis</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Eigenvalue analysis</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz analyze model.json --type modal</code></pre>
+                        </div>
+                        <p>Performs eigenvalue analysis determining natural frequencies and mode shapes.</p>
+
+                        <h3>Analysis Options</h3>
+                        <ul>
+                            <li><code>--type</code>: Analysis type (static, modal, dynamic)</li>
+                            <li><code>--output, -o</code>: Output file for results</li>
+                            <li><code>--solver</code>: Solver type (auto, cholesky, lu)</li>
+                            <li><code>--tolerance</code>: Convergence tolerance (default: 1e-9)</li>
+                            <li><code>--max-iterations</code>: Maximum solver iterations (default: 1000)</li>
+                        </ul>
+                    </section>
+
+                    <section id="validation" class="docs-section">
+                        <h2>Model Validation</h2>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Comprehensive model checking</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz validate model.json</code></pre>
+                        </div>
+                        
+                        <p>Performs comprehensive model checking:</p>
+                        <ul>
+                            <li>Structural integrity verification</li>
+                            <li>Node connectivity analysis</li>
+                            <li>Constraint sufficiency checking</li>
+                            <li>Load case validation</li>
+                            <li>Material property verification</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Model information display</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>gz info model.json</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="file-formats" class="docs-section">
+                        <h2>File Formats</h2>
+                        
+                        <h3>Model Files</h3>
+                        <p>Gazelle uses JSON format for structural models:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Example model structure</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>{
+  "info": {
+    "name": "Model Name",
+    "description": "Model Description", 
+    "units": "SI",
+    "version": "1.0"
+  },
+  "nodes": {
+    "n1": {"id": "n1", "x": 0.0, "y": 0.0, "z": 0.0}
+  },
+  "elements": {
+    "e1": {
+      "id": "e1",
+      "type": "Truss2D",
+      "nodes": ["n1", "n2"],
+      "material": "steel",
+      "properties": {"area": 0.01}
+    }
+  },
+  "materials": {
+    "steel": {
+      "id": "steel",
+      "name": "Structural Steel",
+      "type": "Steel",
+      "elastic_modulus": 200e9,
+      "density": 7850,
+      "yield_strength": 355e6
+    }
+  }
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="examples" class="docs-section">
+                        <h2>Worked Examples</h2>
+                        
+                        <h3>Example 1: Simple Truss Analysis</h3>
+                        <p>Create and analyze an 8m span truss with 30 kN load:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Complete truss workflow</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Create model
+gz create example1.json --example truss --span 8.0 --height 3.0 --loads 30.0
+
+# Validate model  
+gz validate example1.json
+
+# Run static analysis
+gz analyze example1.json --type static --output example1_results.json
+
+# View results
+gz info example1.json</code></pre>
+                        </div>
+                        
+                        <div class="example-results">
+                            <h4>Expected Results:</h4>
+                            <ul>
+                                <li>Maximum displacement: ~2.5e-5 m</li>
+                                <li>Support reactions: ~15 kN each</li>
+                                <li>Analysis time: Microsecond-scale</li>
+                            </ul>
+                        </div>
+                    </section>
+
+
+
+                    <!-- Navigation Footer -->
+                    <div class="docs-footer">
+                        <div class="docs-footer-nav">
+                            <a href="index.html" class="docs-footer-link">← Back to Home</a>
+                            <a href="https://github.com/jsbayley/gazelle" class="docs-footer-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Documentation-specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for docs navigation
+            const navLinks = document.querySelectorAll('.docs-nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update active link
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Highlight current section on scroll
+            const sections = document.querySelectorAll('.docs-section');
+            const options = {
+                rootMargin: '-20% 0px -60% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
