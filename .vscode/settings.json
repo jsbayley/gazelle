@@ -11,6 +11,10 @@
   
   "diffEditor.ignoreTrimWhitespace": false,
 
+  "files.associations": {
+    "*.fsproj": "xml"
+  },
+
   "files.exclude": {
     "**/.git": false,
     "**/bin": false,
