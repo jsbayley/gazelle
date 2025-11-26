@@ -11,13 +11,20 @@ Gazelle is a **community-led** project designed to:
 ## Installation
 
 ### Prerequisites
-- Go 1.25 or later
+- .NET 9 SDK or later
+- F# support (included with .NET SDK)
 
 ### Build from source
 ```bash
 git clone https://github.com/jsbayley/gazelle.git
 cd gazelle
-go build -o gz ./pkg/main.go
+dotnet build
+dotnet run --project src/main.fs
+```
+
+### Install from NuGet
+```bash
+dotnet add package Gazelle --version 0.0.2
 ```
 
 ## CLI Usage
@@ -286,13 +293,7 @@ Expected results:
 - Base reactions: Variable based on load distribution
 - Multiple natural frequencies: 10-25 Hz range
 
-## Performance Characteristics
 
-- Static analysis: 2-5 microseconds typical
-- Modal analysis: 2-4 microseconds typical
-- Model validation: <1 microsecond
-- Memory usage: Minimal for typical structural models
-- File I/O: JSON parsing optimized for engineering data
 
 ## Units and Conventions
 
@@ -307,10 +308,10 @@ Expected results:
 ## Error Handling
 
 Gazelle provides comprehensive error checking:
+- Units of measure validation eliminating dangerous unit mixing disasters
+- Strong type safety with F# preventing common engineering mistakes
 - Model validation errors with specific diagnostic messages
-- Analysis convergence monitoring
 - File I/O error reporting with recovery suggestions
-- Type safety enforcement preventing common engineering mistakes
 
 ---
 
