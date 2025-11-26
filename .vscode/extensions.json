@@ -7,8 +7,13 @@
     "github.vscode-github-actions",
     "golang.go",
     "grapecity.gc-excelviewer",
+    "ionide.ionide-fsharp",
     "ms-azuretools.vscode-docker",
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.dotnet-interactive-vscode",
+    "ms-vscode.powershell",
     "redhat.vscode-xml",
+    "ritwickdey.liveserver",
     "tamasfe.even-better-toml"
   ]
 }

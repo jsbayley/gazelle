@@ -26,6 +26,7 @@
         "ms-dotnettools.dotnet-interactive-vscode",
         "ms-vscode.powershell",
         "redhat.vscode-xml",
+        "ritwickdey.liveserver",
 				"tamasfe.even-better-toml"
 			]
 		}
