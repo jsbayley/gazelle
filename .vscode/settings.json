@@ -14,6 +14,12 @@
   "files.exclude": {
     "**/.git": false,
     "**/bin": false,
+    "**/obj": true
+  },
+
+  "[fsharp]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
   },
   
   "git.autofetch": true,
@@ -33,6 +39,11 @@
   "gopls": { 
     "ui.semanticTokens": true 
   },
+
+  "powershell.powerShellDefaultVersion": "PowerShell",
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.suppressAdditionalExeNotFoundWarning": false,
+
 
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Fira Code', Menlo, Monaco, Consolas",
 

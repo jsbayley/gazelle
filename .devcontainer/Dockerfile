@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/devcontainers/go:1.25
+FROM mcr.microsoft.com/devcontainers/dotnet:1-9.0

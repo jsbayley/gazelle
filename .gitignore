@@ -2,6 +2,10 @@
 bin/
 build/
 
+# .NET
+obj/
+.fake
+
 # JavaScript
 node_modules/
 

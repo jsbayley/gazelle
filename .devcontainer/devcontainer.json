@@ -4,8 +4,12 @@
 	"build": { "dockerfile": "Dockerfile" },
 	"privileged": true,
 	"features": {
-		"ghcr.io/devcontainers/features/git:1": { "version": "2.52.0" }
+		"ghcr.io/devcontainers/features/git:1": { "version": "2.52.0" },
+    "ghcr.io/devcontainers/features/go:1": { "version": "1.25" }
 	},
+  "postCreateCommand": {
+    "dotnet": "dotnet tool restore"
+  },
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -16,7 +20,11 @@
 				"github.vscode-github-actions",
         "golang.go",
 				"grapecity.gc-excelviewer",
+				"ionide.ionide-fsharp",
 				"ms-azuretools.vscode-docker",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "ms-vscode.powershell",
         "redhat.vscode-xml",
 				"tamasfe.even-better-toml"
 			]

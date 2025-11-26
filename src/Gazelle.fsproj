@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>James S. Bayley</Authors>
+    <TargetFramework>net9.0</TargetFramework>
+    <RepositoryUrl>https://github.com/jsbayley/gazelle</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageDescription>A Fast Engine for Structural Engineering.</PackageDescription>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageId>Gazelle</PackageId>
+    <IsPackable>true</IsPackable>
+    <Version>0.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="units\Units.fs" />
+    <Compile Include="units\Annotation.fs" />
+    <Compile Include="units\Conversion.fs" />
+    <Compile Include="units\Math.fs" />
+    <Compile Include="Geometry.fs" />
+  </ItemGroup>
+
+</Project>
