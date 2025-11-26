@@ -19,15 +19,25 @@ dotnet run -- <command> [options]
 
 ## Commands
 
+### Core Analysis
 - `gz info <model>` - Show model information  
 - `gz analyze <model>` - Analyze structural model
 - `gz validate <model>` - Validate model structure  
 - `gz create --template <name>` - Create new model from template
 - `gz templates list` - List available templates
+
+### ETABS Integration 🦌💨
+- `gz etabs demo` - ETABS interop demonstration
+- `gz etabs units` - Units of measure examples  
+- `gz etabs connect` - Connect to existing ETABS instance
+- `gz etabs` - ETABS command help
+
+### General
 - `gz help` - Show help information
 
 ## Examples
 
+### Core Analysis
 ```bash
 # Get model information in JSON format
 gz info model.json --format json
@@ -43,6 +53,21 @@ gz templates list --format json
 
 # Validate a model with detailed output
 gz validate model.json --format json --detailed
+```
+
+### ETABS Integration
+```bash
+# Run ETABS interop demonstration
+gz etabs demo --verbose
+
+# Show units of measure examples
+gz etabs units
+
+# Test ETABS connection with JSON output
+gz etabs connect --format json
+
+# Save ETABS results to file
+gz etabs units --output structural-calc.json --format json
 ```
 
 ## Global Options
