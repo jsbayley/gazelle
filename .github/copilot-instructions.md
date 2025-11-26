@@ -42,7 +42,7 @@ Gazelle features a **unified architecture** achieved through comprehensive conso
 - Template system: beam, truss, portal structures with parameterization
 
 ### Version Management
-- **Centralized**: `Directory.Build.props` contains `<Version>0.0.4</Version>` inherited by all projects
+- **Centralized**: `Directory.Build.props` contains `<Version>0.0.5</Version>` inherited by all projects
 - **Script**: `./scripts/update-version.sh` updates all files consistently
 - **Global tool**: CLI packaged as `gz` command via `PackAsTool=true`
 
