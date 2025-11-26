@@ -9,6 +9,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gazelle", "src\Gazelle.fspr
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gazelle.Tests", "tests\Gazelle.Tests.fsproj", "{5B21029F-9FC4-425E-A8B0-8051410FB906}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cli", "cli", "{342A349A-D343-8551-4064-2E2800C39E13}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gazelle.CLI", "cli\Gazelle.CLI.fsproj", "{CFBEB801-4FDB-485B-814A-35D78111109A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,18 @@ Global
 		{5B21029F-9FC4-425E-A8B0-8051410FB906}.Release|x64.Build.0 = Release|Any CPU
 		{5B21029F-9FC4-425E-A8B0-8051410FB906}.Release|x86.ActiveCfg = Release|Any CPU
 		{5B21029F-9FC4-425E-A8B0-8051410FB906}.Release|x86.Build.0 = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|x64.Build.0 = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|x64.Build.0 = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFBEB801-4FDB-485B-814A-35D78111109A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +66,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{31BC741D-663D-49B6-A0B1-263D1D2F054B} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{5B21029F-9FC4-425E-A8B0-8051410FB906} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{CFBEB801-4FDB-485B-814A-35D78111109A} = {342A349A-D343-8551-4064-2E2800C39E13}
 	EndGlobalSection
 EndGlobal
