@@ -11,6 +11,5 @@ repository-code: 'https://github.com/jsbayley/gazelle'
 abstract: >-
   A Fast Engine for Structural Engineers.
 keywords:
-  - Civil Engineering
   - Structural Engineering
 license: AGPL-3.0-or-later
