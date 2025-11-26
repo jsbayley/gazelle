@@ -39,8 +39,8 @@ html {
         --text-tertiary: #cbd5e0;
         --border-color: #4a5568;
         --card-bg: #2d3748;
-        --code-bg: #0f1419;
-        --code-header: #1a202c;
+        --code-bg: #1a202c;
+        --code-header: #2d3748;
         --shadow-light: rgba(0, 0, 0, 0.2);
         --shadow-medium: rgba(0, 0, 0, 0.3);
         --shadow-strong: rgba(0, 0, 0, 0.4);
@@ -56,8 +56,8 @@ html {
     --text-tertiary: #cbd5e0;
     --border-color: #4a5568;
     --card-bg: #2d3748;
-    --code-bg: #0f1419;
-    --code-header: #1a202c;
+    --code-bg: #1a202c;
+    --code-header: #2d3748;
     --shadow-light: rgba(0, 0, 0, 0.2);
     --shadow-medium: rgba(0, 0, 0, 0.3);
     --shadow-strong: rgba(0, 0, 0, 0.4);
@@ -361,6 +361,10 @@ p {
     color: var(--accent-blue);
 }
 
+[data-theme="dark"] .stat-number {
+    color: #8B7EF7;
+}
+
 .stat-label {
     display: block;
     font-size: 0.875rem;
@@ -413,31 +417,36 @@ p {
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-.download-card:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 173, 216, 0.15);
+
+
+.download-card.recommended {
+    border: 2px solid var(--accent-blue);
 }
 
-.download-card::before {
-    content: '';
+[data-theme="dark"] .download-card.recommended {
+    border: 2px solid #8B7EF7;
+}
+
+.recommended-badge {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-    transition: left 0.5s ease;
+    top: -1px;
+    right: -1px;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-hover) 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0 12px 0 12px;
+    z-index: 10;
 }
 
-.download-card:hover::before {
-    left: 100%;
+[data-theme="dark"] .recommended-badge {
+    background: linear-gradient(135deg, #8B7EF7 0%, #7A6DEF 100%);
 }
+
+
 
 .platform-icon {
     font-size: 2.5rem;

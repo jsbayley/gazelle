@@ -230,7 +230,7 @@ function detectPlatform() {
     const platformCard = document.querySelector(`[data-platform="${platform}"]`);
     if (platformCard) {
         platformCard.style.order = '-1';
-        platformCard.style.border = '2px solid var(--accent-blue)';
+        platformCard.classList.add('recommended');
         
         // Theme-aware background highlighting
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -243,18 +243,6 @@ function detectPlatform() {
         // Add "recommended" badge
         const badge = document.createElement('div');
         badge.className = 'recommended-badge';
-        badge.style.cssText = `
-            position: absolute;
-            top: -1px;
-            right: -1px;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-hover) 100%);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 0 12px 0 12px;
-            z-index: 10;
-        `;
         badge.textContent = 'RECOMMENDED';
         platformCard.style.position = 'relative';
         platformCard.appendChild(badge);
