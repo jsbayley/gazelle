@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/jsbayley/gazelle/schemas/model-schema.json",
+  "title": "Gazelle Structural Model",
+  "description": "JSON schema for Gazelle structural engineering models",
+  "type": "object",
+  "required": ["info", "nodes", "elements"],
+  "properties": {
+    "info": {
+      "type": "object",
+      "required": ["name", "units", "version"],
+      "properties": {
+        "name": { "type": "string", "description": "Model name" },
+        "description": { "type": "string", "description": "Model description" },
+        "units": { 
+          "type": "string", 
+          "enum": ["SI", "Imperial"],
+          "description": "Unit system (SI or Imperial)" 
+        },
+        "version": { 
+          "type": "string", 
+          "pattern": "^\\d+\\.\\d+$",
+          "description": "Model format version" 
+        }
+      }
+    },
+    "nodes": {
+      "type": "object",
+      "description": "Node definitions with coordinates",
+      "patternProperties": {
+        "^n[0-9]+$": {
+          "type": "object",
+          "required": ["id", "x", "y", "z"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^n[0-9]+$" },
+            "x": { "type": "number", "description": "X coordinate" },
+            "y": { "type": "number", "description": "Y coordinate" },
+            "z": { "type": "number", "description": "Z coordinate" }
+          }
+        }
+      }
+    },
+    "elements": {
+      "type": "object",
+      "description": "Element definitions connecting nodes",
+      "patternProperties": {
+        "^e[0-9]+$": {
+          "type": "object",
+          "required": ["id", "type", "nodes", "material"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^e[0-9]+$" },
+            "type": { 
+              "type": "string", 
+              "enum": ["Truss2D", "Frame2D", "Beam", "Plate"],
+              "description": "Element type"
+            },
+            "nodes": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^n[0-9]+$" },
+              "minItems": 2,
+              "description": "Connected node IDs"
+            },
+            "material": { "type": "string", "description": "Material ID reference" },
+            "properties": {
+              "type": "object",
+              "description": "Element-specific properties"
+            }
+          }
+        }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "description": "Material property definitions",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_]*$": {
+          "type": "object",
+          "required": ["id", "name", "type", "elastic_modulus"],
+          "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "type": { 
+              "type": "string", 
+              "enum": ["Steel", "Concrete", "Wood", "Aluminum"],
+              "description": "Material type"
+            },
+            "elastic_modulus": { "type": "number", "minimum": 0 },
+            "density": { "type": "number", "minimum": 0 },
+            "yield_strength": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "loads": {
+      "type": "object",
+      "description": "Applied loads on nodes",
+      "patternProperties": {
+        "^l[0-9]+$": {
+          "type": "object",
+          "required": ["id", "type", "node", "direction", "magnitude"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^l[0-9]+$" },
+            "type": { 
+              "type": "string", 
+              "enum": ["Force", "Moment"],
+              "description": "Load type"
+            },
+            "node": { "type": "string", "pattern": "^n[0-9]+$" },
+            "direction": { 
+              "type": "string", 
+              "enum": ["Fx", "Fy", "Fz", "Mx", "My", "Mz"],
+              "description": "Load direction"
+            },
+            "magnitude": { "type": "number", "description": "Load magnitude" }
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Boundary conditions and supports",
+      "patternProperties": {
+        "^c[0-9]+$": {
+          "type": "object",
+          "required": ["id", "type", "node", "dof"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^c[0-9]+$" },
+            "type": { 
+              "type": "string", 
+              "enum": ["Fixed", "Pinned", "Roller"],
+              "description": "Constraint type"
+            },
+            "node": { "type": "string", "pattern": "^n[0-9]+$" },
+            "dof": {
+              "type": "array",
+              "items": { 
+                "type": "string", 
+                "enum": ["Ux", "Uy", "Uz", "Rx", "Ry", "Rz"] 
+              },
+              "description": "Constrained degrees of freedom"
+            }
+          }
+        }
+      }
+    }
+  }
+}

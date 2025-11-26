@@ -65,6 +65,7 @@
                         <h3>Reference</h3>
                         <ul>
                             <li><a href="#file-formats" class="docs-nav-link">File Formats</a></li>
+                            <li><a href="#ai-orchestration" class="docs-nav-link">AI Integration</a></li>
                             <li><a href="#examples" class="docs-nav-link">Examples</a></li>
                         </ul>
                     </nav>
@@ -301,6 +302,66 @@ gz analyze [file]    # Perform structural analysis</code></pre>
                         </div>
                     </section>
 
+                    <section id="ai-orchestration" class="docs-section">
+                        <h2>AI Integration & Orchestration</h2>
+                        
+                        <p>Gazelle is designed for seamless AI orchestration with structured outputs, type safety, and batch processing capabilities.</p>
+                        
+                        <h3>Machine-Readable Outputs</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">JSON output for AI parsing</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Get structured model information
+gz info model.json --format json
+
+# Analysis results for AI consumption  
+gz analyze model.json --output results.json --format json --verbose</code></pre>
+                        </div>
+                        
+                        <h3>Batch Processing</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Process multiple models</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Batch analysis with progress reporting
+gz batch-analyze *.json --output-dir results/ --format json --progress
+
+# Parallel processing for AI workloads
+gz analyze-parallel models/ --workers 8 --format json</code></pre>
+                        </div>
+                        
+                        <h3>Template-Based Generation</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">AI-friendly model templates</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Generate from templates
+gz create --template truss --params params.json --output model.json
+
+# List available templates
+gz templates list --format json</code></pre>
+                        </div>
+                        
+                        <div class="ai-integration-highlight">
+                            <h3>🤖 AI Orchestration Benefits</h3>
+                            <ul>
+                                <li><strong>Structured Data:</strong> All I/O in JSON for easy parsing</li>
+                                <li><strong>Type Safety:</strong> F# prevents dangerous unit mixing in AI-generated models</li>
+                                <li><strong>Reliable Analysis:</strong> Consistent results for AI iteration</li>
+                                <li><strong>Error Reporting:</strong> Detailed, structured error information for AI decision-making</li>
+                                <li><strong>Batch Processing:</strong> Processing for AI optimization workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <p>Perfect for generative design, optimization algorithms, design space exploration, and automated structural analysis workflows.</p>
+                        
+                        <p><strong>Complete AI Integration Guide:</strong> <a href="https://github.com/jsbayley/gazelle/blob/main/AI_INTEGRATION.md" target="_blank">AI_INTEGRATION.md</a></p>
+                    </section>
+
                     <section id="examples" class="docs-section">
                         <h2>Worked Examples</h2>
                         
@@ -330,7 +391,7 @@ gz info example1.json</code></pre>
                             <ul>
                                 <li>Maximum displacement: ~2.5e-5 m</li>
                                 <li>Support reactions: ~15 kN each</li>
-                                <li>Analysis time: Microsecond-scale</li>
+                                <li>Analysis: Real-time results</li>
                             </ul>
                         </div>
                     </section>
