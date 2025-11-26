@@ -134,8 +134,29 @@ dotnet build
 dotnet tool install --global --add-source ./cli/bin/Release Gazelle.CLI</code></pre>
                         </div>
 
-                        <div class="info-box">
-                            <p><strong>Cross-Platform Support:</strong> Gazelle works on Windows, macOS, and Linux. ETABS integration is available on Windows only, with graceful error handling on other platforms.</p>
+                        <div class="success-box">
+                            <p>Quick Start Ready! Get started immediately with the CLI tool. Core functionality works on all platforms, with enhanced Windows ETABS integration.</p>
+                        </div>
+
+                        <div class="quick-start-grid">
+                            <div class="quick-start-card">
+                                <h4>🚀 Install & Go</h4>
+                                <div class="code-snippet">
+                                    <code>dotnet tool install --global Gazelle.CLI</code>
+                                </div>
+                            </div>
+                            <div class="quick-start-card">
+                                <h4>⚡ Create Model</h4>
+                                <div class="code-snippet">
+                                    <code>gz create beam.json --template beam</code>
+                                </div>
+                            </div>
+                            <div class="quick-start-card">
+                                <h4>📊 Analyze</h4>
+                                <div class="code-snippet">
+                                    <code>gz analyze beam.json --verbose</code>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -144,62 +165,138 @@ dotnet tool install --global --add-source ./cli/bin/Release Gazelle.CLI</code></
                         <p>The <code>gz</code> command provides a cross-platform interface for creating, validating, and analyzing structural models.</p>
 
                         <h3>Cross-Platform Support</h3>
-                        <div class="feature-grid">
-                            <div class="feature-card">
-                                <h4>🪟 Windows</h4>
+                        <div class="platform-support-intro">
+                            <p>Gazelle provides comprehensive cross-platform support with intelligent feature detection:</p>
+                        </div>
+                        
+                        <div class="feature-grid platform-grid">
+                            <div class="feature-card platform-card platform-windows">
+                                <div class="platform-header">
+                                    <h4>🪟 Windows</h4>
+                                    <span class="platform-badge windows-badge">Full Support</span>
+                                </div>
                                 <ul>
-                                    <li>✅ Full core features</li>
-                                    <li>✅ ETABS integration (V17/V19)</li>
-                                    <li>✅ CLI tool</li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">✅</span>
+                                        <span class="feature-text">Complete core functionality</span>
+                                    </li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">🏭</span>
+                                        <span class="feature-text">ETABS integration (V17/V19)</span>
+                                    </li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">⚙️</span>
+                                        <span class="feature-text">CLI tool (<code>gz</code>)</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="feature-card">
-                                <h4>🍎 macOS</h4>
+                            <div class="feature-card platform-card platform-macos">
+                                <div class="platform-header">
+                                    <h4>🍎 macOS</h4>
+                                    <span class="platform-badge macos-badge">Core Support</span>
+                                </div>
                                 <ul>
-                                    <li>✅ Full core features</li>
-                                    <li>❌ ETABS integration (graceful error)</li>
-                                    <li>✅ CLI tool</li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">✅</span>
+                                        <span class="feature-text">Complete core functionality</span>
+                                    </li>
+                                    <li class="feature-unavailable">
+                                        <span class="feature-icon">⚠️</span>
+                                        <span class="feature-text">ETABS integration (graceful error)</span>
+                                    </li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">⚙️</span>
+                                        <span class="feature-text">CLI tool (<code>gz</code>)</span>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="feature-card">
-                                <h4>🐧 Linux</h4>
+                            <div class="feature-card platform-card platform-linux">
+                                <div class="platform-header">
+                                    <h4>🐧 Linux</h4>
+                                    <span class="platform-badge linux-badge">Core Support</span>
+                                </div>
                                 <ul>
-                                    <li>✅ Full core features</li>
-                                    <li>❌ ETABS integration (graceful error)</li>
-                                    <li>✅ CLI tool</li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">✅</span>
+                                        <span class="feature-text">Complete core functionality</span>
+                                    </li>
+                                    <li class="feature-unavailable">
+                                        <span class="feature-icon">⚠️</span>
+                                        <span class="feature-text">ETABS integration (graceful error)</span>
+                                    </li>
+                                    <li class="feature-available">
+                                        <span class="feature-icon">⚙️</span>
+                                        <span class="feature-text">CLI tool (<code>gz</code>)</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
 
                         <h3>Available Commands</h3>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span class="code-title">Core commands (all platforms)</span>
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <div class="commands-intro">
+                            <p>The <code>gz</code> CLI provides two categories of commands based on platform capabilities:</p>
+                        </div>
+                        
+                        <div class="command-section">
+                            <div class="code-block universal-commands">
+                                <div class="code-header">
+                                    <div class="command-category">
+                                        <span class="code-title">🌍 Universal Commands</span>
+                                        <span class="availability-badge universal">All Platforms</span>
+                                    </div>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>gz create [file]     <span class="comment"># Create new structural models</span>
+gz info [file]       <span class="comment"># Display model information</span>
+gz validate [file]   <span class="comment"># Check model integrity</span>
+gz analyze [file]    <span class="comment"># Perform structural analysis</span>
+gz templates list    <span class="comment"># List available templates</span></code></pre>
                             </div>
-                            <pre><code>gz create [file]     # Create new structural models
-gz info [file]       # Display model information  
-gz validate [file]   # Check model integrity
-gz analyze [file]    # Perform structural analysis
-gz templates list    # List available templates</code></pre>
+
+                            <div class="code-block windows-commands">
+                                <div class="code-header">
+                                    <div class="command-category">
+                                        <span class="code-title">🪟 ETABS Integration</span>
+                                        <span class="availability-badge windows-only">Windows Only</span>
+                                    </div>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>gz etabs demo        <span class="comment"># ETABS interop demonstration</span>
+gz etabs connect     <span class="comment"># Connect to existing ETABS instance</span>
+gz etabs units       <span class="comment"># Units of measure examples</span></code></pre>
+                            </div>
                         </div>
 
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span class="code-title">Windows-specific ETABS integration</span>
-                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <h3>Global Options</h3>
+                        <div class="options-grid">
+                            <div class="option-card">
+                                <div class="option-header">
+                                    <code class="option-flag">--verbose, -v</code>
+                                </div>
+                                <p class="option-description">Enable detailed logging and progress information</p>
+                                <div class="option-example">
+                                    <code>gz analyze model.json --verbose</code>
+                                </div>
                             </div>
-                            <pre><code>gz etabs demo        # ETABS interop demonstration
-gz etabs connect     # Connect to existing ETABS instance
-gz etabs units       # Units of measure examples</code></pre>
+                            <div class="option-card">
+                                <div class="option-header">
+                                    <code class="option-flag">--format json</code>
+                                </div>
+                                <p class="option-description">Output results in machine-readable JSON format</p>
+                                <div class="option-example">
+                                    <code>gz info model.json --format json</code>
+                                </div>
+                            </div>
+                            <div class="option-card">
+                                <div class="option-header">
+                                    <code class="option-flag">--help, -h</code>
+                                </div>
+                                <p class="option-description">Display help information and usage examples</p>
+                                <div class="option-example">
+                                    <code>gz --help</code>
+                                </div>
+                            </div>
                         </div>
-
-                        <h3>Global Flags</h3>
-                        <ul>
-                            <li><code>--verbose, -v</code>: Enable verbose logging</li>
-                            <li><code>--config</code>: Specify configuration file</li>
-                            <li><code>--help, -h</code>: Show help information</li>
-                        </ul>
                     </section>
 
                     <section id="architecture" class="docs-section">
