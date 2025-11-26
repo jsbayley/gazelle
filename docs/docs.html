@@ -65,8 +65,15 @@
                         <h3>Reference</h3>
                         <ul>
                             <li><a href="#file-formats" class="docs-nav-link">File Formats</a></li>
-                            <li><a href="#ai-orchestration" class="docs-nav-link">AI Integration</a></li>
                             <li><a href="#examples" class="docs-nav-link">Examples</a></li>
+                            <li><a href="#units-conventions" class="docs-nav-link">Units & Conventions</a></li>
+                            <li><a href="#error-handling" class="docs-nav-link">Error Handling</a></li>
+                        </ul>
+                        
+                        <h3>AI & Automation</h3>
+                        <ul>
+                            <li><a href="#ai-orchestration" class="docs-nav-link">AI Integration</a></li>
+                            <li><a href="#batch-processing" class="docs-nav-link">Batch Processing</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -117,7 +124,7 @@
                             <pre><code>git clone https://github.com/jsbayley/gazelle.git
 cd gazelle
 dotnet build
-dotnet run --project src/main.fs</code></pre>
+dotnet run --project cli -- help</code></pre>
                         </div>
                     </section>
 
@@ -320,17 +327,17 @@ gz info model.json --format json
 gz analyze model.json --output results.json --format json --verbose</code></pre>
                         </div>
                         
-                        <h3>Batch Processing</h3>
+                        <h3>Type-Safe F# Integration</h3>
+                        <p>Gazelle's F# type system provides compile-time safety for AI-generated models:</p>
+                        
                         <div class="code-block">
                             <div class="code-header">
-                                <span class="code-title">Process multiple models</span>
+                                <span class="code-title">F# units of measure example</span>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <pre><code># Batch analysis with progress reporting
-gz batch-analyze *.json --output-dir results/ --format json --progress
-
-# Parallel processing for AI workloads
-gz analyze-parallel models/ --workers 8 --format json</code></pre>
+                            <pre><code>let span = 10.0<m>          // Meters - type safe
+let load = 25000.0<N>       // Newtons - type safe
+let stress = load / (0.01<m^2>)  // Automatic unit checking</code></pre>
                         </div>
                         
                         <h3>Template-Based Generation</h3>
@@ -339,27 +346,52 @@ gz analyze-parallel models/ --workers 8 --format json</code></pre>
                                 <span class="code-title">AI-friendly model templates</span>
                                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                             </div>
-                            <pre><code># Generate from templates
-gz create --template truss --params params.json --output model.json
+                            <pre><code># Generate from templates with parameters
+gz create --template truss --span 10.0 --height 4.0 --loads 25.0
+gz create --template cantilever --span 6.0 --loads 50.0
+gz create --template portal --span 12.0 --height 4.0 --loads 15.0,100.0
 
 # List available templates
 gz templates list --format json</code></pre>
                         </div>
                         
                         <div class="ai-integration-highlight">
-                            <h3>🤖 AI Orchestration Benefits</h3>
+                            <h3>🤖 Key AI Integration Features</h3>
                             <ul>
-                                <li><strong>Structured Data:</strong> All I/O in JSON for easy parsing</li>
-                                <li><strong>Type Safety:</strong> F# prevents dangerous unit mixing in AI-generated models</li>
-                                <li><strong>Reliable Analysis:</strong> Consistent results for AI iteration</li>
-                                <li><strong>Error Reporting:</strong> Detailed, structured error information for AI decision-making</li>
-                                <li><strong>Batch Processing:</strong> Processing for AI optimization workflows</li>
+                                <li><strong>Structured JSON I/O</strong> - Machine-readable inputs and outputs</li>
+                                <li><strong>Batch Processing</strong> - Support for AI workloads</li>
+                                <li><strong>Template System</strong> - Consistent model generation</li>
+                                <li><strong>Type Safety</strong> - F# prevents unit mixing disasters</li>
+                                <li><strong>Reliable Analysis</strong> - Consistent results for iteration</li>
+                                <li><strong>Error Handling</strong> - Detailed, structured error reporting</li>
                             </ul>
+                        </div>
+                        
+                        <h3>Results Format</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Structured analysis results</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>{
+  "type": "static",
+  "converged": true,
+  "iterations": 1,
+  "max_displacement": 0.000025,
+  "max_reaction": 12500,
+  "strain_energy": 0.3125,
+  "displacements": {
+    "n1": [0, -0.000025, 0]
+  },
+  "reactions": {
+    "n1": [0, 12500, 0]
+  }
+}</code></pre>
                         </div>
                         
                         <p>Perfect for generative design, optimization algorithms, design space exploration, and automated structural analysis workflows.</p>
                         
-                        <p><strong>Complete AI Integration Guide:</strong> <a href="https://github.com/jsbayley/gazelle/blob/main/AI_INTEGRATION.md" target="_blank">AI_INTEGRATION.md</a></p>
+                        <p><strong>Complete AI Integration Guide:</strong> <a href="https://github.com/jsbayley/gazelle/blob/main/ai-agents/AI_INTEGRATION.md" target="_blank">AI_INTEGRATION.md</a></p>
                     </section>
 
                     <section id="examples" class="docs-section">
@@ -391,9 +423,135 @@ gz info example1.json</code></pre>
                             <ul>
                                 <li>Maximum displacement: ~2.5e-5 m</li>
                                 <li>Support reactions: ~15 kN each</li>
-                                <li>Analysis: Real-time results</li>
+                                <li>Analysis time: <5 microseconds</li>
                             </ul>
                         </div>
+                        
+                        <h3>Example 2: Cantilever Beam Design</h3>
+                        <p>Design a 5m cantilever beam for 40 kN tip load:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Cantilever analysis</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Create beam model
+gz create cantilever.json --example cantilever --span 5.0 --loads 40.0
+
+# Analyze deflection
+gz analyze cantilever.json --output cantilever_results.json
+
+# Check natural frequencies
+gz analyze cantilever.json --type modal</code></pre>
+                        </div>
+                        
+                        <div class="example-results">
+                            <h4>Expected Results:</h4>
+                            <ul>
+                                <li>Tip deflection: ~6.0e-5 m</li>
+                                <li>Fixed support reaction: 40 kN</li>
+                                <li>First natural frequency: ~10 Hz</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Example 3: Portal Frame Analysis</h3>
+                        <p>Analyze a 10m x 4m portal frame with combined loading:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Portal frame with wind and dead loads</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Create frame with wind and dead loads
+gz create portal.json --example portal --span 10.0 --height 4.0 --loads 20.0,80.0
+
+# Perform comprehensive analysis
+gz validate portal.json
+gz analyze portal.json --type static --output portal_static.json
+gz analyze portal.json --type modal
+
+# Review model properties
+gz info portal.json</code></pre>
+                        </div>
+                        
+                        <div class="example-results">
+                            <h4>Expected Results:</h4>
+                            <ul>
+                                <li>Maximum displacement: ~9.0e-5 m</li>
+                                <li>Base reactions: Variable based on load distribution</li>
+                                <li>Multiple natural frequencies: 10-25 Hz range</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section id="units-conventions" class="docs-section">
+                        <h2>Units and Conventions</h2>
+                        
+                        <div class="units-table">
+                            <h3>Standard Units</h3>
+                            <ul>
+                                <li><strong>Length:</strong> meters (m)</li>
+                                <li><strong>Force:</strong> Newtons (N)</li>
+                                <li><strong>Stress:</strong> Pascals (Pa)</li>
+                                <li><strong>Mass:</strong> kilograms (kg)</li>
+                                <li><strong>Time:</strong> seconds (s)</li>
+                                <li><strong>Frequency:</strong> Hertz (Hz)</li>
+                                <li><strong>Load input:</strong> kilonewtons (kN) - automatically converted to N</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section id="error-handling" class="docs-section">
+                        <h2>Error Handling</h2>
+                        
+                        <p>Gazelle provides comprehensive error checking:</p>
+                        
+                        <div class="error-features">
+                            <ul>
+                                <li><strong>Units of measure validation</strong> eliminating dangerous unit mixing disasters</li>
+                                <li><strong>Strong type safety</strong> with F# preventing common engineering mistakes</li>
+                                <li><strong>Model validation errors</strong> with specific diagnostic messages</li>
+                                <li><strong>File I/O error reporting</strong> with recovery suggestions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Example error handling</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Detailed validation with error reporting
+gz validate model.json --format json --detailed
+
+# Analysis with verbose error information
+gz analyze model.json --verbose --output results.json</code></pre>
+                        </div>
+                    </section>
+                    
+                    <section id="batch-processing" class="docs-section">
+                        <h2>Batch Processing</h2>
+                        
+                        <p>Process multiple models efficiently for design optimization and parameter studies:</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Batch analysis workflows</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code># Process multiple models with pattern matching
+gz batch-analyze models/*.json --output-dir results/ --format json
+
+# Parallel processing for optimization workflows
+gz analyze-parallel design-variants/ --workers 8 --progress</code></pre>
+                        </div>
+                        
+                        <p>Perfect for:</p>
+                        <ul>
+                            <li>Design space exploration</li>
+                            <li>Parameter sensitivity studies</li>
+                            <li>Optimization algorithms</li>
+                            <li>AI-driven generative design</li>
+                        </ul>
                     </section>
 
 

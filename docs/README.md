@@ -23,7 +23,7 @@ web/
 ### 🎨 Design
 - Clean, modern design with Gazelle branding
 - Responsive layout for desktop, tablet, and mobile
-- Professional color scheme with Go blue (#00ADD8) accents
+- Professional color scheme with .NET purple (#512BD4) accents
 - Smooth animations and hover effects
 - Inter font family for excellent readability
 
@@ -61,14 +61,13 @@ The entire `web/` directory can be deployed to any static hosting service:
 - **Nginx**: Serve as static files
 
 ### Building Releases
-Use the build script to create binaries for all platforms:
+Use the .NET publish commands to create binaries for all platforms:
 
 ```bash
-# Build all platform binaries
-./scripts/build-releases.sh
-
-# Or build with specific version
-./scripts/build-releases.sh v1.0.0
+# Build for specific platforms
+dotnet publish -c Release -r win-x64 --self-contained
+dotnet publish -c Release -r osx-x64 --self-contained
+dotnet publish -c Release -r linux-x64 --self-contained
 ```
 
 ### Local Development
@@ -76,19 +75,19 @@ Serve locally for development:
 
 ```bash
 # Python
-cd web && python -m http.server 8000
+cd docs && python -m http.server 8000
 
 # Node.js (if you have serve installed)
-cd web && npx serve
+cd docs && npx serve
 
-# Go (from project root)
-go run pkg/main.go serve-web
+# .NET CLI (from project root)
+dotnet run --project cli -- help
 ```
 
 ## Customization
 
 ### Branding
-- Update colors in `styles.css` (search for `#00ADD8`)
+- Update colors in `styles.css` (search for `#512BD4`)
 - Replace logo/icons in HTML
 - Modify hero section content
 

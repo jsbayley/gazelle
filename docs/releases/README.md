@@ -22,19 +22,24 @@ To build releases for all platforms, run:
 ./scripts/build-releases.sh
 ```
 
-Or manually:
+Or manually using .NET publish:
 
 ```bash
 # Windows
-GOOS=windows GOARCH=amd64 go build -ldflags "-s -w" -o web/releases/gazelle-windows-x64.exe ./pkg/main.go
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r win-x64 --self-contained -o docs/releases/win-x64
+cp docs/releases/win-x64/gz.exe docs/releases/gazelle-windows-x64.exe
 
-# macOS Universal (requires macOS with Go 1.17+)
-GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o web/releases/gazelle-macos-amd64 ./pkg/main.go
-GOOS=darwin GOARCH=arm64 go build -ldflags "-s -w" -o web/releases/gazelle-macos-arm64 ./pkg/main.go
-lipo -create -output web/releases/gazelle-macos-universal web/releases/gazelle-macos-amd64 web/releases/gazelle-macos-arm64
+# macOS x64
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-x64 --self-contained -o docs/releases/osx-x64
+cp docs/releases/osx-x64/gz docs/releases/gazelle-macos-x64
+
+# macOS ARM64
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-arm64 --self-contained -o docs/releases/osx-arm64
+cp docs/releases/osx-arm64/gz docs/releases/gazelle-macos-arm64
 
 # Linux
-GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o web/releases/gazelle-linux-x64 ./pkg/main.go
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-x64 --self-contained -o docs/releases/linux-x64
+cp docs/releases/linux-x64/gz docs/releases/gazelle-linux-x64
 ```
 
 ## Checksums
@@ -42,7 +47,7 @@ GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o web/releases/gazelle-linux-
 Generate checksums for verification:
 
 ```bash
-cd web/releases
+cd docs/releases
 sha256sum gazelle-* > checksums.txt
 ```
 
@@ -52,4 +57,4 @@ sha256sum gazelle-* > checksums.txt
 - macOS: ~7.8 MB  
 - Linux: ~7.5 MB
 
-Sizes may vary depending on Go version and build optimizations.
+Sizes may vary depending on .NET version and publish optimizations.
