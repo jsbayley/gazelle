@@ -2,7 +2,6 @@ namespace Gazelle.IO.ETABS
 
 open System
 open Gazelle.IO
-open Gazelle.IO.IO
 
 // ========================================
 // CROSS-PLATFORM TYPES
