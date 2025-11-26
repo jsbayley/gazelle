@@ -1,0 +1,1 @@
+Provide a CLI list of all key publications.
