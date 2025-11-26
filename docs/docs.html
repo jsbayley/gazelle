@@ -70,6 +70,11 @@
                             <li><a href="#error-handling" class="docs-nav-link">Error Handling</a></li>
                         </ul>
                         
+                        <h3>Libraries</h3>
+                        <ul>
+                            <li><a href="#gazelle-io" class="docs-nav-link">Gazelle.IO</a></li>
+                        </ul>
+                        
                         <h3>AI & Automation</h3>
                         <ul>
                             <li><a href="#ai-orchestration" class="docs-nav-link">AI Integration</a></li>
@@ -306,6 +311,102 @@ gz analyze [file]    # Perform structural analysis</code></pre>
     }
   }
 }</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="gazelle-io" class="docs-section">
+                        <h2>Gazelle.IO Library</h2>
+                        
+                        <p><strong>Gazelle.IO</strong> is a companion library that provides robust IO operations and ETABS interop for the Gazelle structural analysis engine.</p>
+                        
+                        <h3>Quick Start</h3>
+                        <div class="code-block-container">
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">📋</button>
+                            <pre><code class="language-bash"># Build the library
+dotnet build io/Gazelle.IO.fsproj
+
+# Use in your projects
+dotnet add reference io/Gazelle.IO.fsproj</code></pre>
+                        </div>
+                        
+                        <h3>ETABS Integration</h3>
+                        <p>Connect to ETABS for advanced structural modeling and analysis:</p>
+                        <div class="code-block-container">
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">📋</button>
+                            <pre><code class="language-fsharp">open Gazelle.IO.ETABS
+
+// Launch ETABS and create a new model
+let result = ETABS.start()
+
+match result with
+| Ok (etabsApp, sapModel) ->
+    printfn "✅ ETABS connected successfully"
+    
+    // Initialize a clean model environment
+    ETABS.initialise sapModel
+    
+    // Refresh the ETABS view
+    ETABS.refreshView sapModel
+    
+    // Close ETABS (with save)
+    ETABS.close result SaveFile
+    
+| Error e ->
+    printfn "❌ Failed to connect to ETABS: %A" e</code></pre>
+                        </div>
+                        
+                        <h3>Error Handling Pattern</h3>
+                        <p>All operations use the robust <code>Result&lt;'T, IOError&gt;</code> pattern:</p>
+                        <div class="code-block-container">
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">📋</button>
+                            <pre><code class="language-fsharp">open Gazelle.IO
+
+// Interactive user input with validation
+let userChoice = IO.askForUserInput "Enter your choice:" validateInput
+
+match userChoice with
+| Ok validChoice -> 
+    printfn "Processing: %A" validChoice
+| Error err ->
+    IOError.print err</code></pre>
+                        </div>
+                        
+                        <h3>Library Architecture</h3>
+                        <p>The library follows a proven architectural pattern with strong type safety:</p>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <h4>🏗️ Proven Architecture</h4>
+                                <p>Battle-tested code organization with <code>Shared/</code> utilities and <code>ETABS/</code> integration</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🛡️ Type Safety</h4>
+                                <p>Validated types pattern: UnvalidatedTypes → ValidatedTypes with compile-time safety</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🔄 Error Handling</h4>
+                                <p>Comprehensive <code>Result&lt;'T, IOError&gt;</code> pattern throughout the library</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🔌 ETABS Integration</h4>
+                                <p>Multi-version support (V17/V19) with unified API interface</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Version Support</h3>
+                        <div class="code-block-container">
+                            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">📋</button>
+                            <pre><code class="language-fsharp">type Version =
+  | V17  // ETABS 17
+  | V19  // ETABS 19
+
+type InstanceType =
+  | NewAppInstance           // Launch new ETABS instance
+  | ExistingLiveInstance     // Attach to running ETABS</code></pre>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4>📚 Complete Documentation</h4>
+                            <p>For detailed examples, API reference, and integration patterns, see the complete <a href="https://github.com/jsbayley/gazelle/blob/main/io/DOCS.md" target="_blank">Gazelle.IO documentation</a>.</p>
                         </div>
                     </section>
 
