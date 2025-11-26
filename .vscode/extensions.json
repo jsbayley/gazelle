@@ -5,7 +5,6 @@
     "docker.docker",
     "github.copilot",
     "github.vscode-github-actions",
-    "golang.go",
     "grapecity.gc-excelviewer",
     "ionide.ionide-fsharp",
     "ms-azuretools.vscode-docker",

@@ -10,7 +10,6 @@
   [![CI](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml)
 
   [![.NET](https://img.shields.io/badge/.NET-9.0.3-512bd4)](https://dotnet.microsoft.com/en-us/)
-  [![Go](https://img.shields.io/badge/Go-1.25.3-00add8?logo=go)](https://www.go.dev)
 </div>
 
 ## Table of Contents

@@ -33,13 +33,6 @@
     "markdown": false
   },
 
-  "go.gopath": "/go",
-  "go.useLanguageServer": true,
-  "go.languageServerFlags": ["-rpc.trace"],
-  "gopls": { 
-    "ui.semanticTokens": true 
-  },
-
   "liveServer.settings.root": "/docs",
   "liveServer.settings.file": "index.html",
   "liveServer.settings.host": "localhost",
