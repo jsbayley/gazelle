@@ -220,6 +220,24 @@ p {
     margin: 0;
 }
 
+.version-stamp {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.version-stamp:hover {
+    opacity: 1;
+}
+
 .nav-wrapper {
     display: flex;
     align-items: center;
@@ -1094,6 +1112,12 @@ p {
     
     .logo h1 {
         font-size: 1.3rem;
+    }
+    
+    .version-stamp {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.4rem;
+        margin-left: 0.3rem;
     }
 }
 
