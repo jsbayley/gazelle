@@ -21,8 +21,8 @@ html {
     --card-bg: #ffffff;
     --code-bg: #f8fafc;
     --code-header: #edf2f7;
-    --accent-blue: #00ADD8;
-    --accent-blue-hover: #0099c7;
+    --accent-blue: #512BD4;
+    --accent-blue-hover: #3E1A9A;
     --accent-green: #48bb78;
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.1);
@@ -124,12 +124,12 @@ p {
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-hover) 100%);
     color: white;
-    box-shadow: 0 4px 14px rgba(0, 173, 216, 0.3);
+    box-shadow: 0 4px 14px rgba(81, 43, 212, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 173, 216, 0.4);
+    box-shadow: 0 6px 20px rgba(81, 43, 212, 0.4);
 }
 
 .btn-secondary {
