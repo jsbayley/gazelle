@@ -1,0 +1,7 @@
+- [ ] Configure CI pipeline so versions are updated and git commit is tagged.
+- [ ] Ensure the built assets are deployed into the GH Pages site.
+- [ ] Wire up CLI builds for multiplatform builds.
+- [ ] Wire up CI. 
+- [ ] Create issues template.
+- [ ] Update GitHub configuration.
+- [ ] Update GitHub Sponsors bio.
