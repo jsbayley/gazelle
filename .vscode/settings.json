@@ -40,6 +40,11 @@
     "ui.semanticTokens": true 
   },
 
+  "liveServer.settings.root": "/docs",
+  "liveServer.settings.file": "index.html",
+  "liveServer.settings.host": "localhost",
+  "liveServer.settings.port": 8000,
+
   "powershell.powerShellDefaultVersion": "PowerShell",
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.suppressAdditionalExeNotFoundWarning": false,
