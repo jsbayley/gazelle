@@ -37,16 +37,16 @@
 
   <ItemGroup>
     <!-- Core Gazelle.IO library following proven architecture -->
-    <Compile Include=".\code\Shared\UnvalidatedTypes.fs" /> 
-    <Compile Include=".\code\Shared\ValidatedTypes.fs" /> 
-    <Compile Include=".\code\Shared\Unwrap.fs" /> 
-    <Compile Include=".\code\Shared\Messages.fs" />
-    <Compile Include=".\code\Shared\ErrorHandling.fs" />
-    <Compile Include=".\code\Shared\IO.fs" />
-    <Compile Include=".\code\Shared\Model.fs" /> 
-    <Compile Include=".\code\ETABS\Types.fs" />
-    <Compile Include=".\code\ETABS\ETABS.fs" />
-    <Compile Include=".\code\ETABS\Renderer.fs" />
+    <Compile Include=".\Shared\UnvalidatedTypes.fs" /> 
+    <Compile Include=".\Shared\ValidatedTypes.fs" /> 
+    <Compile Include=".\Shared\Unwrap.fs" /> 
+    <Compile Include=".\Shared\Messages.fs" />
+    <Compile Include=".\Shared\ErrorHandling.fs" />
+    <Compile Include=".\Shared\IO.fs" />
+    <Compile Include=".\Shared\Model.fs" /> 
+    <Compile Include=".\ETABS\Types.fs" />
+    <Compile Include=".\ETABS\ETABS.fs" />
+    <Compile Include=".\ETABS\Renderer.fs" />
   </ItemGroup>
 
   <ItemGroup>
