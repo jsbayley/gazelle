@@ -1231,3 +1231,134 @@ p {
 .copied::after {
     content: ' ✓';
 }
+
+/* Feature Grid Styles */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-grid .card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--card-bg);
+    box-shadow: 0 1px 3px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.feature-grid .card h3 {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Info Box Styles */
+.info-box {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.info-box::before {
+    content: 'ℹ️';
+    font-weight: bold;
+    color: #1976d2;
+    margin-right: 0.5rem;
+}
+
+.info-box strong {
+    color: #1976d2;
+}
+
+.warning-box {
+    background: #fff3e0;
+    border: 1px solid #ff9800;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.warning-box::before {
+    content: '⚠️';
+    font-weight: bold;
+    color: #f57c00;
+    margin-right: 0.5rem;
+}
+
+.warning-box strong {
+    color: #f57c00;
+}
+
+.success-box {
+    background: #e8f5e8;
+    border: 1px solid #4caf50;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.success-box::before {
+    content: '✅';
+    font-weight: bold;
+    color: #388e3c;
+    margin-right: 0.5rem;
+}
+
+.success-box strong {
+    color: #388e3c;
+}
+
+.error-box {
+    background: #ffebee;
+    border: 1px solid #f44336;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.error-box::before {
+    content: '❌';
+    font-weight: bold;
+    color: #d32f2f;
+    margin-right: 0.5rem;
+}
+
+.error-box strong {
+    color: #d32f2f;
+}
+
+/* Dark mode adjustments for info boxes */
+@media (prefers-color-scheme: dark) {
+    .info-box {
+        background: #1a237e;
+        border-color: #3f51b5;
+        color: #e3f2fd;
+    }
+    
+    .warning-box {
+        background: #e65100;
+        border-color: #ff9800;
+        color: #fff3e0;
+    }
+    
+    .success-box {
+        background: #2e7d32;
+        border-color: #4caf50;
+        color: #e8f5e8;
+    }
+    
+    .error-box {
+        background: #c62828;
+        border-color: #f44336;
+        color: #ffebee;
+    }
+}

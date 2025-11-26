@@ -4,6 +4,52 @@ open System
 open System.IO
 open System.Text.Json
 
+// ========================================
+// MESSAGES MODULE
+// ========================================
+
+[<RequireQualifiedAccess>]
+module Messages =
+
+  /// Formatted message to display useful info to user.
+  let info (msg: string) : unit =
+    Console.ForegroundColor <- ConsoleColor.Green
+    printf "Info: "
+    Console.ResetColor()
+    printfn "%s" msg
+
+  /// Formatted message to display when user input is required.
+  let prompt (msg: string) : unit =
+    Console.ForegroundColor <- ConsoleColor.DarkYellow
+    printf "Input Required: "
+    Console.ResetColor()
+    printfn "%s" msg
+
+  /// Formatted message to display on successful event.
+  let success (msg: string) : unit =
+    Console.ForegroundColor <- ConsoleColor.Green
+    printf "Success: "
+    Console.ResetColor()
+    printfn "%s" msg
+
+  /// Formatted message to display when process is aborted.
+  let abort (msg: string) : unit =
+    Console.ForegroundColor <- ConsoleColor.Magenta
+    printf "Abort: "
+    Console.ResetColor()
+    printfn "%s" msg
+
+  /// Formatted message to display on erroneous event.
+  let error (errorType: string) (msg: string) : unit =
+    Console.ForegroundColor <- ConsoleColor.Red
+    printf $"{errorType}: "
+    Console.ResetColor()
+    printfn "%s" msg
+
+// ========================================
+// IO MODULE
+// ========================================
+
 module IO =
 
   /// Generic HOF that prompts for user input and validates it against a given validation function.
@@ -37,7 +83,7 @@ module IO =
     (f: FilePath)
     : Result<'T, IOError> =
     try
-      Unwrap.filepath f |> File.ReadAllText |> deserialize |> Ok
+      Unwrap.filePath f |> File.ReadAllText |> deserialize |> Ok
     with :? JsonException ->
       Error(DeserializationError "Malformed JSON file")
 
@@ -95,7 +141,6 @@ module IO =
     /// When a 'change' event is fired by the FileWatcher, (1) parse the changed .json
     /// or .config file, (2) deserialize the contents and bind against generic type 'T,
     /// and (3) update the ETABS model to reflect the changes.
-    // let onChangeUpdateModel<'T, 'U> (deserialize: string -> Result<'T, IOError>) (validate: 'T -> Result<'U, seq<ValidationResult>>) (render: 'U -> unit) =
     let onChangeUpdateModel<'T, 'U>
       (deserialize: string -> 'T)
       (validate: 'T -> Result<'U, seq<ModelValidationResult>>)

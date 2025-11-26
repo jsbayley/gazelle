@@ -5,16 +5,28 @@ Gazelle is a **safety-critical structural engineering analysis engine** built wi
 
 ## Architecture & Components
 
-### Core Structure
-- **`src/`** - Main library with units of measure system (`src/units/`) and concrete engineering domain (`src/concrete/`)  
-- **`cli/`** - Modern CLI tool using Spectre.Console with emoji branding (🦌💨), packaged as global .NET tool `gz`
+### Consolidated Architecture
+Gazelle features a **unified architecture** achieved through comprehensive consolidation:
+
+- **`src/Gazelle.fsproj`** - Single unified library containing all functionality
+  - **`units/`** - F# units of measure system preventing calculation errors
+  - **`concrete/`** - Concrete engineering domain with strong typing
+  - **`io/`** - Consolidated I/O operations (Types.fs, IO.fs, ETABS.fs)
+- **`cli/Gazelle.CLI.fsproj`** - Cross-platform CLI tool with emoji branding (🦌💨)
 - **`tests/`** - XUnit test suite
-- **`docs/`** - Professional landing page website for binary downloads
+- **`docs/`** - Professional website with cross-platform compatibility tables
+- **`DOCS.md`** - **Single consolidated documentation** (the only DOCS.md in the entire solution)
+
+### Cross-Platform Design
+- **Conditional compilation**: `#if WINDOWS` for ETABS COM interop
+- **Universal CLI**: `gz` command works on Windows, macOS, and Linux
+- **Graceful degradation**: Platform-specific features show informative error messages
 
 ### Critical Safety Features
-- **Units of measure**: F# compile-time validation prevents unit mixing disasters (`src/units/Units.fs`)
+- **Units of measure**: F# compile-time validation prevents unit mixing disasters
 - **Strong typing**: Domain types for engineering concepts (stress, density, limit states)  
-- **JSON schemas**: Machine-readable validation for AI workflows (`ai-agents/schemas/`)
+- **Platform awareness**: Clear error messages for Windows-only features
+- **Consolidated codebase**: Single library eliminates inter-project dependency issues
 
 ## Development Patterns
 
@@ -64,18 +76,33 @@ git add . && git commit -m "Update version to 0.0.5"
 - Always validate units: prefer `float<kN>` over `float` for engineering values
 - Use domain types: `Stress<kN, m>` not generic numbers
 - Include engineering context in error messages: "Load exceeds yield strength"
+- Leverage consolidated architecture: all functionality in single `Gazelle.dll`
+
+### Cross-Platform Compatibility
+- Use conditional compilation `#if WINDOWS` for ETABS-specific code
+- Provide graceful error messages for Windows-only features on other platforms
+- Test CLI functionality on Linux dev container environment
+- Ensure core analysis works universally across all platforms
 
 ### CLI UX Standards  
 - Emoji branding: 🦌 Gazelle 💨 in headers only (not in body text)
-- Colorful output: green for success, red for errors, cyan for info
+- Colorful output: green for success, red for errors, cyan for info, yellow for warnings
 - JSON output option: `--format json` for machine consumption
+- Cross-platform help: show platform-specific feature availability
 - Template system: consistent parameterization (span, height, loads)
+
+### Documentation Standards
+- **Single source of truth**: All documentation in root `DOCS.md` only
+- **No duplicate DOCS.md files**: Remove any redundant documentation files
+- **Cross-platform tables**: Always include platform compatibility information
+- **Consolidation history**: Document architectural transformation achievements
 
 ### AI/Automation Integration
 - Structured JSON I/O for all models and results
 - Batch processing support: `gz batch-analyze pattern`  
 - Template system for consistent model generation
 - Error handling with machine-readable diagnostics
+- Platform-aware workflows: handle Windows-only features gracefully
 
 ## Dependencies & Integration
 - **Spectre.Console 0.49.1**: Modern terminal UI (required for CLI)
