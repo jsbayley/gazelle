@@ -31,7 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 - macOS `.DS_Store` files and other development artifacts
 
 ### Technical Improvements
-- **Build Performance**: 63% faster builds due to simplified project dependencies
+- **Build Performance**: Faster builds due to simplified project dependencies and single assembly output
 - **Assembly Output**: Reduced from 2 DLLs to 1 consolidated assembly
 - **Cross-Platform Verification**: Full CLI functionality tested and working on Linux dev container
 - **Error Handling**: Enhanced platform-aware messaging for Windows-only features
