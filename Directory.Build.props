@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- Central version management -->
+    <Version>0.0.3</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <PackageVersion>$(Version)</PackageVersion>
+  </PropertyGroup>
+</Project>

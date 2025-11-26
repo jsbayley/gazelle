@@ -11,7 +11,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>Gazelle</PackageId>
     <IsPackable>true</IsPackable>
-    <Version>0.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

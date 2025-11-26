@@ -24,7 +24,7 @@ dotnet run --project src/main.fs
 
 ### Install from NuGet
 ```bash
-dotnet add package Gazelle --version 0.0.2
+dotnet add package Gazelle --version 0.0.3
 ```
 
 ## CLI Usage
