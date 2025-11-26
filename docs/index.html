@@ -1,300 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gazelle</title>
-    <meta name="description" content="Download Gazelle, the fast, reliable, and transparent structural analysis engine for Windows, Mac, and Linux.">
-    <meta name="keywords" content="structural engineering, analysis, CLI, open source, fast, reliable">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gazelle</title>
+  <meta name="description" content="Download Gazelle, the fast, reliable, and transparent structural analysis engine for Windows, Mac, and Linux.">
+  <meta name="keywords" content="structural engineering, analysis, CLI, open source, fast, reliable">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">🦌</div>
-                <h1>Gazelle 💨</h1>
-            </div>
-            <div class="nav-wrapper">
-                <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav">
-                    <a href="#download" class="nav-link">Download</a>
-                    <a href="#features" class="nav-link">Features</a>
-                    <a href="#docs" class="nav-link">Docs</a>
-                    <a href="https://github.com/jsbayley/gazelle" class="nav-link" target="_blank">GitHub</a>
-                </nav>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-                    <span class="theme-icon"></span>
-                </button>
-            </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">🦌</div>
+        <h1>Gazelle 💨</h1>
+      </div>
+      <div class="nav-wrapper">
+        <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav">
+          <a href="#download" class="nav-link">Download</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#docs" class="nav-link">Docs</a>
+          <a href="https://github.com/jsbayley/gazelle" class="nav-link" target="_blank">GitHub</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <span class="theme-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">A Fast Engine for Structural Engineering</h2>
+        <p class="hero-subtitle">
+            An Open-Source CLI and Toolchain.
+        </p>
+        <div class="hero-tagline">
+            Fast • Simple • Reliable • Transparent • Cross-platform
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">A Fast Engine for Structural Engineering</h2>
-                <p class="hero-subtitle">
-                    An Open-Source CLI and Toolchain.
-                </p>
-                <div class="hero-tagline">
-                    Fast • Simple • Reliable • Transparent • Cross-platform
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                      <span class="stat-number">.NET</span>
-                      <span class="stat-label">Built With</span>
-                    </div>
-                    <div class="stat">
-                      <span class="stat-number">F#</span>
-                      <span class="stat-label">Written In</span>
-                    </div>
-                     <div class="stat">
-                        <span class="stat-number">AGPL-3.0</span>
-                        <span class="stat-label">Open Source</span>
-                    </div>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">Download Now</a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">.NET</span>
+            <span class="stat-label">Built With</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">F#</span>
+            <span class="stat-label">Written In</span>
+          </div>
+            <div class="stat">
+              <span class="stat-number">AGPL-3.0</span>
+              <span class="stat-label">Open Source</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="download-section">
-        <div class="container">
-            <h2 class="section-title">Download Gazelle</h2>
-            <p class="section-subtitle">Choose your platform and get started in seconds</p>
-            
-            <div class="download-grid">
-                <div class="download-card" data-platform="macos-intel">
-                    <div class="platform-icon">🍎</div>
-                    <h3>macOS Intel</h3>
-                    <p>Intel Macs (macOS 10.15+)</p>
-                    <div class="download-buttons">
-                        <button class="btn btn-download" onclick="downloadFile('macos-intel')">
-                            <span class="download-icon">⬇️</span>
-                            Download gz
-                        </button>
-                        <div class="file-info">
-                            <span class="file-size" id="macos-intel-size">~7.4 MB</span>
-                            <span class="file-version">v1.0.0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-card" data-platform="macos-arm64">
-                    <div class="platform-icon">🍎</div>
-                    <h3>Apple Silicon</h3>
-                    <p>M1/M2/M3 Macs</p>
-                    <div class="download-buttons">
-                        <button class="btn btn-download" onclick="downloadFile('macos-arm64')">
-                            <span class="download-icon">⬇️</span>
-                            Download gz
-                        </button>
-                        <div class="file-info">
-                            <span class="file-size" id="macos-arm64-size">~7.0 MB</span>
-                            <span class="file-version">v1.0.0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-card" data-platform="windows">
-                    <div class="platform-icon">🪟</div>
-                    <h3>Windows</h3>
-                    <p>Windows 10/11 (x64)</p>
-                    <div class="download-buttons">
-                        <button class="btn btn-download" onclick="downloadFile('windows')">
-                            <span class="download-icon">⬇️</span>
-                            Download gz.exe
-                        </button>
-                        <div class="file-info">
-                            <span class="file-size" id="windows-size">~8.2 MB</span>
-                            <span class="file-version">v1.0.0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-card" data-platform="linux">
-                    <div class="platform-icon">🐧</div>
-                    <h3>Linux</h3>
-                    <p>Linux x64 (glibc 2.31+)</p>
-                    <div class="download-buttons">
-                        <button class="btn btn-download" onclick="downloadFile('linux')">
-                            <span class="download-icon">⬇️</span>
-                            Download gz
-                        </button>
-                        <div class="file-info">
-                            <span class="file-size" id="linux-size">~7.5 MB</span>
-                            <span class="file-version">v1.0.0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="download-note">
-                <p><strong>Installation:</strong> Extract the binary and add it to your PATH. No additional dependencies required.</p>
-                <p><strong>Verification:</strong> All binaries are signed and include SHA256 checksums for security verification.</p>
-            </div>
+        <div class="hero-buttons">
+          <a href="#download" class="btn btn-primary">Download Now</a>
+          <a href="#features" class="btn btn-secondary">Learn More</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <h2 class="section-title">Why Choose Gazelle?</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Transparent</h3>
-                    <p>Open source algorithms you can inspect and verify. No black box calculations in safety-critical engineering software.</p>
-                </div>
+  <!-- Download Section -->
+  <section id="download" class="download-section">
+      <div class="container">
+          <h2 class="section-title">Download Gazelle</h2>
+          <p class="section-subtitle">Choose your platform and get started in seconds</p>
+          
+          <div class="download-grid">
+              <div class="download-card" data-platform="macos-intel">
+                  <div class="platform-icon">🍎</div>
+                  <h3>macOS Intel</h3>
+                  <p>Intel Macs (macOS 10.15+)</p>
+                  <div class="download-buttons">
+                      <button class="btn btn-download" onclick="downloadFile('macos-intel')">
+                          <span class="download-icon">⬇️</span>
+                          Download gz
+                      </button>
+                      <div class="file-info">
+                          <span class="file-size" id="macos-intel-size">~7.4 MB</span>
+                          <span class="file-version">v1.0.0</span>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Type Safety</h3>
-                    <p>Built-in unit validation prevents engineering errors. Strong typing and units of measure eliminate dangerous unit mixing disasters.</p>
-                </div>
+              <div class="download-card" data-platform="macos-arm64">
+                  <div class="platform-icon">🍎</div>
+                  <h3>Apple Silicon</h3>
+                  <p>M1/M2/M3 Macs</p>
+                  <div class="download-buttons">
+                      <button class="btn btn-download" onclick="downloadFile('macos-arm64')">
+                          <span class="download-icon">⬇️</span>
+                          Download gz
+                      </button>
+                      <div class="file-info">
+                          <span class="file-size" id="macos-arm64-size">~7.0 MB</span>
+                          <span class="file-version">v1.0.0</span>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Cross Platform</h3>
-                    <p>Single binary deployment on Windows, macOS, and Linux. Consistent behavior across all development environments.</p>
-                </div>
+              <div class="download-card" data-platform="windows">
+                  <div class="platform-icon">🪟</div>
+                  <h3>Windows</h3>
+                  <p>Windows 10/11 (x64)</p>
+                  <div class="download-buttons">
+                      <button class="btn btn-download" onclick="downloadFile('windows')">
+                          <span class="download-icon">⬇️</span>
+                          Download gz.exe
+                      </button>
+                      <div class="file-info">
+                          <span class="file-size" id="windows-size">~8.2 MB</span>
+                          <span class="file-version">v1.0.0</span>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>CLI First</h3>
-                    <p>Command-line interface designed for automation, scripting, and integration with existing engineering workflows.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+              <div class="download-card" data-platform="linux">
+                  <div class="platform-icon">🐧</div>
+                  <h3>Linux</h3>
+                  <p>Linux x64 (glibc 2.31+)</p>
+                  <div class="download-buttons">
+                      <button class="btn btn-download" onclick="downloadFile('linux')">
+                          <span class="download-icon">⬇️</span>
+                          Download gz
+                      </button>
+                      <div class="file-info">
+                          <span class="file-size" id="linux-size">~7.5 MB</span>
+                          <span class="file-version">v1.0.0</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-    <!-- Quick Start Section -->
-    <section class="quickstart-section">
-        <div class="container">
-            <h2 class="section-title">Quick Start</h2>
-            
-            <div class="code-examples">
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-title">Create a structural model</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    </div>
-                    <pre><code># Create a 10m truss with 25kN load
+          <div class="download-note">
+              <p><strong>Installation:</strong> Extract the binary and add it to your PATH. No additional dependencies required.</p>
+              <p><strong>Verification:</strong> All binaries are signed and include SHA256 checksums for security verification.</p>
+          </div>
+      </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+      <div class="container">
+          <h2 class="section-title">Why Choose Gazelle?</h2>
+          
+          <div class="features-grid">
+              <div class="feature-card">
+                  <div class="feature-icon">🔍</div>
+                  <h3>Transparent</h3>
+                  <p>Open source algorithms you can inspect and verify. No black box calculations in safety-critical engineering software.</p>
+              </div>
+
+              <div class="feature-card">
+                  <div class="feature-icon">🛡️</div>
+                  <h3>Type Safety</h3>
+                  <p>Built-in unit validation prevents engineering errors. Strong typing and units of measure eliminate dangerous unit mixing disasters.</p>
+              </div>
+
+              <div class="feature-card">
+                  <div class="feature-icon">🌍</div>
+                  <h3>Cross Platform</h3>
+                  <p>Single binary deployment on Windows, macOS, and Linux. Consistent behavior across all development environments.</p>
+              </div>
+
+              <div class="feature-card">
+                  <div class="feature-icon">🔧</div>
+                  <h3>CLI First</h3>
+                  <p>Command-line interface designed for automation, scripting, and integration with existing engineering workflows.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Quick Start Section -->
+  <section class="quickstart-section">
+      <div class="container">
+          <h2 class="section-title">Quick Start</h2>
+          
+          <div class="code-examples">
+              <div class="code-block">
+                  <div class="code-header">
+                      <span class="code-title">Create a structural model</span>
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                  </div>
+                  <pre><code># Create a 10m truss with 25kN load
 gz create truss.json --example truss --span 10.0 --height 4.0 --loads 25.0</code></pre>
-                </div>
+              </div>
 
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-title">Run structural analysis</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    </div>
-                    <pre><code># Analyze structure in microseconds
+              <div class="code-block">
+                  <div class="code-header">
+                      <span class="code-title">Run structural analysis</span>
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                  </div>
+                  <pre><code># Analyze structure in microseconds
 gz analyze truss.json --type static --output results.json</code></pre>
-                </div>
+              </div>
 
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="code-title">Validate and inspect</span>
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    </div>
-                    <pre><code># Check model integrity and view results
+              <div class="code-block">
+                  <div class="code-header">
+                      <span class="code-title">Validate and inspect</span>
+                      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                  </div>
+                  <pre><code># Check model integrity and view results
 gz validate truss.json
 gz info truss.json</code></pre>
-                </div>
-            </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Documentation Links -->
+  <section id="docs" class="docs-section">
+    <div class="container">
+      <h2 class="section-title">Documentation & Support</h2>
+      
+      <div class="docs-grid">
+        <a href="https://github.com/jsbayley/gazelle/blob/main/DOCS.md" class="doc-card" target="_blank">
+          <div class="doc-icon">📖</div>
+          <h3>User Guide</h3>
+          <p>Complete documentation with examples, file formats, and CLI reference.</p>
+        </a>
+
+        <a href="https://github.com/jsbayley/gazelle" class="doc-card" target="_blank">
+          <div class="doc-icon">💻</div>
+          <h3>Source Code</h3>
+          <p>Explore the open source code, contribute, and report issues on GitHub.</p>
+        </a>
+
+        <a href="https://github.com/jsbayley/gazelle/blob/main/.github/CONTRIBUTING.md" class="doc-card" target="_blank">
+          <div class="doc-icon">🤝</div>
+          <h3>Contributing</h3>
+          <p>Join the development community and help improve structural engineering software.</p>
+        </a>
+
+        <a href="https://github.com/jsbayley/gazelle/issues" class="doc-card" target="_blank">
+          <div class="doc-icon">🐛</div>
+          <h3>Issues & Support</h3>
+          <p>Report bugs, request features, and get help from the community.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <div class="logo-icon">🦌</div>
+            <span>Gazelle 💨</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Documentation Links -->
-    <section id="docs" class="docs-section">
-        <div class="container">
-            <h2 class="section-title">Documentation & Support</h2>
-            
-            <div class="docs-grid">
-                <a href="https://github.com/jsbayley/gazelle/blob/main/DOCS.md" class="doc-card" target="_blank">
-                    <div class="doc-icon">📖</div>
-                    <h3>User Guide</h3>
-                    <p>Complete documentation with examples, file formats, and CLI reference.</p>
-                </a>
-
-                <a href="https://github.com/jsbayley/gazelle" class="doc-card" target="_blank">
-                    <div class="doc-icon">💻</div>
-                    <h3>Source Code</h3>
-                    <p>Explore the open source code, contribute, and report issues on GitHub.</p>
-                </a>
-
-                <a href="https://github.com/jsbayley/gazelle/blob/main/.github/CONTRIBUTING.md" class="doc-card" target="_blank">
-                    <div class="doc-icon">🤝</div>
-                    <h3>Contributing</h3>
-                    <p>Join the development community and help improve structural engineering software.</p>
-                </a>
-
-                <a href="https://github.com/jsbayley/gazelle/issues" class="doc-card" target="_blank">
-                    <div class="doc-icon">🐛</div>
-                    <h3>Issues & Support</h3>
-                    <p>Report bugs, request features, and get help from the community.</p>
-                </a>
-            </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="#download">Download</a>
+            <a href="#features">Features</a>
+            <a href="https://github.com/jsbayley/gazelle/releases" target="_blank">Releases</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Developers</h4>
+            <a href="https://github.com/jsbayley/gazelle" target="_blank">GitHub</a>
+            <a href="https://github.com/jsbayley/gazelle/blob/main/DOCS.md" target="_blank">Documentation</a>
+            <a href="https://github.com/jsbayley/gazelle/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <a href="https://github.com/jsbayley/gazelle/blob/main/LICENSE" target="_blank">License (AGPL-3.0)</a>
+            <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">Report Issues</a>
+          </div>
         </div>
-    </section>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>Built with ❤️ for the global engineering community</p>
+        <p>&copy; 2025 Gazelle Project. Licensed under AGPL-3.0.</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-logo">
-                        <div class="logo-icon">🦌</div>
-                        <span>Gazelle 💨</span>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#download">Download</a>
-                        <a href="#features">Features</a>
-                        <a href="https://github.com/jsbayley/gazelle/releases" target="_blank">Releases</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Developers</h4>
-                        <a href="https://github.com/jsbayley/gazelle" target="_blank">GitHub</a>
-                        <a href="https://github.com/jsbayley/gazelle/blob/main/DOCS.md" target="_blank">Documentation</a>
-                        <a href="https://github.com/jsbayley/gazelle/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="https://github.com/jsbayley/gazelle/blob/main/LICENSE" target="_blank">License (AGPL-3.0)</a>
-                        <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">Report Issues</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>Built with ❤️ for the global engineering community</p>
-                <p>&copy; 2025 Gazelle Project. Licensed under AGPL-3.0.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
