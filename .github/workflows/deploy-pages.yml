@@ -42,7 +42,7 @@ jobs:
           
       - name: Download CLI artifacts (if available)
         if: github.event_name == 'workflow_run'
-        uses: dawidd6/action-download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: publish-cli.yml
           name: website-files
