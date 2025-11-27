@@ -32,10 +32,23 @@ fi
 
 # Update website (handle both plain and v-prefixed versions)
 echo "Updating website files..."
-find web/ -name "*.html" -exec sed -i "s/$CURRENT_VERSION/$NEW_VERSION/g" {} \;
-find web/ -name "*.html" -exec sed -i "s/v$CURRENT_VERSION/v$NEW_VERSION/g" {} \;
-# Also handle escaped versions in HTML/JSON
-find web/ -name "*.html" -exec sed -i "s/\"$CURRENT_VERSION\"/\"$NEW_VERSION\"/g" {} \;
+# Check for web/ folder first, then fall back to docs/
+if [ -d "web/" ]; then
+    WEBSITE_DIR="web"
+elif [ -d "docs/" ]; then
+    WEBSITE_DIR="docs"
+else
+    echo "⚠ No website directory found (looking for web/ or docs/)"
+    WEBSITE_DIR=""
+fi
+
+if [ -n "$WEBSITE_DIR" ]; then
+    find "$WEBSITE_DIR/" -name "*.html" -exec sed -i "s/$CURRENT_VERSION/$NEW_VERSION/g" {} \;
+    find "$WEBSITE_DIR/" -name "*.html" -exec sed -i "s/v$CURRENT_VERSION/v$NEW_VERSION/g" {} \;
+    # Also handle escaped versions in HTML/JSON
+    find "$WEBSITE_DIR/" -name "*.html" -exec sed -i "s/\"$CURRENT_VERSION\"/\"$NEW_VERSION\"/g" {} \;
+    echo "✓ Updated website files in $WEBSITE_DIR/"
+fi
 
 # Update AI integration documentation
 echo "Updating AI integration documentation..."
