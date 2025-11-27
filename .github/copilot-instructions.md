@@ -14,7 +14,7 @@ Gazelle features a **unified architecture** achieved through comprehensive conso
   - **`io/`** - Consolidated I/O operations (Types.fs, IO.fs, ETABS.fs)
 - **`cli/Gazelle.CLI.fsproj`** - Cross-platform CLI tool with emoji branding (🦌💨)
 - **`tests/`** - XUnit test suite
-- **`docs/`** - Professional website with cross-platform compatibility tables
+- **`web/`** - Professional landing page to download CLI.
 - **`DOCS.md`** - **Single consolidated documentation** (the only DOCS.md in the entire solution)
 
 ### Cross-Platform Design
