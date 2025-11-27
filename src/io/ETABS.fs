@@ -93,7 +93,7 @@ module ETABS =
         | "19" -> Ok Version.V19
         | _ -> Error(UnsupportedVersion "Unsupported ETABS Version.")
 
-      askForUserInput "Select ETABS Version [V17/V19]..." validateVersion
+      IO.askForUserInput "Select ETABS Version [V17/V19]..." validateVersion
 
     /// Establishes the ETABS version and either launches a fresh instance or attaches to an existing process.
     let using (i: InstanceType) (v: Version) : (ETABSObject * SAPModel) =
