@@ -10,6 +10,7 @@
 ## .NET Developers
 
 - [ ] Create C# wrapper to help consumers of Gazelle library.
+- [ ] Develop a PowerShell wrapper module for the PS Gallery.
 - [X] Wire up NuGet package push.
 
 ## JavaScript Developers
