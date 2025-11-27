@@ -81,7 +81,7 @@ dotnet tool install --global --add-source ./cli/bin/Release Gazelle.CLI
 
 ### Install from NuGet
 ```bash
-dotnet add package Gazelle --version 0.0.5
+dotnet add package Gazelle --version 0.0.6
 ```
 
 > **ℹ️ Cross-Platform Note**: The CLI tool (`gz`) works on all platforms. ETABS integration features are Windows-only due to COM interop requirements.
@@ -288,11 +288,11 @@ Analysis results are saved in JSON format:
   "type": "static",
   "converged": true,
   "iterations": 1,
-  "max_displacement": 0.000025,
+  "max_displacement": 0.0005,
   "max_reaction": 12500,
   "strain_energy": 0.3125,
   "displacements": {
-    "n1": [0, -0.000025, 0]
+    "n1": [0, -0.0005, 0]
   },
   "reactions": {
     "n1": [0, 12500, 0]

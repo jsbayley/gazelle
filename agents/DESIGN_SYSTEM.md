@@ -1,6 +1,6 @@
 # Gazelle Documentation Design System
 
-## Color Consolidation (v0.0.5)
+## Color Consolidation (v0.0.6)
 
 The Gazelle documentation website has been thoroughly redesigned with a consolidated, professional color system that ensures excellent readability, accessibility, and visual consistency across all elements.
 
