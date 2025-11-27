@@ -100,23 +100,22 @@ This updates all version references across:
 
 ## Website Development
 
-The Gazelle landing page (`docs/`) is a single-page static website for hosting CLI downloads.
+The Gazelle landing page (`.github/pages/`) is a single-page static website for hosting CLI downloads.
 
 ### Structure
 ```
-docs/
+.github/pages/
 ├── index.html              # Main landing page
 ├── styles.css              # Responsive design and styling
-├── script.js               # Download functionality
-└── README.md              # Website documentation
+└── script.js               # Download functionality
 ```
 
 ### Local Development
 ```bash
 # Serve locally for testing
-cd docs && python -m http.server 8000
+cd .github/pages && python -m http.server 8000
 # or
-cd docs && npx serve
+cd .github/pages && npx serve
 ```
 
 ### Deployment

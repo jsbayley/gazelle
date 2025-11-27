@@ -32,13 +32,10 @@ fi
 
 # Update website (handle both plain and v-prefixed versions)
 echo "Updating website files..."
-# Check for web/ folder first, then fall back to docs/
-if [ -d "web/" ]; then
-    WEBSITE_DIR="web"
-elif [ -d "docs/" ]; then
-    WEBSITE_DIR="docs"
+if [ -d ".github/pages/" ]; then
+    WEBSITE_DIR=".github/pages"
 else
-    echo "⚠ No website directory found (looking for web/ or docs/)"
+    echo "⚠ No website directory found (looking for .github/pages/)"
     WEBSITE_DIR=""
 fi
 

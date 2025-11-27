@@ -110,12 +110,12 @@ jobs:
         with:
             path: artifacts
       
-      - name: Move built artifacts to docs/releases
+      - name: Move built artifacts to .github/pages/releases
         run: |
-          New-Item -ItemType Directory -Force -Path "docs/releases"
-          Get-ChildItem "artifacts" -Recurse -File | ForEach-Object {
-            Copy-Item $_.FullName "docs/releases/" -Force
-            Write-Host "Copied $($_.Name) to docs/releases/"
+          New-Item -ItemType Directory -Force -Path ".github/pages/releases"
+          Get-ChildItem -Path "artifacts/" -Filter "gz.*" | ForEach-Object {
+            Copy-Item $_.FullName ".github/pages/releases/" -Force
+            Write-Host "Copied $($_.Name) to .github/pages/releases/"
           }
           
       - name: Setup Pages
@@ -124,7 +124,7 @@ jobs:
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/
+          path: .github/pages/
           
       - name: Deploy to GitHub Pages
         id: deployment
