@@ -1,0 +1,150 @@
+name: Publish CLI
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:  # Allow manual triggering
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build-cli:
+    name: Build Cross-Platform CLI
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        include:
+          - runtime: win-x64
+            extension: .exe
+            output: gazelle-windows-x64.exe
+          - runtime: osx-x64
+            extension: ""
+            output: gazelle-macos-intel
+          - runtime: osx-arm64
+            extension: ""
+            output: gazelle-macos-arm64
+          - runtime: linux-x64
+            extension: ""
+            output: gazelle-linux-x64
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Publish CLI for ${{ matrix.runtime }}
+        run: |
+          dotnet publish cli/Gazelle.CLI.fsproj `
+            -c Release `
+            -r ${{ matrix.runtime }} `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:PublishTrimmed=true `
+            -p:TrimMode=link `
+            -o "artifacts/${{ matrix.runtime }}"
+            
+      - name: Rename binary
+        run: |
+          $sourcePath = "artifacts/${{ matrix.runtime }}/gz${{ matrix.extension }}"
+          $targetPath = "artifacts/${{ matrix.output }}"
+          Move-Item $sourcePath $targetPath
+          
+      - name: Generate checksums
+        run: |
+          $hash = Get-FileHash "artifacts/${{ matrix.output }}" -Algorithm SHA256
+          "$($hash.Hash.ToLower())  ${{ matrix.output }}" | Out-File -Encoding UTF8 "artifacts/${{ matrix.output }}.sha256"
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cli-${{ matrix.runtime }}
+          path: |
+            artifacts/${{ matrix.output }}
+            artifacts/${{ matrix.output }}.sha256
+          retention-days: 30
+
+  update-website:
+    name: Update Website with CLI Artifacts  
+    needs: build-cli
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Download all CLI artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: cli-artifacts
+          
+      - name: Prepare releases directory
+        run: |
+          # Create releases directory in web folder
+          New-Item -ItemType Directory -Force -Path "web/releases"
+          Get-ChildItem "web/releases" -Exclude "README.md" | Remove-Item -Force
+          
+      - name: Copy CLI binaries to website
+        run: |
+          # Copy all binaries from artifact directories to web/releases/
+          Get-ChildItem "cli-artifacts" -Recurse -File -Exclude "*.sha256" | ForEach-Object {
+            Copy-Item $_.FullName "web/releases/" -Force
+            Write-Host "Copied $($_.Name) to web/releases/"
+          }
+          
+      - name: Generate checksums file
+        run: |
+          # Combine all individual checksums into single file
+          $checksums = @()
+          Get-ChildItem "cli-artifacts" -Recurse -Filter "*.sha256" | ForEach-Object {
+            $checksums += Get-Content $_.FullName
+          }
+          $checksums | Out-File -Encoding UTF8 "web/releases/checksums.txt"
+          
+      - name: Update file sizes in website
+        run: |
+          # Calculate actual file sizes and update JavaScript
+          $scriptPath = "web/script.js"
+          $scriptContent = Get-Content $scriptPath -Raw
+          
+          $files = @{
+            "gazelle-windows-x64.exe" = "windows"
+            "gazelle-macos-intel" = "macos-intel" 
+            "gazelle-macos-arm64" = "macos-arm64"
+            "gazelle-linux-x64" = "linux"
+          }
+          
+          foreach ($file in $files.Keys) {
+            $filePath = "web/releases/$file"
+            if (Test-Path $filePath) {
+              $sizeBytes = (Get-Item $filePath).Length
+              $sizeMB = [math]::Round($sizeBytes / 1MB, 1)
+              $platform = $files[$file]
+              
+              # Update size in JavaScript
+              $pattern = "('$platform':\s*\{[^}]*size:\s*')[^']*(')"
+              $replacement = "`${1}$sizeMB MB`${2}"
+              $scriptContent = $scriptContent -replace $pattern, $replacement
+              
+              Write-Host "Updated $platform size to $sizeMB MB"
+            }
+          }
+          
+          Set-Content $scriptPath -Value $scriptContent -Encoding UTF8
+          
+      - name: Upload website files
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-files
+          path: web/
+          retention-days: 1

@@ -1,0 +1,29 @@
+name: Publish Library To NuGet Gallery
+
+on:
+  push:
+    branches:
+      - 'main'
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  publish-to-nuget: 
+    name: Publish Library To NuGet Gallery
+    runs-on: Ubuntu-Latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Publish
+        run: dotnet publish ./src -c Release
+
+      - name: Push
+        run: |
+          dotnet nuget push src/bin/Release/*.nupkg `
+            --api-key ${{ secrets.NUGET_KEY }} `
+            --source "https://api.nuget.org/v3/index.json" `
+            --skip-duplicate
