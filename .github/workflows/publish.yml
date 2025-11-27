@@ -1,0 +1,93 @@
+name: Publish Gazelle
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  publish-to-nuget: 
+    name: Publish Library To NuGet Gallery
+    runs-on: Ubuntu-Latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Publish
+        run: dotnet publish ./src -c Release
+
+      - name: Push
+        run: |
+          dotnet nuget push src/bin/Release/*.nupkg `
+            --api-key ${{ secrets.NUGET_KEY }} `
+            --source "https://api.nuget.org/v3/index.json" `
+            --skip-duplicate
+
+  build-cli:
+    name: Build Cross-Platform CLI
+    runs-on: Ubuntu-Latest
+
+    strategy:
+      matrix:
+        include:
+          - runtime: win-x64
+            extension: .exe
+            output: gazelle-windows-x64.exe
+          - runtime: osx-x64
+            extension: ""
+            output: gazelle-macos-intel
+          - runtime: osx-arm64
+            extension: ""
+            output: gazelle-macos-arm64
+          - runtime: linux-x64
+            extension: ""
+            output: gazelle-linux-x64
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.x.x"
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Publish CLI for ${{ matrix.runtime }}
+        run: |
+          dotnet publish cli/Gazelle.CLI.fsproj `
+            -c Release `
+            -r ${{ matrix.runtime }} `
+            --self-contained true `
+            -p:PublishSingleFile=true `
+            -p:PublishTrimmed=true `
+            -p:TrimMode=link `
+            -o "artifacts/${{ matrix.runtime }}"
+
+      - name: Rename binary
+        run: |
+          $sourcePath = "artifacts/${{ matrix.runtime }}/gz${{ matrix.extension }}"
+          $targetPath = "artifacts/${{ matrix.output }}"
+          Move-Item $sourcePath $targetPath
+
+      - name: Generate checksums
+        run: |
+          $hash = Get-FileHash "artifacts/${{ matrix.output }}" -Algorithm SHA256
+          "$($hash.Hash.ToLower())  ${{ matrix.output }}" | Out-File -Encoding UTF8 "artifacts/${{ matrix.output }}.sha256"
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gz-${{ matrix.runtime }}
+          path: |
+            artifacts/${{ matrix.output }}
+            artifacts/${{ matrix.output }}.sha256
+          retention-days: 1
