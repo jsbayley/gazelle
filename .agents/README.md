@@ -20,7 +20,7 @@ This folder serves as a central resource for:
 
 ```bash
 # Navigate to AI resources
-cd ai-agents/
+cd .agents/
 
 # Review integration patterns
 cat AI_INTEGRATION.md
