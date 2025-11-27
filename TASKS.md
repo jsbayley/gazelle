@@ -7,3 +7,4 @@
 - [ ] Create issues template.
 - [ ] Update GitHub configuration.
 - [ ] Update GitHub Sponsors bio.
+- [ ] Wire up Fable transpilation.
