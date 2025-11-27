@@ -281,21 +281,27 @@ function updateFileSizes() {
 function testDownloadAvailability() {
     Object.keys(downloads).forEach(platform => {
         const download = downloads[platform];
-        fetch(download.url, { method: 'HEAD' })
-            .then(response => {
-                const button = document.querySelector(`[data-platform="${platform}"] .btn-download`);
-                if (!response.ok && button) {
+        const button = document.querySelector(`[data-platform="${platform}"] .btn-download`);
+        
+        if (button) {
+            fetch(download.url, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // File available - restore normal appearance
+                        button.style.opacity = '';
+                        button.title = '';
+                    } else {
+                        // File not available - dim button
+                        button.style.opacity = '0.7';
+                        button.title = 'Download will be available soon';
+                    }
+                })
+                .catch(() => {
+                    // Error fetching - dim button
                     button.style.opacity = '0.7';
                     button.title = 'Download will be available soon';
-                }
-            })
-            .catch(() => {
-                const button = document.querySelector(`[data-platform="${platform}"] .btn-download`);
-                if (button) {
-                    button.style.opacity = '0.7';
-                    button.title = 'Download will be available soon';
-                }
-            });
+                });
+        }
     });
 }
 
