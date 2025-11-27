@@ -81,4 +81,47 @@ jobs:
           name: gz-${{ matrix.runtime }}
           path: artifacts/gz.${{ matrix.runtime }}${{ matrix.extension }}*
           retention-days: 1
+
+
+  publish-to-gazelle-sh:
+    name: Publish to gazelle.sh
+    needs: build-cli
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download all CLI artifacts
+        uses: actions/download-artifact@v4
+        with:
+            path: artifacts
+      
+      - name: Move built artifacts to docs/releases
+        run: |
+          New-Item -ItemType Directory -Force -Path "docs/releases"
+          Get-ChildItem "artifacts" -Recurse -File | ForEach-Object {
+            Copy-Item $_.FullName "docs/releases/" -Force
+            Write-Host "Copied $($_.Name) to docs/releases/"
+          }
           
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
