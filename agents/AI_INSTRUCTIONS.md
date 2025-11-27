@@ -282,15 +282,14 @@ max_displacement = analysis['max_displacement']
    - `cli/README.md` - CLI installation instructions
 
 2. **Documentation Consistency**
-   - `DOCS.md` ↔ `docs/docs.html` - Must match exactly
+   - `DOCS.md` - Single source of truth documentation
    - `README.md` - Project overview and badges
    - `CHANGELOG.md` - Version history and features
    - `ai-agents/AI_INTEGRATION.md` - AI workflow documentation
    - `.github/copilot-instructions.md` - AI agent guidance
 
 3. **Website & Package Materials**
-   - `docs/index.html` - Download links and version references
-   - `docs/docs.html` - Complete user documentation
+   - `docs/index.html` - Landing page with download links and version references
    - `src/README.md` - NuGet package description
    - All `.md` files in `/docs/` directory
 
@@ -311,8 +310,8 @@ grep -r "version\|Version" --include="*.md" --include="*.html" --include="*.json
 
 ### Documentation Sync Verification
 ```bash
-# Check for inconsistencies between DOCS.md and docs.html
-# Manual review required to ensure content matches
+# Verify DOCS.md is current and comprehensive
+cat DOCS.md
 
 # Verify NuGet package README is current
 cat src/README.md
