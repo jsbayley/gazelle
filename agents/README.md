@@ -41,5 +41,5 @@ ls schemas/
 ## Related Documentation
 
 - Main project: [`../README.md`](../README.md)
-- Website docs: [`../docs/`](../docs/)
+- Website docs: [`../web/`](../web/)
 - Contributing: [`../.github/CONTRIBUTING.md`](../.github/CONTRIBUTING.md)

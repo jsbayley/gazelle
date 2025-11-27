@@ -26,20 +26,20 @@ Or manually using .NET publish:
 
 ```bash
 # Windows
-dotnet publish cli/Gazelle.CLI.fsproj -c Release -r win-x64 --self-contained -o docs/releases/win-x64
-cp docs/releases/win-x64/gz.exe docs/releases/gazelle-windows-x64.exe
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r win-x64 --self-contained -o web/releases/win-x64
+cp web/releases/win-x64/gz.exe web/releases/gazelle-windows-x64.exe
 
 # macOS x64
-dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-x64 --self-contained -o docs/releases/osx-x64
-cp docs/releases/osx-x64/gz docs/releases/gazelle-macos-x64
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-x64 --self-contained -o web/releases/osx-x64
+cp web/releases/osx-x64/gz web/releases/gazelle-macos-x64
 
 # macOS ARM64
-dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-arm64 --self-contained -o docs/releases/osx-arm64
-cp docs/releases/osx-arm64/gz docs/releases/gazelle-macos-arm64
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r osx-arm64 --self-contained -o web/releases/osx-arm64
+cp web/releases/osx-arm64/gz web/releases/gazelle-macos-arm64
 
 # Linux
-dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-x64 --self-contained -o docs/releases/linux-x64
-cp docs/releases/linux-x64/gz docs/releases/gazelle-linux-x64
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-x64 --self-contained -o web/releases/linux-x64
+cp web/releases/linux-x64/gz web/releases/gazelle-linux-x64
 ```
 
 ## Checksums
