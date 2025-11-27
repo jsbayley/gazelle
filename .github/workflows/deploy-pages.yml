@@ -28,9 +28,9 @@ jobs:
 #       name: github-pages
 #       url: https://gazelle.sh
     
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
         
 #       - name: Check if CLI workflow completed successfully
 #         if: github.event_name == 'workflow_run'
