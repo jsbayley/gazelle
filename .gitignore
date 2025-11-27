@@ -1,6 +1,7 @@
 # Build
 bin/
 build/
+releases/
 
 # .NET
 obj/

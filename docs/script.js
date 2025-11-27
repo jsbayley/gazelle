@@ -1,24 +1,20 @@
 // Download functionality
 const downloads = {
     windows: {
-        url: 'releases/gazelle-windows-x64.exe',
-        filename: 'gz.exe',
-        size: '7.9 MB'
+        url: 'releases/gz.win-x64.exe',
+        filename: 'gz.exe'
     },
     'macos-intel': {
-        url: 'releases/gazelle-macos-intel',
-        filename: 'gz',
-        size: '7.4 MB'
+        url: 'releases/gz.osx-x64',
+        filename: 'gz'
     },
     'macos-arm64': {
-        url: 'releases/gazelle-macos-arm64',
-        filename: 'gz',
-        size: '7.0 MB'
+        url: 'releases/gz.osx-arm64',
+        filename: 'gz'
     },
     linux: {
-        url: 'releases/gazelle-linux-x64',
-        filename: 'gz',
-        size: '7.6 MB'
+        url: 'releases/gz.linux-x64',
+        filename: 'gz'
     }
 };
 
@@ -251,12 +247,32 @@ function detectPlatform() {
     }
 }
 
-// Initialize file size display
+// Initialize file size display with dynamic fetching
 function updateFileSizes() {
     Object.keys(downloads).forEach(platform => {
         const sizeElement = document.getElementById(`${platform}-size`);
         if (sizeElement) {
-            sizeElement.textContent = `~${downloads[platform].size}`;
+            // Show loading state
+            sizeElement.textContent = 'Loading...';
+            
+            // Fetch actual file size
+            fetch(downloads[platform].url, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const sizeBytes = parseInt(response.headers.get('content-length'));
+                        if (sizeBytes) {
+                            const sizeMB = (sizeBytes / (1024 * 1024)).toFixed(1);
+                            sizeElement.textContent = `~${sizeMB} MB`;
+                        } else {
+                            sizeElement.textContent = '~?.? MB';
+                        }
+                    } else {
+                        sizeElement.textContent = 'Not available';
+                    }
+                })
+                .catch(() => {
+                    sizeElement.textContent = 'Not available';
+                });
         }
     });
 }
