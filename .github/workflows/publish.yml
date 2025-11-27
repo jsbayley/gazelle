@@ -110,10 +110,17 @@ jobs:
         with:
             path: artifacts
       
+      - name: List downloaded artifacts for debugging
+        run: |
+          Write-Host "Contents of artifacts directory:"
+          Get-ChildItem -Path "artifacts/" -Recurse | ForEach-Object {
+            Write-Host "  $($_.FullName)"
+          }
+      
       - name: Move built artifacts to .github/pages/releases
         run: |
           New-Item -ItemType Directory -Force -Path ".github/pages/releases"
-          Get-ChildItem -Path "artifacts/" -Filter "gz.*" | ForEach-Object {
+          Get-ChildItem -Path "artifacts/" -Recurse -File -Filter "gz.*" | ForEach-Object {
             Copy-Item $_.FullName ".github/pages/releases/" -Force
             Write-Host "Copied $($_.Name) to .github/pages/releases/"
           }
