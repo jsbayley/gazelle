@@ -38,16 +38,12 @@ jobs:
         include:
           - runtime: win-x64
             extension: .exe
-            output: gazelle-windows-x64.exe
           - runtime: osx-x64
             extension: ""
-            output: gazelle-macos-intel
           - runtime: osx-arm64
             extension: ""
-            output: gazelle-macos-arm64
           - runtime: linux-x64
             extension: ""
-            output: gazelle-linux-x64
 
     steps:
       - name: Checkout Repository
@@ -70,24 +66,19 @@ jobs:
             -p:PublishSingleFile=true `
             -p:PublishTrimmed=true `
             -p:TrimMode=link `
-            -o "artifacts/${{ matrix.runtime }}"
-
-      - name: Rename binary
-        run: |
-          $sourcePath = "artifacts/${{ matrix.runtime }}/gz${{ matrix.extension }}"
-          $targetPath = "artifacts/${{ matrix.output }}"
-          Move-Item $sourcePath $targetPath
+            -p:AssemblyName=gz.${{ matrix.runtime }} `
+            -o "artifacts/"
 
       - name: Generate checksums
         run: |
-          $hash = Get-FileHash "artifacts/${{ matrix.output }}" -Algorithm SHA256
-          "$($hash.Hash.ToLower())  ${{ matrix.output }}" | Out-File -Encoding UTF8 "artifacts/${{ matrix.output }}.sha256"
+          $filename = "gz.${{ matrix.runtime }}${{ matrix.extension }}"
+          $hash = Get-FileHash "artifacts/$filename" -Algorithm SHA256
+          "$($hash.Hash.ToLower())  $filename" | Out-File -Encoding UTF8 "artifacts/$filename.sha256"
           
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: gz-${{ matrix.runtime }}
-          path: |
-            artifacts/${{ matrix.output }}
-            artifacts/${{ matrix.output }}.sha256
+          path: artifacts/gz.${{ matrix.runtime }}${{ matrix.extension }}*
           retention-days: 1
+          
