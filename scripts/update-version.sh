@@ -32,10 +32,10 @@ fi
 
 # Update website (handle both plain and v-prefixed versions)
 echo "Updating website files..."
-find docs/ -name "*.html" -exec sed -i "s/$CURRENT_VERSION/$NEW_VERSION/g" {} \;
-find docs/ -name "*.html" -exec sed -i "s/v$CURRENT_VERSION/v$NEW_VERSION/g" {} \;
+find web/ -name "*.html" -exec sed -i "s/$CURRENT_VERSION/$NEW_VERSION/g" {} \;
+find web/ -name "*.html" -exec sed -i "s/v$CURRENT_VERSION/v$NEW_VERSION/g" {} \;
 # Also handle escaped versions in HTML/JSON
-find docs/ -name "*.html" -exec sed -i "s/\"$CURRENT_VERSION\"/\"$NEW_VERSION\"/g" {} \;
+find web/ -name "*.html" -exec sed -i "s/\"$CURRENT_VERSION\"/\"$NEW_VERSION\"/g" {} \;
 
 # Update AI integration documentation
 echo "Updating AI integration documentation..."
