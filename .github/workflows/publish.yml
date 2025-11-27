@@ -69,6 +69,10 @@ jobs:
             -p:AssemblyName=gz.${{ matrix.runtime }} `
             -o "artifacts/"
 
+      - name: Set executable permissions (macOS/Linux)
+        if: runner.os != 'Windows'
+        run: chmod +x artifacts/gz.${{ matrix.runtime }}
+        
       - name: Generate checksums
         run: |
           $filename = "gz.${{ matrix.runtime }}${{ matrix.extension }}"

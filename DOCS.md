@@ -69,6 +69,34 @@ module ETABS =
 - F# support (included with .NET SDK)
 - **Windows only**: ETABS v17 or later (for ETABS integration features)
 
+### Download Binaries
+
+Pre-built binaries are available for Windows, macOS (Intel/Apple Silicon), and Linux from the [releases page](https://github.com/jsbayley/gazelle/releases).
+
+#### macOS Security Notes
+
+macOS requires additional steps for downloaded binaries due to Gatekeeper security:
+
+1. **Make executable and remove quarantine**:
+   ```bash
+   chmod +x gz.osx-x64      # or gz.osx-arm64
+   sudo xattr -rd com.apple.quarantine gz.osx-x64
+   ```
+
+2. **Alternative method** (if the above doesn't work):
+   ```bash
+   # Remove all extended attributes
+   sudo xattr -c gz.osx-x64
+   chmod +x gz.osx-x64
+   ```
+
+3. **If you still get security warnings**:
+   - Go to **System Preferences** → **Security & Privacy** → **General**
+   - Click **"Allow Anyway"** next to the blocked application message
+   - Or use: `sudo spctl --add gz.osx-x64` to whitelist the binary
+
+> **Note**: These steps are required because the macOS binaries are not currently code-signed or notarized. This is a common requirement for distributing macOS applications.
+
 ### Build from source
 ```bash
 git clone https://github.com/jsbayley/gazelle.git
