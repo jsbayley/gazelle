@@ -2,10 +2,9 @@
 
 ## DevOps
 
-- [ ] Configure CI pipeline so versions are updated and git commit is tagged.
-- [ ] Ensure the built assets are deployed into the GH Pages site.
-- [ ] Wire up CLI builds for multiplatform builds.
-- [ ] Wire up CI. 
+- [X] Ensure the built assets are deployed into the GH Pages site.
+- [X] Wire up CLI builds for multiplatform builds.
+- [X] Wire up CI. 
 
 ## .NET Developers
 
