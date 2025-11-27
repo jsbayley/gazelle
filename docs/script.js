@@ -261,7 +261,15 @@ function updateFileSizes() {
                     if (response.ok) {
                         const sizeBytes = parseInt(response.headers.get('content-length'));
                         if (sizeBytes) {
-                            const sizeMB = (sizeBytes / (1024 * 1024)).toFixed(1);
+                            // Check if content is compressed
+                            const encoding = response.headers.get('content-encoding');
+                            let sizeMB = (sizeBytes / (1024 * 1024)).toFixed(1);
+                            
+                            // If compressed, estimate uncompressed size (rough approximation)
+                            if (encoding && encoding.includes('gzip')) {
+                                sizeMB = (sizeBytes * 2.5 / (1024 * 1024)).toFixed(1); // Rough estimate
+                            }
+                            
                             sizeElement.textContent = `~${sizeMB} MB`;
                         } else {
                             sizeElement.textContent = '~?.? MB';
@@ -288,7 +296,7 @@ function testDownloadAvailability() {
                 .then(response => {
                     if (response.ok) {
                         // File available - restore normal appearance
-                        button.style.opacity = '';
+                        button.style.opacity = '1';
                         button.title = '';
                     } else {
                         // File not available - dim button

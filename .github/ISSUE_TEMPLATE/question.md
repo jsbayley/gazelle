@@ -22,7 +22,7 @@ Please provide context about:
 
 ## Environment (if relevant)
 - **OS**: [e.g. Windows 11, macOS 14.0, Ubuntu 22.04]
-- **Gazelle Version**: [e.g. v0.0.6]
+- **Gazelle Version**: [e.g. v0.0.7]
 - **Related Software**: [e.g. ETABS, Excel, Python scripts]
 
 ## Additional Details
