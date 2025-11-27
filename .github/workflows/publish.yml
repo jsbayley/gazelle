@@ -68,10 +68,6 @@ jobs:
             -p:TrimMode=link `
             -p:AssemblyName=gz.${{ matrix.runtime }} `
             -o "artifacts/"
-
-      - name: Set executable permissions (macOS/Linux)
-        if: matrix.runtime != 'win-x64'
-        run: chmod +x artifacts/gz.${{ matrix.runtime }}
         
       - name: Generate checksums
         run: |
@@ -116,6 +112,15 @@ jobs:
           Get-ChildItem -Path "artifacts/" -Recurse -File -Filter "gz.*" | ForEach-Object {
             Copy-Item $_.FullName ".github/pages/releases/" -Force
             Write-Host "Copied $($_.Name) to .github/pages/releases/"
+          }
+          
+      - name: Restore executable permissions for macOS/Linux binaries
+        run: |
+          Get-ChildItem -Path ".github/pages/releases/" -File | Where-Object { 
+            $_.Name -match "gz\.(osx-x64|osx-arm64|linux-x64)$" 
+          } | ForEach-Object {
+            chmod +x $_.FullName
+            Write-Host "Set executable permissions for $($_.Name)"
           }
           
       - name: Setup Pages
