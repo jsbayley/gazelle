@@ -18,3 +18,17 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "9.x.x"
+
+      - name: Restore Project
+        run: dotnet tool restore && dotnet restore
+  
+      - name: Check Code Formatting
+        run: dotnet fantomas . --check
+
+      - name: Run Test Suite
+        run: dotnet test
