@@ -90,16 +90,16 @@ jobs:
           
       - name: Prepare releases directory
         run: |
-          # Create releases directory in web folder
-          New-Item -ItemType Directory -Force -Path "web/releases"
-          Get-ChildItem "web/releases" -Exclude "README.md" | Remove-Item -Force
+          # Create releases directory in docs folder
+          New-Item -ItemType Directory -Force -Path "docs/releases"
+          Get-ChildItem "docs/releases" -Exclude "README.md" | Remove-Item -Force
           
       - name: Copy CLI binaries to website
         run: |
-          # Copy all binaries from artifact directories to web/releases/
+          # Copy all binaries from artifact directories to docs/releases/
           Get-ChildItem "cli-artifacts" -Recurse -File -Exclude "*.sha256" | ForEach-Object {
-            Copy-Item $_.FullName "web/releases/" -Force
-            Write-Host "Copied $($_.Name) to web/releases/"
+            Copy-Item $_.FullName "docs/releases/" -Force
+            Write-Host "Copied $($_.Name) to docs/releases/"
           }
           
       - name: Generate checksums file
@@ -109,12 +109,12 @@ jobs:
           Get-ChildItem "cli-artifacts" -Recurse -Filter "*.sha256" | ForEach-Object {
             $checksums += Get-Content $_.FullName
           }
-          $checksums | Out-File -Encoding UTF8 "web/releases/checksums.txt"
+          $checksums | Out-File -Encoding UTF8 "docs/releases/checksums.txt"
           
       - name: Update file sizes in website
         run: |
           # Calculate actual file sizes and update JavaScript
-          $scriptPath = "web/script.js"
+          $scriptPath = "docs/script.js"
           $scriptContent = Get-Content $scriptPath -Raw
           
           $files = @{
@@ -125,7 +125,7 @@ jobs:
           }
           
           foreach ($file in $files.Keys) {
-            $filePath = "web/releases/$file"
+            $filePath = "docs/releases/$file"
             if (Test-Path $filePath) {
               $sizeBytes = (Get-Item $filePath).Length
               $sizeMB = [math]::Round($sizeBytes / 1MB, 1)
@@ -146,5 +146,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: website-files
-          path: web/
+          path: docs/
           retention-days: 1
