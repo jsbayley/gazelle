@@ -37,7 +37,7 @@
     "markdown": false
   },
 
-  "liveServer.settings.root": "/docs",
+  "liveServer.settings.root": "/web",
   "liveServer.settings.file": "index.html",
   "liveServer.settings.host": "localhost",
   "liveServer.settings.port": 8000,
