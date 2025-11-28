@@ -15,6 +15,10 @@ const downloads = {
     linux: {
         url: 'releases/gz.linux-x64',
         filename: 'gz'
+    },
+    'linux-arm64': {
+        url: 'releases/gz.linux-arm64',
+        filename: 'gz'
     }
 };
 

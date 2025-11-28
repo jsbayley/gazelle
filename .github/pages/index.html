@@ -129,8 +129,8 @@
 
               <div class="download-card" data-platform="linux">
                   <div class="platform-icon">🐧</div>
-                  <h3>Linux</h3>
-                  <p>Linux x64 (glibc 2.31+)</p>
+                  <h3>Linux x64</h3>
+                  <p>Intel/AMD Linux (glibc 2.31+)</p>
                   <div class="download-buttons">
                       <button class="btn btn-download" onclick="downloadFile('linux')">
                           <span class="download-icon">⬇️</span>
@@ -138,6 +138,22 @@
                       </button>
                       <div class="file-info">
                           <span class="file-size" id="linux-size">~7.5 MB</span>
+                          <span class="file-version">v0.0.7</span>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="download-card" data-platform="linux-arm64">
+                  <div class="platform-icon">🐧</div>
+                  <h3>Linux ARM64</h3>
+                  <p>ARM64 Linux (Raspberry Pi, Apple Silicon containers)</p>
+                  <div class="download-buttons">
+                      <button class="btn btn-download" onclick="downloadFile('linux-arm64')">
+                          <span class="download-icon">⬇️</span>
+                          Download gz
+                      </button>
+                      <div class="file-info">
+                          <span class="file-size" id="linux-arm64-size">~7.2 MB</span>
                           <span class="file-version">v0.0.7</span>
                       </div>
                   </div>

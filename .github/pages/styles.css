@@ -162,9 +162,11 @@ p {
     background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
     color: white;
     width: 100%;
-    padding: 0.875rem 1rem;
+    padding: 0.875rem 0.5rem;
     font-weight: 600;
     box-shadow: 0 3px 12px rgba(72, 187, 120, 0.3);
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .btn-download:hover {
@@ -421,10 +423,10 @@ p {
 
 .download-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
     margin-bottom: 3rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -435,6 +437,10 @@ p {
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
 }
 
 
@@ -472,14 +478,24 @@ p {
 }
 
 .download-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .download-card p {
     color: var(--text-tertiary);
     margin-bottom: 2rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    min-height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .download-buttons {
