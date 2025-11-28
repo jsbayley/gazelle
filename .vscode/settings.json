@@ -37,7 +37,7 @@
     "markdown": false
   },
 
-  "liveServer.settings.root": "/web",
+  "liveServer.settings.root": "/.github/pages",
   "liveServer.settings.file": "index.html",
   "liveServer.settings.host": "localhost",
   "liveServer.settings.port": 8000,
@@ -45,7 +45,6 @@
   "powershell.powerShellDefaultVersion": "PowerShell",
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.suppressAdditionalExeNotFoundWarning": false,
-
 
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Fira Code', Menlo, Monaco, Consolas",
 
