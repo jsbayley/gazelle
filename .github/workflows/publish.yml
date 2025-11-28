@@ -31,24 +31,21 @@ jobs:
 
   build-cli:
     name: Build Cross-Platform CLI
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         include:
           - runtime: win-x64
             extension: .exe
-            os: windows-latest
           - runtime: osx-x64
             extension: ""
-            os: macos-13
           - runtime: osx-arm64
             extension: ""
-            os: macos-latest
           - runtime: linux-x64
             extension: ""
-            os: ubuntu-latest
-    
-    runs-on: ${{ matrix.os }}
+          - runtime: linux-arm64
+            extension: ""
 
     steps:
       - name: Checkout Repository
