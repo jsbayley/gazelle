@@ -69,7 +69,7 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
 
 ## Contributors
 
-Thanks to those who have contributed to Gazelle and keep the project moving forwards:
+Thanks to those who have contributed to Gazelle and help to keep the project moving forwards:
 
 <div align="center">
   <a href="https://github.com/goswinr">
