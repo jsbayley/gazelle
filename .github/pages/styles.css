@@ -896,6 +896,17 @@ p {
 
 /* Mobile Navigation - Tablet and Mobile */
 @media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    #docs .feature-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
     .hamburger-menu {
         display: flex;
     }
@@ -940,7 +951,7 @@ p {
 }
 
 /* Small Mobile Specific */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .hero {
         padding: 6rem 0 4rem;
     }
@@ -959,8 +970,18 @@ p {
     }
     
     .feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 1rem;
+    }
+    
+    #docs .feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    
+    .doc-card {
+        width: 100%;
+        display: block;
     }
     
     .logo h1 {
