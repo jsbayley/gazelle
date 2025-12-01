@@ -57,6 +57,10 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
   We consider structural engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, we are human and mistakes are possible. Please submit error reports and suggestions for improvement via <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">GitHub Issues</a>.
 </p>
 
+## Security
+
+Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilities.
+
 ---
 
 <div align="center">
