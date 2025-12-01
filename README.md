@@ -34,38 +34,53 @@
 ## Why?
 
 <p align="justify">
-The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. 
+I got caught up in a lot of analysis paralysis over language selection for a while, hence the project paused for quite some time. I've since decided to take a practical approach of getting Gazelle out there, seeing what the public reaction is, and go from there.
+</p>
+
+## What?
+
+<p align="justify">
+Gazelle is a library and Command-Line Interface (CLI) written in F# on .NET 9. It offers a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, workflow orchestration using command-line tools or AI orchestration.
 </p>
 
 <p align="justify">
-The ETABS wrapper was originally a separate project that I started as a concept, and I decided to integrate into Gazelle because it felt like a logical thing to do: pull/push data from where Engineers are working and then run automation on top of those steps. 
+We support a CLI for two reasons:
+</p>
+
+<p align="justify">
+  <ol>
+    <li>
+      Standard input/output mechanics of compiled tools (`stdin`/`stdout`) mean they can interoperate easily with other languages and technology stacks,
+    </li>
+    <li>
+      Eventually, we intend to layer a Daemon-style service and/or AI-orchestrator on top for advanced workflows. 
+    </li>
+  </ol>
+</p>
+
+## Why Choose F#?
+
+<p align="justify">
+The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. The strictness of the F# compiler makes it ideal for maintaining correctness. For safety-critical software development, compiler strictness helps to ensure structural integrity. The advanced domain modelling and type system characteristics of F# also allow for elegant expression of complex algorithms, which ultimately improves clarity, maintainability, and readability.
+</p>
+
+<p align="justify">
+The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. 
 </p>
 
 <p align="justify">
 I got caught up in a lot of analysis paralysis for a while, hence why the project paused for quite some time. So, I've decided to take a practical approach of getting it out there, seeing what the reaction is from people, and whether or not it's potentially valuable.
 </p>
 
-The CLI piece is for two reasons: 
+## Distribution
 
-1. The input/output mechanics of compiled tools mean that they can interoperate easily with other languages and stacks, and 
-
-2. Because I'd like to eventually layer on top either a Daemon-style service, or an AI-orchestration. But relying on the strictness of the F# compiler to help ensure structural integrity for users.
-
-## What?
-
-- Cross‑platform CLI written in F# on .NET 9.
-- Deterministic commands and structured outputs.
-- ETABS integration (Windows-only features behind conditional compilation).
-- Ready for automation: scripts, CI pipelines, and AI orchestration.
-
-## How?
-
-- Single‑file self‑contained binaries provided for each platform.
-- Official GitHub Pages deployment for latest release downloads.
+<p align="justify">
+Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh.
+</p>
 
 ## When?
 
-We are in the earliest-stages of defining the open-source product roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
+We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
 
 ## Join Our Community
 
