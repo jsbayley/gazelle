@@ -14,18 +14,20 @@
 
 ## Table of Contents
 
-- [Documentation](#documentation)
-- [Get Involved](#get-involved)
-- [Open Source](#open-source)
-- [Security](#security)
-- [Errata](#errata)
-- [Contributors](#contributors)
+1. [Why?](#1-why)
+2. [What?](#2-what)
+3. [How?](#3-how)
+4. [When?](#4-when)
+5. [For Who?](#5-for-who)
+6. [Values](#6-values)
+7. [Documentation](#7-documentation)
+8. [Get Involved](#8-get-involved)
+9. [Open Source](#9-open-source)
+10. [Security](#10-security)
+11. [Errata](#11-errata)
+12. [Contributors](#12-contributors)
 
-## Documentation
-
-Visit our [docs](./DOCS.md) to learn more.
-
-## Why
+## 1. Why?
 
 <p align="justify">
 The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. 
@@ -45,7 +47,19 @@ The CLI piece is for two reasons:
 
 2. Because I'd like to eventually layer on top either a Daemon-style service, or an AI-orchestration. But relying on the strictness of the F# compiler to help ensure structural integrity for users.
 
-## Values
+## 2. What?
+
+
+## 3. How?
+
+
+## 4. When?
+
+
+## 5. For Who?
+
+
+## 6. Values
 
 Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
 
@@ -59,11 +73,15 @@ Gazelle is opinionated by design. These **nine** principles guide every decision
 8. **Small Composable Tools:** Unix-style components combine into workflows.
 9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
 
-## Get Involved
+## 7. Documentation
+
+Visit our [docs](./DOCS.md) to learn more.
+
+## 8. Get Involved
 
 See our guidance on [how to get involved](./CONTRIBUTING.md).
 
-## Open Source
+## 9. Open Source
 
 <p align="justify">
   Engineers accept phenomenal responsibility when dedicating their lives to improving our built environment. However, the vast majority of professional engineering software is, regrettably, closed source and proprietary. This is unfair and must change. Engineers should be offered the respect and freedom to inspect, validate and influence the algorithms used to design our buildings and bridges. 
@@ -73,17 +91,17 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
   Gazelle is proudly <a href="./LICENSE" target="_blank">open source</a>.
 </p>
 
-## Security
+## 10. Security
 
 Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilities.
 
-## Errata
+## 11. Errata
 
 <p align="justify">
   We consider structural engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, we are human and mistakes are possible. Please submit error reports and suggestions for improvement via <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">GitHub Issues</a>.
 </p>
 
-## Contributors
+## 12. Contributors
 
 Thanks to those who have [contributed](https://github.com/jsbayley/gazelle/graphs/contributors) to Gazelle and help to keep the project moving forwards:
 
