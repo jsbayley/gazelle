@@ -42,15 +42,15 @@ The CLI piece is for two reasons:
 
 Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
 
-1. **Privacy-First:** All computation happens locally. Your data stays on your machine. No cloud dependency. No tracking.
-2. **Type-Safe by Design:** F# Units-of-Measure and strong typing enforce structural integrity. Mistakes surface at compile time.
-3. **Radical Transparency:** Engineering software is safety critical. Its algorithms must be readable, verifiable, and open to scrutiny.
-4. **Small Composable Tools:** Small, predictable, Unix-style building blocks. Components can be assembled into powerful workflows.
-5. **Performance as a Feature:** Lean binaries, fast startup, low friction. Engineering tools should be responsive and reliable.
-6. **Reliability Matters:** Engineering tools must be predictable. Stability, correctness, and deterministic behaviour matter more than novelty.
-7. **Open Collaboration:** Engineering is a collective discipline. Open code, open discussion, and shared learning strengthen the profession.
-8. **Designed for Humans:** Built to reduce cognitive load and help engineers think clearly. Simplicity, clarity, and flow are core design goals.
-9. **Optimised for AI:** Clean CLI interfaces and structured data formats make Gazelle ideal for AI orchestration and automation workflows.
+1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
+2. **Radical Transparency:** Algorithms must be readable, verifiable, and open to scrutiny.
+3. **Small Composable Tools:** Unix-style components that combine into workflows.
+4. **Open Collaboration:** Open code, discussion, and shared learning strengthen our profession.
+5. **Reliability Matters:** Stability, correctness, and deterministic behaviour matter more than novelty.
+6. **Type-Safe by Design:** F# Units-of-Measure and strong typing ensure mistakes surface at compile time.
+7. **Designed for Humans:** Simplicity, clarity, and flow are core design goals to reduce cognitive load.
+8. **Optimised for AI:** Clean CLI interfaces and structured data formats ideal for AI orchestration.
+9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
 
 ## Get Involved
 
