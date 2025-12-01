@@ -43,7 +43,7 @@ I got caught up in a lot of analysis paralysis over language selection for a whi
 ## What Is Gazelle?
 
 <p align="justify">
-Gazelle is a library and Command-Line Interface (CLI) written in F# on .NET 9. It takes a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, workflow orchestration using command-line tools or AI orchestration.
+Gazelle is a library and Command-Line Interface (CLI) written in F# and running on .NET 9. It favours a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, and workflow orchestration using peripheral command-line tools or AI orchestrators.
 </p>
 
 <p align="justify">
