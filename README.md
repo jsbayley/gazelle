@@ -73,7 +73,7 @@ The foundational aspiration for Gazelle is to be a central library (and CLI) for
 I got caught up in a lot of analysis paralysis for a while, hence why the project paused for quite some time. So, I've decided to take a practical approach of getting it out there, seeing what the reaction is from people, and whether or not it's potentially valuable.
 </p>
 
-## Distribution
+## Releases
 
 <p align="justify">
 Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh.
