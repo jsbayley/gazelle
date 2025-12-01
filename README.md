@@ -15,14 +15,15 @@
 ## Table of Contents
 
 - [Why?](#why)
-- [What?](#what)
-- [How?](#how)
-- [When?](#when)
+- [What Is Gazelle?](#what-is-gazelle)
+- [Why Choose F#?](#why-choose-f)
+- [Releases](#releases)
+- [Roadmap](#roadmap)
 - [Join Our Community](#join-our-community)
 - [Quick Start](#quick-start)
   - [Option A: Download a binary](#option-a-download-a-binary)
   - [Option B: Build from source](#option-b-build-from-source)
-- [Values](#values)
+- [Project Values](#project-values)
 - [Documentation](#documentation)
 - [Get Involved](#get-involved)
 - [Open Source](#open-source)
@@ -37,7 +38,7 @@
 I got caught up in a lot of analysis paralysis over language selection for a while, hence the project paused for quite some time. I've since decided to take a practical approach of getting Gazelle out there, seeing what the public reaction is, and go from there.
 </p>
 
-## What?
+## What Is Gazelle?
 
 <p align="justify">
 Gazelle is a library and Command-Line Interface (CLI) written in F# on .NET 9. It offers a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, workflow orchestration using command-line tools or AI orchestration.
@@ -61,7 +62,7 @@ We support a CLI for two reasons:
 ## Why Choose F#?
 
 <p align="justify">
-The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. The strictness of the F# compiler makes it ideal for maintaining correctness. For safety-critical software development, compiler strictness helps to ensure structural integrity. The advanced domain modelling and type system characteristics of F# also allow for elegant expression of complex algorithms, which ultimately improves clarity, maintainability, and readability.
+I originally selected F# because of its <a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure">Units-of-Measure</a> feature and the interop with existing engineering applications offered by .modern NET. The strictness of the F# compiler makes it ideal for maintaining correctness. For safety-critical software development, compiler strictness helps to ensure structural integrity. The advanced domain modelling and type system characteristics of F# also allow for elegant expression of complex algorithms, which ultimately improves clarity, maintainability, and readability.
 </p>
 
 <p align="justify">
@@ -75,10 +76,10 @@ I got caught up in a lot of analysis paralysis for a while, hence why the projec
 ## Distribution
 
 <p align="justify">
-Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh.
+Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh. We only support latest releases at this time.
 </p>
 
-## When?
+## Roadmap
 
 We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
 
@@ -133,7 +134,7 @@ dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-arm64 --self-contained
 ./artifacts/gz --help
 ```
 
-## Values
+## Project Values
 
 Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
 
