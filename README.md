@@ -72,11 +72,8 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
 Thanks to those who have contributed to Gazelle and keep the project moving forwards:
 
 <div align="center">
-  <a href="https://github.com/jsbayley">
-    <img src="https://github.com/jsbayley.png?size=80" width="80" height="80" alt="@jsbayley" style="border-radius: 50%;" />
-  </a>
   <a href="https://github.com/goswinr">
-    <img src="https://github.com/goswinr.png?size=80" width="80" height="80" alt="@goswinr" style="border-radius: 50%;" />
+    <img src="https://github.com/goswinr.png?size=80" width="80" height="80" alt="@goswinr" />
   </a>
 </div>
 
