@@ -27,11 +27,17 @@ Visit our [docs](./DOCS.md) to learn more.
 
 ## Why
 
+<p align="justify">
 The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. 
+</p>
 
+<p align="justify">
 The ETABS wrapper was originally a separate project that I started as a concept, and I decided to integrate into Gazelle because it felt like a logical thing to do: pull/push data from where Engineers are working and then run automation on top of those steps. 
+</p>
 
+<p align="justify">
 I got caught up in a lot of analysis paralysis for a while, hence why the project paused for quite some time. So, I've decided to take a practical approach of getting it out there, seeing what the reaction is from people, and whether or not it's potentially valuable.
+</p>
 
 The CLI piece is for two reasons: 
 
