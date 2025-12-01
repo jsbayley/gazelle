@@ -76,7 +76,9 @@ Gazelle is a **community-led** project designed to:
 - 🎓 Support Structural Engineering education, and
 - 🫱🏻‍🫲🏾 Connect like-minded Engineers.
 
-Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. If you're interested, we also welcome [contributions](.github/CONTRIBUTING.md) and will support you in taking your first steps into Open Source.
+Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. 
+
+If you're interested, we also encourage [contributions](.github/CONTRIBUTING.md) and will happily support you in taking your first steps into Open Source.
 
 ## Quick Start
 
