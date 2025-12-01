@@ -14,20 +14,22 @@
 
 ## Table of Contents
 
-1. [Why?](#1-why)
-2. [What?](#2-what)
-3. [How?](#3-how)
-4. [When?](#4-when)
-5. [For Who?](#5-for-who)
-6. [Values](#6-values)
-7. [Documentation](#7-documentation)
-8. [Get Involved](#8-get-involved)
-9. [Open Source](#9-open-source)
-10. [Security](#10-security)
-11. [Errata](#11-errata)
-12. [Contributors](#12-contributors)
+- [Why?](#why)
+- [What?](#what)
+- [How?](#how)
+- [When?](#when)
+- [For Who?](#for-who)
+- [Quick Start](#quick-start)
+- [Values](#values)
+- [Documentation](#documentation)
+- [Get Involved](#get-involved)
+- [Open Source](#open-source)
+- [Security](#security)
+- [Errata](#errata)
+- [FAQ](#faq)
+- [Contributors](#contributors)
 
-## 1. Why?
+## Why?
 
 <p align="justify">
 The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. The reason I originally selected F# was because of the Units-of-Measure feature and its interop with existing engineering applications. 
@@ -47,19 +49,23 @@ The CLI piece is for two reasons:
 
 2. Because I'd like to eventually layer on top either a Daemon-style service, or an AI-orchestration. But relying on the strictness of the F# compiler to help ensure structural integrity for users.
 
-## 2. What?
+## What?
 
 
-## 3. How?
+## How?
 
 
-## 4. When?
+## When?
 
 
-## 5. For Who?
+## For Who?
 
 
-## 6. Values
+## Quick Start
+
+...
+
+## Values
 
 Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
 
@@ -73,15 +79,15 @@ Gazelle is opinionated by design. These **nine** principles guide every decision
 8. **Small Composable Tools:** Unix-style components combine into workflows.
 9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
 
-## 7. Documentation
+## Documentation
 
 Visit our [docs](./DOCS.md) to learn more.
 
-## 8. Get Involved
+## Get Involved
 
-See our guidance on [how to get involved](./CONTRIBUTING.md).
+See our guidance on [how to get involved](.github/CONTRIBUTING.md).
 
-## 9. Open Source
+## Open Source
 
 <p align="justify">
   Engineers accept phenomenal responsibility when dedicating their lives to improving our built environment. However, the vast majority of professional engineering software is, regrettably, closed source and proprietary. This is unfair and must change. Engineers should be offered the respect and freedom to inspect, validate and influence the algorithms used to design our buildings and bridges. 
@@ -91,23 +97,33 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
   Gazelle is proudly <a href="./LICENSE" target="_blank">open source</a>.
 </p>
 
-## 10. Security
+## Security
 
 Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilities.
 
-## 11. Errata
+## Errata
 
 <p align="justify">
   We consider structural engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, we are human and mistakes are possible. Please submit error reports and suggestions for improvement via <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">GitHub Issues</a>.
 </p>
 
-## 12. Contributors
+## FAQ
+
+Review our [FAQ](./docs/FAQ.md) for answers to popular questions.
+
+## Contributors
 
 Thanks to those who have [contributed](https://github.com/jsbayley/gazelle/graphs/contributors) to Gazelle and help to keep the project moving forwards:
 
 <div align="center">
+  <a href="https://github.com/jsbayley">
+    <img src="https://github.com/jsbayley.png?size=64" width="64" height="64" alt="@jsbayley" />
+  </a>
   <a href="https://github.com/goswinr">
     <img src="https://github.com/goswinr.png?size=64" width="64" height="64" alt="@goswinr" />
+  </a>
+  <a href="https://github.com/danayet">
+    <img src="https://github.com/danayet.png?size=64" width="64" height="64" alt="@danayet" />
   </a>
 </div>
 
