@@ -20,6 +20,8 @@
 - [When?](#when)
 - [Join Our Community](#join-our-community)
 - [Quick Start](#quick-start)
+  - [Option A: Download a binary](#option-a-download-a-binary)
+  - [Option B: Build from source](#option-b-build-from-source)
 - [Values](#values)
 - [Documentation](#documentation)
 - [Get Involved](#get-involved)
