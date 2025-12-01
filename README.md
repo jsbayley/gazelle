@@ -51,7 +51,7 @@ We support a CLI for two reasons:
 <p align="justify">
   <ol>
     <li>
-      Standard input/output mechanics of compiled tools (`stdin`/`stdout`) mean they can interoperate easily with other languages and technology stacks,
+      Standard input/output mechanics of compiled tools (<code>stdin</code>/<code>stdout</code>) mean they can interoperate easily with other languages and technology stacks,
     </li>
     <li>
       Eventually, we intend to layer a Daemon-style service and/or AI-orchestrator on top for advanced workflows. 
