@@ -97,7 +97,7 @@ While using Gazelle, follow these security practices:
 
 When security updates are released:
 
-1. **Download the latest release** from [GitHub Releases](https://github.com/jsbayley/gazelle/releases)
+1. **Download the latest release** from [Gazelle.sh](https://gazelle.sh)
 2. **Replace your existing binary** with the updated version
 3. **Verify the fix** by checking the release notes for security details
 4. **Test your workflows** to ensure compatibility
@@ -123,4 +123,4 @@ If you have questions about this security policy or need clarification about rep
 - Open a general discussion in [GitHub Discussions](https://github.com/jsbayley/gazelle/discussions)
 - Review existing [security advisories](https://github.com/jsbayley/gazelle/security/advisories)
 
-Thank you for helping keep Gazelle and the structural engineering community safe! 🦌🔒
+Thank you for helping keep Gazelle and the structural engineering community safe! 🔒
