@@ -76,8 +76,10 @@ I got caught up in a lot of analysis paralysis for a while, hence why the projec
 ## Distribution
 
 <p align="justify">
-Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh. We only support latest releases at this time.
+Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh.
 </p>
+
+<p><strong>Note:</strong> We only support latest releases at this time.</p>
 
 ## Roadmap
 
