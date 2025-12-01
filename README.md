@@ -85,7 +85,7 @@ Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilitie
 
 ## Contributors
 
-Thanks to those who have contributed to Gazelle and help to keep the project moving forwards:
+Thanks to those who have [contributed](https://github.com/jsbayley/gazelle/graphs/contributors) to Gazelle and help to keep the project moving forwards:
 
 <div align="center">
   <a href="https://github.com/goswinr">
