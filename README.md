@@ -17,6 +17,7 @@
 - [Documentation](#documentation)
 - [Get Involved](#get-involved)
 - [Open Source](#open-source)
+- [Contributors](#contributors)
 - [Security](#security)
 - [Errata](#errata)
 
@@ -65,6 +66,19 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
 <p align="justify">
   Gazelle is proudly <a href="./LICENSE" target="_blank">open source</a>.
 </p>
+
+## Contributors
+
+Thanks to those who have contributed to Gazelle and keep the project moving forwards:
+
+<div align="center">
+  <a href="https://github.com/jsbayley">
+    <img src="https://github.com/jsbayley.png?size=80" width="80" height="80" alt="@jsbayley" style="border-radius: 50%;" />
+  </a>
+  <a href="https://github.com/goswinr">
+    <img src="https://github.com/goswinr.png?size=80" width="80" height="80" alt="@goswinr" style="border-radius: 50%;" />
+  </a>
+</div>
 
 ## Security
 
