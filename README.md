@@ -25,6 +25,8 @@
   - [Option B: Build from source](#option-b-build-from-source)
 - [Project Values](#project-values)
 - [Documentation](#documentation)
+  - [API Reference](#api-reference)
+  - [CLI Commands](#cli-commands)
 - [Get Involved](#get-involved)
 - [Open Source](#open-source)
 - [Security](#security)
@@ -83,19 +85,6 @@ Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux
 
 We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
 
-## Join Our Community
-
-Gazelle is a **community-led** project designed to:
-
-- 🚀 Accelerate AEC innovation,
-- 📚 Underpin academic research,
-- 🎓 Support Structural Engineering education, and
-- 🫱🏻‍🫲🏾 Connect like-minded Engineers.
-
-Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. 
-
-If you're interested, we also encourage [contributions](.github/CONTRIBUTING.md) and will happily support you in taking your first steps into Open Source.
-
 ## Quick Start
 
 ### Option A: Download a binary
@@ -152,9 +141,30 @@ Gazelle is opinionated by design. These **nine** principles guide every decision
 
 Visit our [docs](./DOCS.md) to learn more.
 
+### API Reference
+
+The comprehensive API reference for the Gazelle library is documented in [API.md](./docs/API.md).
+
+### CLI Commands
+
+The full list of available CLI commands are documented in [CLI.md](./docs/CLI.md).
+
+## Join Our Community
+
+Gazelle is a **community-led** project designed to:
+
+- 🚀 Accelerate AEC innovation,
+- 📚 Underpin academic research,
+- 🎓 Support Structural Engineering education, and
+- 🫱🏻‍🫲🏾 Connect like-minded Engineers.
+
+Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. 
+
+You can also get involved in the [discussions](https://github.com/jsbayley/gazelle/discussions) where the design decisions for the future of Gazelle are conducted in the open.
+
 ## Get Involved
 
-See our guidance on [how to get involved](.github/CONTRIBUTING.md).
+See our guidance on [how to get involved](.github/CONTRIBUTING.md). We encourage contributions and will happily support you to take your first steps into Open Source.
 
 ## Open Source
 
