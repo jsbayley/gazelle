@@ -17,9 +17,9 @@
 - [Documentation](#documentation)
 - [Get Involved](#get-involved)
 - [Open Source](#open-source)
-- [Contributors](#contributors)
 - [Security](#security)
 - [Errata](#errata)
+- [Contributors](#contributors)
 
 ## Documentation
 
@@ -73,16 +73,6 @@ See our guidance on [how to get involved](./CONTRIBUTING.md).
   Gazelle is proudly <a href="./LICENSE" target="_blank">open source</a>.
 </p>
 
-## Contributors
-
-Thanks to those who have contributed to Gazelle and help to keep the project moving forwards:
-
-<div align="center">
-  <a href="https://github.com/goswinr">
-    <img src="https://github.com/goswinr.png?size=64" width="64" height="64" alt="@goswinr" />
-  </a>
-</div>
-
 ## Security
 
 Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilities.
@@ -92,6 +82,16 @@ Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilitie
 <p align="justify">
   We consider structural engineering software to be safety critical. We strive to ensure stability, robustness and correctness throughout the source code, test suite and companion documentation. Nevertheless, we are human and mistakes are possible. Please submit error reports and suggestions for improvement via <a href="https://github.com/jsbayley/gazelle/issues" target="_blank">GitHub Issues</a>.
 </p>
+
+## Contributors
+
+Thanks to those who have contributed to Gazelle and help to keep the project moving forwards:
+
+<div align="center">
+  <a href="https://github.com/goswinr">
+    <img src="https://github.com/goswinr.png?size=64" width="64" height="64" alt="@goswinr" />
+  </a>
+</div>
 
 ---
 
