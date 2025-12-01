@@ -79,8 +79,6 @@ I got caught up in a lot of analysis paralysis for a while, hence why the projec
 Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux at https://gazelle.sh.
 </p>
 
-<p><strong>Note:</strong> We only support latest releases at this time.</p>
-
 ## Roadmap
 
 We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
