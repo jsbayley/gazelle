@@ -18,6 +18,7 @@
 - [Get Involved](#get-involved)
 - [Open Source](#open-source)
 - [Errata](#errata)
+- [Security](#security)
 
 ## Documentation
 
