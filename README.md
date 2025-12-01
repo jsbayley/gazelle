@@ -73,7 +73,7 @@ Thanks to those who have contributed to Gazelle and help to keep the project mov
 
 <div align="center">
   <a href="https://github.com/goswinr">
-    <img src="https://github.com/goswinr.png?size=80" width="80" height="80" alt="@goswinr" />
+    <img src="https://github.com/goswinr.png?size=64" width="64" height="64" alt="@goswinr" />
   </a>
 </div>
 
