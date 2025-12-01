@@ -18,7 +18,7 @@
 - [What?](#what)
 - [How?](#how)
 - [When?](#when)
-- [For Who?](#for-who)
+- [Join Our Community](#join-our-community)
 - [Quick Start](#quick-start)
 - [Values](#values)
 - [Documentation](#documentation)
@@ -51,19 +51,68 @@ The CLI piece is for two reasons:
 
 ## What?
 
+- Cross‑platform CLI written in F# on .NET 9.
+- Deterministic commands and structured outputs.
+- ETABS integration (Windows-only features behind conditional compilation).
+- Ready for automation: scripts, CI pipelines, and AI orchestration.
 
 ## How?
 
+- Single‑file self‑contained binaries provided for each platform.
+- Official GitHub Pages deployment for latest release downloads.
 
 ## When?
 
+We are in the earliest-stages of defining the open-source product roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
 
-## For Who?
+## Join Our Community
 
+Gazelle is a **community-led** project designed to:
+
+- 🚀 Accelerate AEC innovation,
+- 📚 Underpin academic research,
+- 🎓 Support Structural Engineering education, and
+- 🫱🏻‍🫲🏾 Connect like-minded Engineers.
+
+Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. If you're interested, we also welcome [contributions](.github/CONTRIBUTING.md) and will support you in taking your first steps into Open Source.
 
 ## Quick Start
 
-...
+### Option A: Download a binary
+- Website: https://gazelle.sh
+  - gz.win-x64.exe
+  - gz.osx-x64
+  - gz.osx-arm64
+  - gz.linux-x64
+  - gz.linux-arm64
+
+macOS/Linux: add execute bit if needed
+```bash
+chmod +x gz.osx-arm64  # or gz.osx-x64 / gz.linux-*
+./gz.osx-arm64 --help
+```
+
+Verify checksum
+```bash
+sha256sum -c gz.osx-arm64.sha256  # Linux
+shasum -a 256 -c gz.osx-arm64.sha256  # macOS
+```
+
+Windows (PowerShell)
+```powershell
+Get-FileHash .\gz.win-x64.exe -Algorithm SHA256
+.\gz.win-x64.exe --help
+```
+
+### Option B: Build from source
+```bash
+git clone https://github.com/jsbayley/gazelle.git
+cd gazelle
+dotnet build
+dotnet test
+dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-arm64 --self-contained -p:PublishSingleFile=true -o ./artifacts/
+./artifacts/gz --help
+```
 
 ## Values
 
