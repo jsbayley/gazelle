@@ -49,8 +49,8 @@ Gazelle is opinionated by design. These **nine** principles guide every decision
 5. **Type-Safe by Design:** F# Units-of-Measure and strong typing ensure mistakes surface at compile time.
 6. **Designed for Humans:** Simplicity, clarity, and flow are core design goals to reduce cognitive load.
 7. **Optimised for AI:** Clean CLI interfaces and structured data formats ideal for AI orchestration.
-8. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
-9. **Small Composable Tools:** Unix-style components combine into workflows.
+8. **Small Composable Tools:** Unix-style components combine into workflows.
+9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
 
 ## Get Involved
 
