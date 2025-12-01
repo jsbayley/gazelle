@@ -109,7 +109,7 @@ dotnet tool install --global --add-source ./cli/bin/Release Gazelle.CLI
 
 ### Install from NuGet
 ```bash
-dotnet add package Gazelle --version 0.0.7
+dotnet add package Gazelle --version 0.0.8
 ```
 
 > **ℹ️ Cross-Platform Note**: The CLI tool (`gz`) works on all platforms. ETABS integration features are Windows-only due to COM interop requirements.

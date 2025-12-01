@@ -42,7 +42,7 @@ Gazelle features a **unified architecture** achieved through comprehensive conso
 - Template system: beam, truss, portal structures with parameterization
 
 ### Version Management
-- **Centralized**: `Directory.Build.props` contains `<Version>0.0.7</Version>` inherited by all projects
+- **Centralized**: `Directory.Build.props` contains `<Version>0.0.8</Version>` inherited by all projects
 - **Script**: `./scripts/update-version.sh` updates all files consistently
 - **Global tool**: CLI packaged as `gz` command via `PackAsTool=true`
 
@@ -66,8 +66,8 @@ dotnet run --project cli -- analyze model.json --verbose
 
 ### Version Updates  
 ```bash
-./scripts/update-version.sh 0.0.7   # Updates Directory.Build.props + all docs
-git add . && git commit -m "Update version to 0.0.7"
+./scripts/update-version.sh 0.0.8   # Updates Directory.Build.props + all docs
+git add . && git commit -m "Update version to 0.0.8"
 ```
 
 ## Project-Specific Guidelines
