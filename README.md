@@ -138,7 +138,7 @@ chmod +x gz.osx-arm64
 
 ```bash
 # Linux
-sha256sum -c gz.osx-arm64.sha256
+sha256sum -c gz.linux-x64.sha256
 ```
 
 ```bash
