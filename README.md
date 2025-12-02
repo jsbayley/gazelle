@@ -90,7 +90,9 @@ I appreciate each and everyone of you. Your advice and suggestions help to shape
 
 ## Project Values
 
+<p align="justify">
 Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
+</p>
 
 1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
 2. **Radical Transparency:** Algorithms must be readable, verifiable, and open to scrutiny.
@@ -116,7 +118,9 @@ Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux
 
 ## Roadmap
 
+<p align="justify">
 We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
+</p>
 
 ## Quick Start
 
