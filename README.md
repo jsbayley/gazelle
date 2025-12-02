@@ -119,7 +119,7 @@ Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux
 ## Roadmap
 
 <p align="justify">
-We are currently defining the roadmap. Please keep an eye on our [GitHub repository](https://github.com/jsbayley/gazelle) for updates.
+We are currently defining the roadmap. Please keep an eye on our <a href="https://github.com/jsbayley/gazelle">GitHub repository</a> for updates.
 </p>
 
 ## Quick Start
