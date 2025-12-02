@@ -130,13 +130,13 @@ We only support the latest release. If you’re developing the site locally and 
 
 ## What is supported for security fixes?
 
-Per our policy in [.github/SECURITY.md](.github/SECURITY.md), we support security fixes for the latest release only. Please report vulnerabilities privately via GitHub Security Advisories as described there.
+Per our policy in [.github/SECURITY.md](../.github/SECURITY.md), we support security fixes for the latest release only. Please report vulnerabilities privately via GitHub Security Advisories as described there.
 
 
 ## Where are the docs and support?
 
 - Quick start and usage: [README.md](./README.md).
 - Contribution and release process: [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md).
-- Security policy: [.github/SECURITY.md](.github/SECURITY.md).
+- Security policy: [.github/SECURITY.md](../.github/SECURITY.md).
 - Open a discussion or issue: GitHub [Issues](https://github.com/jsbayley/gazelle/issues)/[Discussions](https://github.com/jsbayley/gazelle/discussions) on the repository.
 
