@@ -38,10 +38,12 @@
 ## What Is Gazelle?
 
 <p align="justify">
-Gazelle is a library and Command-Line Interface (CLI) written in F# and running on .NET 9. It favours a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, and workflow orchestration using peripheral command-line tools or AI orchestrators. The standard input/output mechanics of CLI tools (<code>stdin</code>/<code>stdout</code>) allows them to interoperate easily with other languages and technology stacks, which opens up the ecosystem for collaboration.
+Gazelle is a library and Command-Line Interface (CLI) written in F# and running on .NET 9. It favours a batteries-included approach with intuitive CLI commands, structured outputs, Eurocode design equations, and ETABS I/O support. Gazelle is optimised for automation, CI pipelines, and workflow orchestration using peripheral command-line tools or AI orchestrators. The standard I/O mechanics of CLI tools (<code>stdin</code>/<code>stdout</code>) allow them to interoperate easily with other languages and technology stacks, which opens up the ecosystem for collaboration.
 </p>
 
 ## Why Build Gazelle?
+
+Frustrated by the friction and opacity of traditional tools, and an admiration for the Unix Philosophy of small, focussed, composable tools, we set out on a journey to build a modern equivalent for the Structural Engineer. Gazelle aims to play nicely with the wider ecosystem, offer a stable and reliable platform for others to build on top of, and ultimately be a tool of choice for Engineers everywhere. We want to build something that Engineers love to use.
 
 Gazelle is, first and foremost, the tool we wish existed:
 
@@ -61,8 +63,6 @@ The project is the purest expression of our love for:
 - Purpose, 
 - Precision, and
 - Experience Design.
-
-Frustrated by the friction and opacity of traditional tools, and an admiration for the Unix Philosophy of small, focussed, composable tools, we set out on a journey to build a modern equivalent for the Structural Engineer. Gazelle aims to play nicely with the wider ecosystem, offer a stable and reliable platform for others to build on top of, and ultimately be a tool of choice for Engineers everywhere. We want to build something that Engineers love to use.
 
 ## A Note From Our Creator
 
