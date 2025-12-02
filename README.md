@@ -14,16 +14,17 @@
 
 ## Table of Contents
 
-- [Why?](#why)
 - [What Is Gazelle?](#what-is-gazelle)
-- [Why Choose F#?](#why-choose-f)
+- [Why Build Gazelle?](#why-build-gazelle)
+- [A Note From Our Creator](#a-note-from-our-creator)
+- [Project Values](#project-values)
+- [Why F#?](#why-f)
 - [Releases](#releases)
 - [Roadmap](#roadmap)
 - [Join Our Community](#join-our-community)
 - [Quick Start](#quick-start)
   - [Option A: Download a binary](#option-a-download-a-binary)
   - [Option B: Build from source](#option-b-build-from-source)
-- [Project Values](#project-values)
 - [Documentation](#documentation)
   - [API Reference](#api-reference)
   - [CLI Commands](#cli-commands)
@@ -34,45 +35,71 @@
 - [FAQ](#faq)
 - [Contributors](#contributors)
 
-## Why?
-
-<p align="justify">
-I got caught up in a lot of analysis paralysis over language selection for a while, hence the project paused for quite some time. I've since decided to take a practical approach of getting Gazelle out there, seeing what the public reaction is, and go from there.
-</p>
-
 ## What Is Gazelle?
 
 <p align="justify">
-Gazelle is a library and Command-Line Interface (CLI) written in F# and running on .NET 9. It favours a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, and workflow orchestration using peripheral command-line tools or AI orchestrators.
+Gazelle is a library and Command-Line Interface (CLI) written in F# and running on .NET 9. It favours a batteries-included approach, with intuitive CLI commands, structured outputs, and ETABS I/O support (windows-only). Gazelle is optimised for automation, CI pipelines, and workflow orchestration using peripheral command-line tools or AI orchestrators. The standard input/output mechanics of CLI tools (<code>stdin</code>/<code>stdout</code>) allows them to interoperate easily with other languages and technology stacks, which opens up the ecosystem for collaboration.
+</p>
+
+## Why Build Gazelle?
+
+Gazelle is, first and foremost, the tool we wish existed:
+
+- Fast,
+- Composable,
+- Transparent, 
+- Minimal,
+- Local,
+- Type-safe, and
+- Crafted with intention.
+
+The project is the purest expression of our love for:
+
+- Clarity,
+- Elegance,
+- Order,
+- Purpose, 
+- Precision, and
+- Experience Design.
+
+Frustrated by the friction and opacity of traditional tools, and an admiration for the Unix Philosophy of small, focussed, composable tools, we set out on a journey to build a modern equivalent for the Structural Engineer. Gazelle aims to play nicely with the wider ecosystem, offer a stable and reliable platform for others to build on top of, and ultimately be a tool of choice for Engineers everywhere. We want to build something that Engineers love to use.
+
+## A Note From Our Creator
+
+<p align="justify">
+Gazelle is the clearest, most honest expression of my craft, my philosophy, and my desire to create a better way for engineers to think and work. It sits at the exact intersection of who I am, how I think, and what I wish existed in the world. It's ultimately a form of self-expression. Gazelle is my way of showing that AEC tools can be more humane.  We don’t need bloated GUIs to do serious engineering. We can centre experience design in a field that ignores it. We can open-source safety-critical tooling and still maintain trust.
 </p>
 
 <p align="justify">
-We support a CLI for two reasons:
+I am humbled and energised to see so many people take an interest in the project and follow its evolution. I welcome and encourage as many of you as possible to <a href="#get-involved">get involved</a> and <a href="#join-our-community">join our community</a>. If you love Gazelle and wish to support, you can also <a href="https://github.com/sponsors/jsbayley">sponsor</a> its development here on GitHub.
 </p>
 
 <p align="justify">
-  <ol>
-    <li>
-      Standard input/output mechanics of compiled tools (<code>stdin</code>/<code>stdout</code>) mean they can interoperate easily with other languages and technology stacks,
-    </li>
-    <li>
-      Eventually, we intend to layer a Daemon-style service and/or AI-orchestrator on top for advanced workflows. 
-    </li>
-  </ol>
-</p>
-
-## Why Choose F#?
-
-<p align="justify">
-I originally selected F# because of its <a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure">Units-of-Measure</a> feature and the interop with existing engineering applications offered by .NET. The strictness of the F# compiler makes it ideal for maintaining correctness. For safety-critical software development, compiler strictness helps to ensure structural integrity. The advanced domain modelling and type system characteristics of F# also allow for elegant expression of complex algorithms, which ultimately improves clarity, maintainability, and readability.
+I appreciate each and everyone of you. Your advice and suggestions help to shape the strategic roadmap for Gazelle. If you'd like to chat, you can always reach me on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>. Please use our <a href="https://github.com/jsbayley/gazelle/discussions">discussions</a> forum to meet others in our community.
 </p>
 
 <p align="justify">
-The foundational aspiration for Gazelle is to be a central library (and CLI) for Structural Engineering design, which captures the design equations, and other useful utilities that can be assembled into workflows for various engineering-related tasks. 
+🦌 James 💨
 </p>
 
+## Project Values
+
+Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
+
+1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
+2. **Radical Transparency:** Algorithms must be readable, verifiable, and open to scrutiny.
+3. **Open Collaboration:** Open code, discussion, and shared learning strengthen our profession.
+4. **Reliability Matters:** Stability, correctness, and deterministic behaviour matter more than novelty.
+5. **Type-Safe by Design:** F# Units-of-Measure and strong typing ensure mistakes surface at compile time.
+6. **Designed for Humans:** Simplicity, clarity, and flow are core design goals to reduce cognitive load.
+7. **Optimised for AI:** Clean CLI interfaces and structured data formats are ideal for AI orchestration.
+8. **Small Composable Tools:** Unix-style components combine into workflows.
+9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
+
+## Why F#?
+
 <p align="justify">
-I got caught up in a lot of analysis paralysis for a while, hence why the project paused for quite some time. So, I've decided to take a practical approach of getting it out there, seeing what the reaction is from people, and whether or not it's potentially valuable.
+We primarily selected F# because of its <a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/units-of-measure">Units-of-Measure</a> feature, the language's succinctness for expressing mathematical formulae, and the interop with existing engineering applications offered by .NET. The strictness of the F# compiler makes it ideal for maintaining correctness. For safety-critical software development, compiler strictness helps to ensure structural integrity. The advanced domain modelling and type system characteristics of F# also allow for elegant expression of complex algorithms, which ultimately improves clarity, maintainability, and readability.
 </p>
 
 ## Releases
@@ -88,28 +115,56 @@ We are currently defining the roadmap. Please keep an eye on our [GitHub reposit
 ## Quick Start
 
 ### Option A: Download a binary
-- Website: https://gazelle.sh
+1. Visit <a href="https://gazelle.sh">Gazelle.sh</a> and <a href="https://gazelle.sh#download">download</a> one of the following platform-specific binaries:
   - gz.win-x64.exe
   - gz.osx-x64
   - gz.osx-arm64
   - gz.linux-x64
   - gz.linux-arm64
 
-macOS/Linux: add execute bit if needed
+2. For MacOS and Linux Users, enable binary execution permissions:
+
 ```bash
-chmod +x gz.osx-arm64  # or gz.osx-x64 / gz.linux-*
+# Linux (x64)
+chmod +x gz.linux-x64
+```
+
+```bash
+# MacOS (ARM64)
+chmod +x gz.osx-arm64
+```
+
+3. For security reasons to ensure file integrity and no tampering has occurred, verify the checksum:
+
+```bash
+# Linux
+sha256sum -c gz.osx-arm64.sha256
+```
+
+```bash
+# MacOS
+shasum -a 256 -c gz.osx-arm64.sha256
+```
+
+```powershell
+# Windows (PowerShell)
+Get-FileHash .\gz.win-x64.exe -Algorithm SHA256
+```
+
+4. Fire up the help docs:
+
+```bash
+# Linux (x64)
+./gz.linux-x64 --help
+```
+
+```bash
+# MacOS (ARM64)
 ./gz.osx-arm64 --help
 ```
 
-Verify checksum
-```bash
-sha256sum -c gz.osx-arm64.sha256  # Linux
-shasum -a 256 -c gz.osx-arm64.sha256  # macOS
-```
-
-Windows (PowerShell)
 ```powershell
-Get-FileHash .\gz.win-x64.exe -Algorithm SHA256
+# Windows (PowerShell)
 .\gz.win-x64.exe --help
 ```
 
@@ -122,20 +177,6 @@ dotnet test
 dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-arm64 --self-contained -p:PublishSingleFile=true -o ./artifacts/
 ./artifacts/gz --help
 ```
-
-## Project Values
-
-Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
-
-1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
-2. **Radical Transparency:** Algorithms must be readable, verifiable, and open to scrutiny.
-3. **Open Collaboration:** Open code, discussion, and shared learning strengthen our profession.
-4. **Reliability Matters:** Stability, correctness, and deterministic behaviour matter more than novelty.
-5. **Type-Safe by Design:** F# Units-of-Measure and strong typing ensure mistakes surface at compile time.
-6. **Designed for Humans:** Simplicity, clarity, and flow are core design goals to reduce cognitive load.
-7. **Optimised for AI:** Clean CLI interfaces and structured data formats are ideal for AI orchestration.
-8. **Small Composable Tools:** Unix-style components combine into workflows.
-9. **Performance as a Feature:** Lean, fast, low-friction engineering binaries.
 
 ## Documentation
 
