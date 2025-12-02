@@ -47,8 +47,9 @@ Gazelle is a .NET library and Command-Line Interface (CLI) written in F#. It fav
 Frustrated by the friction and opacity of traditional engineering software, and an admiration for the Unix Philosophy of small, focussed, composable tools, we set out on a journey to build a modern equivalent for the Structural Engineer. Gazelle aims to play nicely with the wider ecosystem, offer a stable and reliable platform for others to build on top of, and ultimately be a tool of choice for Engineers everywhere. We want to build something that Engineers love to use.
 </p>
 
-
+<p align="justify">
 Gazelle is, first and foremost, the tool we wish existed:
+</p>
 
 - Fast,
 - Composable,
@@ -58,7 +59,9 @@ Gazelle is, first and foremost, the tool we wish existed:
 - Type-safe, and
 - Crafted with intention.
 
+<p align="justify">
 The project is the purest expression of our love for:
+</p>
 
 - Clarity,
 - Elegance,
