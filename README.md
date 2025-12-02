@@ -91,7 +91,7 @@ I appreciate each and everyone of you. Your advice and suggestions help to shape
 ## Project Values
 
 <p align="justify">
-Gazelle is opinionated by design. These **nine** principles guide every decision in the project and set clear expectations for engineers and contributors.
+Gazelle is opinionated by design. These <strong>nine</strong> principles guide every decision in the project and set clear expectations for engineers and contributors.
 </p>
 
 1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
