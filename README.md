@@ -180,7 +180,7 @@ dotnet publish cli/Gazelle.CLI.fsproj -c Release -r linux-arm64 --self-contained
 
 ## Documentation
 
-Visit our [docs](./DOCS.md) to learn more.
+Visit our [docs](./docs/DOCS.md) to learn more.
 
 ### API Reference
 
