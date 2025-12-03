@@ -148,7 +148,7 @@ I am humbled and energised to see so many people take an interest in the project
 </p>
 
 <p align="justify">
-I appreciate each and everyone of you. Your advice and suggestions help to shape the strategic roadmap for Gazelle. If you'd like to chat, you can always reach me on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>. Please use our <a href="https://github.com/jsbayley/gazelle/discussions">discussions</a> forum to meet others in our community.
+I appreciate each and every one of you. Your advice and suggestions help to shape the strategic roadmap for Gazelle. If you'd like to chat, you can always reach me on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>. Please use our <a href="https://github.com/jsbayley/gazelle/discussions">discussions</a> forum to meet others in our community.
 </p>
 
 <p align="justify">
