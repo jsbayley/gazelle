@@ -97,21 +97,21 @@ Gazelle is, first and foremost, the tool we wish existed:
 </p>
 
 - Fast,
-- Composable,
-- Transparent, 
-- Minimal,
 - Local,
-- Type-safe, and
+- Minimal,
+- Type-safe,
+- Composable,
+- Transparent, and 
 - Crafted with intention.
 
 <p align="justify">
 The project is the purest expression of our love for:
 </p>
 
-- Clarity,
-- Elegance,
 - Order,
 - Purpose, 
+- Clarity,
+- Elegance,
 - Precision, and
 - Experience Design.
 
