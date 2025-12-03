@@ -1,7 +1,5 @@
 # FAQ
 
-## Table of Contents
-
 - [Which platforms are supported?](#which-platforms-are-supported)
 - [How do I choose the right download?](#how-do-i-choose-the-right-download)
 - [macOS: "file is not executable" or Gatekeeper warnings](#macos-file-is-not-executable-or-gatekeeper-warnings)
@@ -14,6 +12,8 @@
 - [The site shows an older version. Is that expected?](#the-site-shows-an-older-version-is-that-expected)
 - [What is supported for security fixes?](#what-is-supported-for-security-fixes)
 - [Where are the docs and support?](#where-are-the-docs-and-support)
+
+---
 
 ## Which platforms are supported?
 
@@ -71,19 +71,19 @@ chmod +x ./gz.linux-*
 Each binary has a matching `.sha256` file in the releases folder.
 
 - Linux:
-	```bash
-	sha256sum -c gz.linux-x64.sha256   # expects "OK"
-	```
+  ```bash
+  sha256sum -c gz.linux-x64.sha256   # expects "OK"
+  ```
 - macOS:
-	```bash
-	shasum -a 256 gz.osx-arm64 | awk '{print tolower($1)}' && cat gz.osx-arm64.sha256
-	# Compare the two hashes visually (shasum -c is not available by default)
-	```
+  ```bash
+  shasum -a 256 gz.osx-arm64 | awk '{print tolower($1)}' && cat gz.osx-arm64.sha256
+  # Compare the two hashes visually (shasum -c is not available by default)
+  ```
 - Windows (PowerShell):
-	```powershell
-	Get-FileHash .\gz.win-x64.exe -Algorithm SHA256
-	Get-Content .\gz.win-x64.exe.sha256
-	```
+  ```powershell
+  Get-FileHash .\gz.win-x64.exe -Algorithm SHA256
+  Get-Content .\gz.win-x64.exe.sha256
+  ```
 
 
 ## Why does the website show a different size than my download?
@@ -103,35 +103,31 @@ After downloading the right binary for your platform, run:
 gz.win-x64.exe --help    # Windows
 ```
 
-
 ## Can I build it locally from source?
 
 Yes. With .NET 9 installed, publish a single-file, self-contained binary for your RID:
 
 ```bash
 dotnet publish cli/Gazelle.CLI.fsproj \
-	-c Release \
-	-r linux-arm64 \
-	--self-contained true \
-	-p:PublishSingleFile=true \
-	-p:PublishTrimmed=true \
-	-p:TrimMode=link \
-	-p:AssemblyName=gz.linux-arm64 \
-	-o artifacts/
+  -c Release \
+  -r linux-arm64 \
+  --self-contained true \
+  -p:PublishSingleFile=true \
+  -p:PublishTrimmed=true \
+  -p:TrimMode=link \
+  -p:AssemblyName=gz.linux-arm64 \
+  -o artifacts/
 ```
 
 Replace `linux-arm64` and `gz.linux-arm64` with your target RID and filename (e.g., `osx-arm64`, `win-x64`).
-
 
 ## The site shows an older version. Is that expected?
 
 We only support the latest release. If you’re developing the site locally and see a stale version, ensure you’ve run our version update script and deployed. End users on the public site should always see the latest after a successful deployment.
 
-
 ## What is supported for security fixes?
 
 Per our policy in [.github/SECURITY.md](../.github/SECURITY.md), we support security fixes for the latest release only. Please report vulnerabilities privately via GitHub Security Advisories as described there.
-
 
 ## Where are the docs and support?
 
@@ -140,3 +136,9 @@ Per our policy in [.github/SECURITY.md](../.github/SECURITY.md), we support secu
 - Security policy: [.github/SECURITY.md](../.github/SECURITY.md).
 - Open a discussion or issue: GitHub [Issues](https://github.com/jsbayley/gazelle/issues)/[Discussions](https://github.com/jsbayley/gazelle/discussions) on the repository.
 
+---
+
+<div align="center">
+   <p><strong>Built with ❤️ for the global engineering community</strong></p>
+  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+</div>

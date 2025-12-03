@@ -1,4 +1,4 @@
-# Gazelle API (Draft)
+# API Reference
 
 Status: pre-1.0, evolving. Surface may change; stability improves toward 1.0.
 
@@ -39,3 +39,10 @@ Status: pre-1.0, evolving. Surface may change; stability improves toward 1.0.
 
 ## Examples
 See `CLI.md` for end‑to‑end usage patterns and command examples.
+
+---
+
+<div align="center">
+   <p><strong>Built with ❤️ for the global engineering community</strong></p>
+  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+</div>
