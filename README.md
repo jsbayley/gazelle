@@ -109,8 +109,8 @@ The project is the purest expression of our love for:
 </p>
 
 - Order,
-- Purpose, 
 - Clarity,
+- Purpose, 
 - Elegance,
 - Precision, and
 - Experience Design.
