@@ -20,6 +20,15 @@ echo "Updating documentation files..."
 find . -name "*.md" -exec sed -i "s/$CURRENT_VERSION/$NEW_VERSION/g" {} \;
 find . -name "*.md" -exec sed -i "s/v$CURRENT_VERSION/v$NEW_VERSION/g" {} \;
 
+# 🔹 NEW: Update README version shield
+echo "Updating version shield in README.md..."
+if [ -f "README.md" ]; then
+    sed -i "s#version-$CURRENT_VERSION-blue#version-$NEW_VERSION-blue#g" README.md
+    echo "✓ Updated version badge in README.md"
+else
+    echo "⚠ README.md not found - version badge not updated"
+fi
+
 # Explicitly update NuGet package README (src/README.md)
 echo "Updating NuGet package README..."
 if [ -f "src/README.md" ]; then
