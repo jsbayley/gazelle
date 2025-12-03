@@ -194,7 +194,16 @@ Review our [security policy](./.github/SECURITY.md) for reporting vulnerabilitie
 
 ## Help and Support
 
-...
+<div align="justify">
+<p>Stuck and need support? Here are a few suggested next steps:</p>
+  <ul>
+    <li>Review our <a href="./docs/DOCS.md">documentation</a> to see if we've answered your question.</li>
+    <li>Check out <a href="https://github.com/jsbayley/gazelle/issues">Issues</a> to see if others are experiencing similar problems.</li>
+    <li>Review <a href="https://github.com/jsbayley/gazelle/discussions">Discussions</a> to discover conversations our community is having.</li>
+    <li>File a new <a href="https://github.com/jsbayley/gazelle/issues">Issue</a> and help us improve Gazelle.</a>
+    <li>Reach out on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a> and we'll do our best to help you.</li>
+  </ul>
+</div>
 
 ## Our Contributors
 
