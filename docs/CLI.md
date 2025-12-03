@@ -66,5 +66,5 @@ gz geometry transform --input shape.json --matrix matrix.json --format json
 
 <div align="center">
    <p><strong>Built with ❤️ for the global engineering community</strong></p>
-  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+   <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
 </div>
