@@ -85,6 +85,7 @@ Gazelle is distributed via self-contained binaries for Windows, MacOS, and Linux
     <li><strong><a href="./docs/DOCS.md">Documentation</a></strong>: A comprehensive deep-dive.</li>
     <li><strong><a href="./docs/CLI.md">CLI Commands</a></strong>: Explore all <code>gz</code> commands.</li>
     <li><strong><a href="./docs/API.md">API Reference</a></strong>: For .NET Developers.</li>
+    <li><strong><a href="https://github.com/jsbayley/gazelle/discussions">Discussions</a></strong>: Where our community learns together.</li>
     <li><strong><a href="./docs/FAQ.md">FAQ</a></strong>: Answers to popular questions.</li>
   </ul>
 </div>
@@ -120,7 +121,7 @@ The project is the purest expression of our love for:
 Gazelle is opinionated by design. These <strong>nine</strong> principles guide every decision in the project and set clear expectations for engineers and contributors.
 </p>
 
-1. **Privacy-First:** All computation happens locally. Your data stays on your machine.
+1. **Privacy-First:** All computation happens locally. Your data stays with you.
 2. **Radical Transparency:** Algorithms must be readable, verifiable, and open to scrutiny.
 3. **Open Collaboration:** Open code, discussion, and shared learning strengthen our profession.
 4. **Reliability Matters:** Stability, correctness, and deterministic behaviour matter more than novelty.
