@@ -20,6 +20,7 @@
 - [Releases](#releases)
 - [Documentation](#documentation)
   - [Quick Start](./docs/DOCS.md#quick-start)
+  - [Deep-Dive](./docs/DOCS.md)
   - [API Reference](./docs/API.md)
   - [CLI Commands](./docs/CLI.md)
   - [FAQ](./docs/FAQ.md)
