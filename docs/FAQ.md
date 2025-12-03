@@ -140,5 +140,5 @@ Per our policy in [.github/SECURITY.md](../.github/SECURITY.md), we support secu
 
 <div align="center">
    <p><strong>Built with ❤️ for the global engineering community</strong></p>
-  <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+   <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
 </div>
