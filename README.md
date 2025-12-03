@@ -55,7 +55,7 @@ Frustrated by the friction and opacity of traditional engineering software, and 
   <p>New to Gazelle? Choose your pathway:</p>
   <ul>
     <li><strong>Structural Engineer?</strong> Read our <a href="./docs/DOCS.md#quick-start">Quick Start</a> guide.</li>
-    <li><strong>Researcher?</strong> <a href=".github/CONTRIBUTING.md">Help us improve Gazelle</a>.</li>
+    <li><strong>Researcher?</strong> <a href="./.github/CONTRIBUTING.md">Help us improve Gazelle</a>.</li>
     <li><strong>Academic, Teacher or Student?</strong> <a href="#join-our-community">Join our community</a>.</li>
     <li><strong>Professional Institution?</strong> Open a <a href="https://github.com/jsbayley/gazelle/discussions">discussion</a> or message us on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>.</li>
     <li><strong>F# Programmer?</strong> Review our <a href="https://github.com/jsbayley/gazelle/issues">Issues</a> and <a href=".github/CONTRIBUTING.md">get involved</a>.</li>
