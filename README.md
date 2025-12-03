@@ -51,7 +51,24 @@ Frustrated by the friction and opacity of traditional engineering software, and 
 
 ## Get Started
 
-...
+<div align="justify">
+  <p>New to Gazelle? Choose your pathway:</p>
+  <ul>
+    <li><strong>Structural Engineer?</strong> Read our <a href="./docs/DOCS.md#quick-start">Quick Start</a> guide.</li>
+    <li><strong>Researcher?</strong> <a href=".github/CONTRIBUTING.md">Help us improve Gazelle</a>.</li>
+    <li><strong>Academic, Teacher or Student?</strong> <a href="#join-our-community">Join our community</a>.</li>
+    <li><strong>Professional Institution?</strong> Open a <a href="https://github.com/jsbayley/gazelle/discussions">discussion</a> or message us on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>.</li>
+    <li><strong>F# Programmer?</strong> Review our <a href="https://github.com/jsbayley/gazelle/issues">Issues</a> and <a href=".github/CONTRIBUTING.md">get involved</a>.</li>
+    <li><strong>C# Programmer?</strong> Join this discussion: <a href="https://github.com/jsbayley/gazelle/discussions/161">Create C# wrapper...</a></li>
+    <li><strong>Python Programmer?</strong> Join this discussion: <a href="https://github.com/jsbayley/gazelle/discussions/162">Wire up Fable transpilation...</a></li>
+    <li><strong>JavaScript Programmer?</strong> Join this discussion: <a href="https://github.com/jsbayley/gazelle/discussions/162">Wire up Fable transpilation...</a></li>
+    <li><strong>PowerShell User?</strong> Join this discussion: <a href="https://github.com/jsbayley/gazelle/discussions/160">Implement PowerShell module...</a></li>
+    <li><strong>Keen to Sponsor?</strong> <a href="https://github.com/sponsors/jsbayley">Sponsor</a> development right here on GitHub.</li>
+    <li><strong>Need Enterprise Support?</strong> Message us on <a href="https://www.linkedin.com/in/jsbayley">LinkedIn</a>.</li>
+    <li><strong>Discovered a Vulnerability?</strong> Review our <a href="./.github/SECURITY.md">Security Policy</a>.</li>
+    <li><strong>Found a Bug?</strong> Please file an <a href="https://github.com/jsbayley/gazelle/issues">Issue</a>.</li>
+  </ul>
+</div>
 
 ## Releases
 
@@ -153,10 +170,6 @@ Please ⭐️ and 'watch' this repository so that you can track its progress in 
 <p align="justify">
 We are currently defining the roadmap. Please keep an eye on our <a href="https://github.com/jsbayley/gazelle">GitHub repository</a> for updates.
 </p>
-
-## Get Involved
-
-See our guidance on [how to get involved](.github/CONTRIBUTING.md). We encourage contributions and will happily support you to take your first steps into Open Source.
 
 ## Open Source
 
