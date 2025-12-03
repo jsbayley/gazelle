@@ -1,4 +1,4 @@
-# Gazelle CLI (Draft)
+# CLI Commands
 
 Status: pre-1.0. Commands and flags may evolve.
 
@@ -62,7 +62,9 @@ gz geometry transform --input shape.json --matrix matrix.json --format json
 - Windows: SmartScreen may require "Run anyway".
 - Verify artifact integrity with `.sha256` files.
 
-## Related Docs
-- `API.md`: concepts and modules
-- `.github/CONTRIBUTING.md`: development and release process
-- `FAQ.md`: common questions
+---
+
+<div align="center">
+   <p><strong>Built with ❤️ for the global engineering community</strong></p>
+   <p><small>Fast • Simple • Reliable • Transparent • Cross-platform</small></p>
+</div>

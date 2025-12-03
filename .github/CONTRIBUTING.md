@@ -9,6 +9,8 @@ We are always on the lookout for new contributors to help:
 - Enhance our testing and performance suite,
 - Verify algorithmic correctness.
 
+We encourage contributions and will happily support you to take your first steps into Open Source.
+
 ## Development Setup
 - .NET 9 SDK
 - Git
