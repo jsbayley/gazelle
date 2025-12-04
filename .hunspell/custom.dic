@@ -8,7 +8,11 @@ composable
 DesignSituation
 dotnet
 div
+dll
+etabs
 ETABS
+etc
+Eurocode
 FSharp
 fsproj
 github
@@ -20,14 +24,18 @@ jsbayley
 kN
 LimitState
 linux
+Math
 md
 momentOfInertia
 npx
+NuGet
 osx
 parsable
 params
 PublishSingleFile
 rd
+Revit
+sha256
 SLS
 src
 stdout
@@ -37,5 +45,6 @@ TMass
 UnitSymbols
 UnitSystems
 v0
+v1
 xattr
 XUnit
