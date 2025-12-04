@@ -34,7 +34,7 @@ jobs:
         run: dotnet fantomas . --check
 
       - name: Run Spell Check
-        run: bash ./ci/spellcheck.sh
+        run: bash ./scripts/spellcheck.sh
 
       - name: Run Test Suite
         run: dotnet test
