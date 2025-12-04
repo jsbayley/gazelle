@@ -32,14 +32,14 @@ Gazelle features a **unified architecture** achieved through comprehensive conso
 
 ### F# Conventions
 - Files ordered by dependency in `.fsproj` (Units.fs → Annotation.fs → Conversion.fs → Math.fs)
-- Domain modeling with discriminated unions: `LimitState = ULS | SLS`, `DesignSituation = Persistent | Transient | Accidental`
+- Domain modelling with discriminated unions: `LimitState = ULS | SLS`, `DesignSituation = Persistent | Transient | Accidental`
 - Units of measure: `float<kN>`, `float<m>`, custom types like `Stress<'TForce, 'TLength>`
 
 ### CLI Development (`cli/Program.fs`)
 - Custom F#-idiomatic argument parser using pattern matching (avoid System.CommandLine)
 - Colorful output with Spectre.Console: `AnsiConsole.MarkupLine("[green]Success![/]")`
 - JSON serialization with camelCase: `JsonNamingPolicy.CamelCase`
-- Template system: beam, truss, portal structures with parameterization
+- Template system: beam, truss, portal structures with parameterisation
 
 ### Version Management
 - **Centralized**: `Directory.Build.props` contains `<Version>0.0.8</Version>` inherited by all projects
