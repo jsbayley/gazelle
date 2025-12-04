@@ -12,6 +12,11 @@
 - [The site shows an older version. Is that expected?](#the-site-shows-an-older-version-is-that-expected)
 - [What is supported for security fixes?](#what-is-supported-for-security-fixes)
 - [Where are the docs and support?](#where-are-the-docs-and-support)
+- [Could Gazelle leverage the Speckle database?](#could-gazelle-leverage-the-speckle-database)
+- [Is Gazelle a Web App or a downloadable tool?](#is-gazelle-a-web-app-or-a-downloadable-tool)
+- [It’s written in F#. Is that similar to Python? Could I still use AI tools?](#its-written-in-f-is-that-similar-to-python-could-i-still-use-ai-tools)
+- [Do calculations run locally, or can this scale to the cloud?](#do-calculations-run-locally-or-can-this-scale-to-the-cloud)
+- [What’s the first ‘simple’ case you plan to test?](#whats-the-first-simple-case-you-plan-to-test)
 
 ---
 
@@ -136,6 +141,29 @@ Per our policy in [.github/SECURITY.md](../.github/SECURITY.md), we support secu
 - Security policy: [.github/SECURITY.md](../.github/SECURITY.md).
 - Open a discussion or issue: GitHub [Issues](https://github.com/jsbayley/gazelle/issues)/[Discussions](https://github.com/jsbayley/gazelle/discussions) on the repository.
 
+## Could Gazelle leverage the Speckle database?
+
+Yes, it could. But this capability has not yet been implemented. In theory, Gazelle could integrate bi-directionally with Speckle: 
+
+- Either pulling model data from Speckle itself, or 
+- Running computations as a Speckle Automate task.
+
+## Is Gazelle a Web App or a downloadable tool?
+
+Gazelle is currently a downloadable binary that runs as a CLI tool. It acts as middleware: a fast engine that other applications or interfaces can be built on top of.
+
+## It’s written in F#. Is that similar to Python? Could I still use AI tools?
+
+F# is closer to Python than people expect: it’s concise, indentation-oriented, and works well with Copilot. Importantly, you don’t need to write F# to use Gazelle: the CLI is language-agnostic. Commands output plain text or structured data that any language can consume or pipe into.
+
+## Do calculations run locally, or can this scale to the cloud?
+
+Today, all computation runs locally for privacy and speed. A daemon-style entrypoint would allow distributed or cloud-cluster execution and this is an item already planned on the roadmap.
+
+## What’s the first ‘simple’ case you plan to test?
+
+A focussed structural element design. Likely something like Pile Caps or Reinforced Concrete Columns to prove the concept before expanding the library.
+ 
 ---
 
 <div align="center">
