@@ -21,7 +21,7 @@ dotnet run -- <command> [options]
 
 ### Core Analysis
 - `gz info <model>` - Show model information  
-- `gz analyze <model>` - Analyze structural model
+- `gz analyse <model>` - Analyse structural model
 - `gz validate <model>` - Validate model structure  
 - `gz create --template <name>` - Create new model from template
 - `gz templates list` - List available templates
@@ -42,8 +42,8 @@ dotnet run -- <command> [options]
 # Get model information in JSON format
 gz info model.json --format json
 
-# Analyze a model with verbose output
-gz analyze beam.json --verbose --output results.json
+# Analyse a model with verbose output
+gz analyse beam.json --verbose --output results.json
 
 # Create a new truss model
 gz create --template truss --output my-truss.json

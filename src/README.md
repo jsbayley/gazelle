@@ -51,7 +51,7 @@ Install the companion CLI tool for interactive analysis:
 ```bash
 dotnet tool install --global Gazelle.CLI
 gz create --template truss --span 10.0 --height 4.0 --loads 25.0
-gz analyze model.json --output results.json
+gz analyse model.json --output results.json
 ```
 
 ## Safety & Reliability

@@ -25,7 +25,7 @@ Gazelle is a **safety-critical structural engineering analysis engine** built wi
 
 ### CLI Development (`cli/Program.fs`)
 - Custom F#-idiomatic argument parser using pattern matching (avoid System.CommandLine)
-- Colorful output with Spectre.Console: `AnsiConsole.MarkupLine("[green]Success![/]")`
+- Coloured output with Spectre.Console: `AnsiConsole.MarkupLine("[green]Success![/]")`
 - JSON serialization with camelCase: `JsonNamingPolicy.CamelCase`
 
 ### Version Management
@@ -48,7 +48,7 @@ dotnet pack cli/                # Package CLI tool
 # Test CLI features
 dotnet run --project cli -- info model.json --format json
 dotnet run --project cli -- create --template truss --output test.json
-dotnet run --project cli -- analyze model.json --verbose
+dotnet run --project cli -- analyse model.json --verbose
 ```
 
 ### Version Updates  
