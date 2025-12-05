@@ -219,6 +219,9 @@ Thanks to those who have [contributed](https://github.com/jsbayley/gazelle/graph
   <a href="https://github.com/danayet">
     <img src="https://github.com/danayet.png?size=64" width="64" height="64" alt="@danayet" />
   </a>
+  <a href="https://github.com/tsargent99">
+    <img src="https://github.com/tsargent99.png?size=64" width="64" height="64" alt="@tsargent99" />
+  </a>
 </div>
 
 ---
