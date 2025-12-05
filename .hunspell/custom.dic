@@ -1,4 +1,5 @@
 AEC
+ai
 AISC
 alt
 AnsiConsole
@@ -11,6 +12,7 @@ cd
 chmod
 cleanup
 cli
+color
 com
 CommandLine
 composable
@@ -85,6 +87,7 @@ ul
 UnitSymbols
 UnitSystems
 visualstudiocode
+whats
 v0
 v1
 xattr
