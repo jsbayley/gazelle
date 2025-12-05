@@ -113,19 +113,11 @@ dotnet tool install --global --add-source ./cli/bin/Release Gazelle.CLI
 dotnet add package Gazelle --version 0.0.8
 ```
 
-> **ℹ️ Cross-Platform Note**: The CLI tool (`gz`) works on all platforms. ETABS integration features are Windows-only due to COM interop requirements.
+> **Cross-Platform Note**: The CLI tool (`gz`) works on all platforms. ETABS integration features are Windows-only due to COM interop requirements.
 
 ## CLI Usage
 
 The `gz` command provides a cross-platform interface for creating, validating, and analyzing structural models.
-
-### Cross-Platform Support
-
-| Platform | Core Features | ETABS Integration | Status |
-|----------|---------------|-------------------|---------|
-| **Windows** | ✅ Full | ✅ V17/V19 | ✅ Complete |
-| **macOS** | ✅ Full | ❌ Graceful error | ✅ Complete |
-| **Linux** | ✅ Full | ❌ Graceful error | ✅ Complete |
 
 ### Available Commands
 

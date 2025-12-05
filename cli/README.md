@@ -67,7 +67,7 @@ gz etabs units
 gz etabs connect --format json
 
 # Save ETABS results to file
-gz etabs units --output structural-calc.json --format json
+gz etabs units --output structural-calculations.json --format json
 ```
 
 ## Global Options
@@ -79,4 +79,4 @@ gz etabs units --output structural-calc.json --format json
 
 ## Status
 
-The CLI is fully functional with colorful modern interface using Spectre.Console and emoji branding. It includes complete integration with the Gazelle analysis engine for structural modeling and analysis.
+The CLI is fully functional with colourful modern interface using Spectre.Console and emoji branding. It includes complete integration with the Gazelle analysis engine for structural modelling and analysis.
