@@ -79,6 +79,7 @@ git add . && git commit -m "Update version to 0.0.8"
 
 ### Documentation Standards
 - **No duplicate DOCS.md files**: There should only be a single `DOCS.md` in project
+- Use British English spellings (e.g., "modelling", "optimisation").
 
 ### AI/Automation Integration
 - Structured JSON I/O for all models and results
