@@ -4,6 +4,7 @@
 # requirements.
 
 lines_of_code=$(cloc ./src ./cli ./tests --include-ext=fs --csv --quiet | grep SUM | awk -F, '{print $5}')
+
 echo "$lines_of_code lines of F# code across cli, src, and tests directories."
 echo ""
 echo "  src: $(cloc ./src --include-ext=fs --csv --quiet | grep SUM | awk -F, '{print $5}')."
