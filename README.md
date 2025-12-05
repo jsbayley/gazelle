@@ -159,12 +159,12 @@ I appreciate each and every one of you. Your advice and suggestions help to shap
 
 Gazelle is a **community-led** project designed to:
 
-- 🚀 Accelerate AEC innovation,
-- 📚 Underpin academic research,
-- 🎓 Support Structural Engineering education, and
-- 🫱🏻‍🫲🏾 Connect like-minded Engineers.
+- Accelerate AEC innovation,
+- Underpin academic research,
+- Support Structural Engineering education, and
+- Connect like-minded Engineers.
 
-Please ⭐️ and 'watch' this repository so that you can track its progress in real-time. You can also get involved in the [discussions](https://github.com/jsbayley/gazelle/discussions) where the design decisions for the future of Gazelle are conducted in the open.
+Please ⭐ and 'watch' this repository so that you can track its progress in real-time. You can also get involved in the [discussions](https://github.com/jsbayley/gazelle/discussions) where the design decisions for the future of Gazelle are conducted in the open.
 
 ## Roadmap
 

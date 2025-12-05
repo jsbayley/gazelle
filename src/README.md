@@ -6,10 +6,10 @@ Gazelle is a safety-critical structural analysis library built with F# and .NET 
 
 ## Key Features
 
-- **🛡️ Type Safety**: F# units of measure prevent unit mixing disasters (`float<kN>`, `float<m>`)
-- **🔍 Transparent**: Open source algorithms you can inspect and verify
-- **🌍 Cross-Platform**: Runs on Windows, macOS, and Linux via .NET 9
-- **📐 Engineering-First**: Built specifically for structural analysis workflows
+- **Type Safety**: F# units of measure prevent unit mixing disasters (`float<kN>`, `float<m>`)
+- **Transparent**: Open source algorithms you can inspect and verify
+- **Cross-Platform**: Runs on Windows, macOS, and Linux via .NET 9
+- **Engineering-First**: Built specifically for structural analysis workflows
 
 ## Installation
 
