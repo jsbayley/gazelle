@@ -73,7 +73,7 @@ git add . && git commit -m "Update version to 0.0.8"
 
 ### CLI UX Standards  
 - Emoji branding: 🦌 Gazelle 💨 in headers only (not in body text)
-- Colorful output: green for success, red for errors, cyan for info, yellow for warnings
+- Colourful output: green for success, red for errors, cyan for info, yellow for warnings
 - JSON output option: `--format json` for machine consumption
 - Cross-platform help: show platform-specific feature availability
 

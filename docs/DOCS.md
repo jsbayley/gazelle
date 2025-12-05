@@ -117,7 +117,7 @@ dotnet add package Gazelle --version 0.0.8
 
 ## CLI Usage
 
-The `gz` command provides a cross-platform interface for creating, validating, and analyzing structural models.
+The `gz` command provides a cross-platform interface for creating, validating, and analysing structural models.
 
 ### Available Commands
 
@@ -126,7 +126,7 @@ The `gz` command provides a cross-platform interface for creating, validating, a
 gz create [file]     # Create new structural models
 gz info [file]       # Display model information
 gz validate [file]   # Check model integrity
-gz analyze [file]    # Perform structural analysis
+gz analyse [file]    # Perform structural analysis
 gz templates list    # List available templates
 
 # Windows-specific ETABS integration
