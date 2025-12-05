@@ -27,4 +27,4 @@ If applicable, please provide:
 - **Workflow Integration**: [e.g. ETABS, Revit, Excel]
 
 ## Additional Context
-Add any other context, mockups, or examples about the feature request here.
+Add any other context or examples about the feature request here.

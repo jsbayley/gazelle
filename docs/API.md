@@ -9,11 +9,11 @@ Status: pre-1.0, evolving. Surface may change; stability improves toward 1.0.
 ## Design Principles
 - Small, composable operations with deterministic outputs.
 - Clear error semantics; machine‑parsable text/JSON responses.
-- Cross‑platform behavior parity where practical.
+- Cross‑platform behaviour parity where practical.
 
 ## Namespaces & Modules
 - `Geometry`: core computational primitives and utilities.
-- `IO`: interaction helpers (e.g., user prompts); platform‑specific behavior gated.
+- `IO`: interaction helpers (e.g., user prompts); platform‑specific behaviour gated.
 - `ETABS` (Windows‑only): interop and data exchange with ETABS.
 
 ## Data Types (Examples)

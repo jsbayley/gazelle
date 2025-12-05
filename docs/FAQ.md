@@ -16,7 +16,7 @@
 - [Is Gazelle a Web App or a downloadable tool?](#is-gazelle-a-web-app-or-a-downloadable-tool)
 - [It’s written in F#. Is that similar to Python? Could I still use AI tools?](#its-written-in-f-is-that-similar-to-python-could-i-still-use-ai-tools)
 - [Do calculations run locally, or can this scale to the cloud?](#do-calculations-run-locally-or-can-this-scale-to-the-cloud)
-- [What’s the first ‘simple’ case you plan to test?](#whats-the-first-simple-case-you-plan-to-test)
+- [What’s the first simple case you plan to test?](#whats-the-first-simple-case-you-plan-to-test)
 
 ---
 
@@ -160,7 +160,7 @@ F# is closer to Python than people expect: it’s concise, indentation-oriented,
 
 Today, all computation runs locally for privacy and speed. A daemon-style entrypoint would allow distributed or cloud-cluster execution and this is an item already planned on the roadmap.
 
-## What’s the first ‘simple’ case you plan to test?
+## What’s the first simple case you plan to test?
 
 A focussed structural element design. Likely something like Pile Caps or Reinforced Concrete Columns to prove the concept before expanding the library.
  

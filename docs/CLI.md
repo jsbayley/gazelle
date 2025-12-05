@@ -23,7 +23,7 @@ gz <command> [options]
 ## Global Flags (planned)
 - `--format json|text` output format
 - `--verbose` extra diagnostics
-- `--no-color` disable ANSI colors
+- `--no-color` disable ANSI colours
 
 ## Commands
 - `geometry`: geometry computations and transforms

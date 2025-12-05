@@ -24,11 +24,17 @@ jobs:
         with:
           dotnet-version: "9.x.x"
 
+      - name: Install Utilities
+        run: sudo apt-get install -y hunspell hunspell-en-gb
+
       - name: Restore Project
         run: dotnet tool restore && dotnet restore
   
       - name: Check Code Formatting
         run: dotnet fantomas . --check
+
+      - name: Run Spell Check
+        run: bash ./scripts/spellcheck.sh
 
       - name: Run Test Suite
         run: dotnet test
