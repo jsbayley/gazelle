@@ -7,9 +7,13 @@ artifacts/
 # .NET
 obj/
 .fake
+TestResults/
 
 # JavaScript
 node_modules/
 
 # MacOS
 .DS_Store
+
+# Miscellaneous
+*.log

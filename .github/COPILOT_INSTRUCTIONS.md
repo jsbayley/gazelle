@@ -5,18 +5,6 @@ Gazelle is a **safety-critical structural engineering analysis engine** built wi
 
 ## Architecture & Components
 
-### Consolidated Architecture
-Gazelle features a **unified architecture** achieved through comprehensive consolidation:
-
-- **`src/Gazelle.fsproj`** - Single unified library containing all functionality
-  - **`units/`** - F# units of measure system preventing calculation errors
-  - **`concrete/`** - Concrete engineering domain with strong typing
-  - **`io/`** - Consolidated I/O operations (Types.fs, IO.fs, ETABS.fs)
-- **`cli/Gazelle.CLI.fsproj`** - Cross-platform CLI tool with emoji branding (🦌💨)
-- **`tests/`** - XUnit test suite
-- **`web/`** - Professional landing page to download CLI.
-- **`DOCS.md`** - **Single consolidated documentation** (the only DOCS.md in the entire solution)
-
 ### Cross-Platform Design
 - **Conditional compilation**: `#if WINDOWS` for ETABS COM interop
 - **Universal CLI**: `gz` command works on Windows, macOS, and Linux
@@ -32,14 +20,13 @@ Gazelle features a **unified architecture** achieved through comprehensive conso
 
 ### F# Conventions
 - Files ordered by dependency in `.fsproj` (Units.fs → Annotation.fs → Conversion.fs → Math.fs)
-- Domain modeling with discriminated unions: `LimitState = ULS | SLS`, `DesignSituation = Persistent | Transient | Accidental`
+- Domain modelling with discriminated unions: `LimitState = ULS | SLS`, `DesignSituation = Persistent | Transient | Accidental`
 - Units of measure: `float<kN>`, `float<m>`, custom types like `Stress<'TForce, 'TLength>`
 
 ### CLI Development (`cli/Program.fs`)
 - Custom F#-idiomatic argument parser using pattern matching (avoid System.CommandLine)
-- Colorful output with Spectre.Console: `AnsiConsole.MarkupLine("[green]Success![/]")`
+- Coloured output with Spectre.Console: `AnsiConsole.MarkupLine("[green]Success![/]")`
 - JSON serialization with camelCase: `JsonNamingPolicy.CamelCase`
-- Template system: beam, truss, portal structures with parameterization
 
 ### Version Management
 - **Centralized**: `Directory.Build.props` contains `<Version>0.0.8</Version>` inherited by all projects
@@ -61,7 +48,7 @@ dotnet pack cli/                # Package CLI tool
 # Test CLI features
 dotnet run --project cli -- info model.json --format json
 dotnet run --project cli -- create --template truss --output test.json
-dotnet run --project cli -- analyze model.json --verbose
+dotnet run --project cli -- analyse model.json --verbose
 ```
 
 ### Version Updates  
@@ -86,32 +73,15 @@ git add . && git commit -m "Update version to 0.0.8"
 
 ### CLI UX Standards  
 - Emoji branding: 🦌 Gazelle 💨 in headers only (not in body text)
-- Colorful output: green for success, red for errors, cyan for info, yellow for warnings
+- Colourful output: green for success, red for errors, cyan for info, yellow for warnings
 - JSON output option: `--format json` for machine consumption
 - Cross-platform help: show platform-specific feature availability
-- Template system: consistent parameterization (span, height, loads)
 
 ### Documentation Standards
-- **Single source of truth**: All documentation in root `DOCS.md` only
-- **No duplicate DOCS.md files**: Remove any redundant documentation files
-- **Cross-platform tables**: Always include platform compatibility information
-- **Consolidation history**: Document architectural transformation achievements
+- **No duplicate DOCS.md files**: There should only be a single `DOCS.md` in project
+- Use British English spellings (e.g., "modelling", "optimisation").
 
 ### AI/Automation Integration
 - Structured JSON I/O for all models and results
-- Batch processing support: `gz batch-analyze pattern`  
-- Template system for consistent model generation
 - Error handling with machine-readable diagnostics
 - Platform-aware workflows: handle Windows-only features gracefully
-
-## Dependencies & Integration
-- **Spectre.Console 0.49.1**: Modern terminal UI (required for CLI)
-- **System.Text.Json 9.0.0**: High-performance JSON (avoid Newtonsoft.Json)
-- **XUnit 2.4.2**: Testing framework  
-- **AGPL-3.0**: Open source license - respect copyleft requirements
-
-## AI-Specific Features
-- JSON schemas in `ai-agents/schemas/` for model validation
-- Structured error reporting with specific diagnostic codes
-- Template-based model generation for consistent AI workflows
-- Type-safe domain modeling prevents common engineering mistakes
