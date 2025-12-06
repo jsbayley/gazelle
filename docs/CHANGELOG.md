@@ -40,7 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ## [0.0.4] - 2025-01-26
 
 ### Added
-- F# CLI implementation with colorful modern interface and emoji branding
+- F# CLI implementation with colourful modern interface and emoji branding
 - Complete structural model creation for truss, cantilever, and portal frame examples
 - Static and modal analysis engines with microsecond execution times
 - JSON-based model and results file formats
@@ -55,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 - F# core library with structural analysis capabilities
-- Domain modeling with strong types and units of measure
+- Domain modelling with strong types and units of measure
 - Basic project structure and documentation
 - AGPL-3.0 licensing
 - Development container configuration
