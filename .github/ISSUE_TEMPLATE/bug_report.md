@@ -16,10 +16,10 @@ A clear and concise description of what the bug is.
 3. Run command '...'
 4. See error
 
-## Expected Behavior
+## Expected Behaviour
 A clear description of what you expected to happen.
 
-## Actual Behavior
+## Actual Behaviour
 A clear description of what actually happened.
 
 ## Environment
