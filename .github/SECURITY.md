@@ -111,7 +111,7 @@ When security updates are released:
 ## Security Updates
 
 Security updates will be:
-- Released as patch versions (e.g., 0.0.7 → 0.0.8)
+- Released as patch versions (e.g., 0.0.7 → 0.0.9)
 - Announced through GitHub Releases with **[SECURITY]** tags in release notes
 - Documented in the changelog with clear security impact descriptions
 - Available immediately through our automated CI/CD pipeline

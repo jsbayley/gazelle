@@ -43,10 +43,10 @@ cd .github/pages && npx serve
 ## Release Process
 Use the version script; latest-only security support.
 ```bash
-./scripts/update-version.sh 0.0.8
+./scripts/update-version.sh 0.0.9
 git add -A
-git commit -m "chore: bump version to 0.0.8"
-git tag v0.0.8
+git commit -m "chore: bump version to 0.0.9"
+git tag v0.0.9
 git push origin main --tags
 ```
 

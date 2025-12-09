@@ -10,7 +10,7 @@
   [![CI](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml)
 
   [![.NET](https://img.shields.io/badge/.NET-9.0.306-512bd4)](https://dotnet.microsoft.com/en-us/)
-  [![Version](https://img.shields.io/badge/Version-0.0.8-911F1E)](https://gazelle.sh)
+  [![Version](https://img.shields.io/badge/Version-0.0.9-911F1E)](https://gazelle.sh)
 </div>
 
 
