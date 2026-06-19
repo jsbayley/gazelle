@@ -9,7 +9,7 @@
   [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-ce412b)](https://choosealicense.com/licenses/agpl-3.0/)
   [![CI](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml/badge.svg)](https://github.com/jsbayley/gazelle/actions/workflows/ci.yml)
 
-  [![.NET](https://img.shields.io/badge/.NET-9.0.306-512bd4)](https://dotnet.microsoft.com/en-us/)
+  [![.NET](https://img.shields.io/badge/.NET-10.0.301-512bd4)](https://dotnet.microsoft.com/en-us/)
   [![Version](https://img.shields.io/badge/Version-0.0.9-911F1E)](https://gazelle.sh)
 </div>
 
