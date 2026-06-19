@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/devcontainers/dotnet:1-9.0
+FROM mcr.microsoft.com/dotnet/sdk:10.0
 
-RUN apt-get update -y && \
-  apt-get upgrade -y && \
-  apt-get install -y cloc hunspell hunspell-en-gb && \
-  apt-get clean && \ 
-  rm -rf /var/lib/apt/lists/*
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+  && apt-get update -y \
+  && apt-get install -y --no-install-recommends cloc hunspell hunspell-en-gb \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
