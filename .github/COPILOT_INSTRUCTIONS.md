@@ -29,7 +29,7 @@ Gazelle is a **safety-critical structural engineering analysis engine** built wi
 - JSON serialization with camelCase: `JsonNamingPolicy.CamelCase`
 
 ### Version Management
-- **Centralized**: `Directory.Build.props` contains `<Version>0.0.8</Version>` inherited by all projects
+- **Centralized**: `Directory.Build.props` contains `<Version>0.0.9</Version>` inherited by all projects
 - **Script**: `./scripts/update-version.sh` updates all files consistently
 - **Global tool**: CLI packaged as `gz` command via `PackAsTool=true`
 
@@ -53,8 +53,8 @@ dotnet run --project cli -- analyse model.json --verbose
 
 ### Version Updates  
 ```bash
-./scripts/update-version.sh 0.0.8   # Updates Directory.Build.props + all docs
-git add . && git commit -m "Update version to 0.0.8"
+./scripts/update-version.sh 0.0.9   # Updates Directory.Build.props + all docs
+git add . && git commit -m "Update version to 0.0.9"
 ```
 
 ## Project-Specific Guidelines

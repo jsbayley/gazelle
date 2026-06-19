@@ -3,13 +3,13 @@
   "isRoot": true,
   "tools": {
     "fantomas": {
-      "version": "7.0.3",
+      "version": "7.0.5",
       "commands": [
         "fantomas"
       ]
     },
     "powershell": {
-      "version": "7.5.4",
+      "version": "7.6.3",
       "commands": [
         "pwsh"
       ]

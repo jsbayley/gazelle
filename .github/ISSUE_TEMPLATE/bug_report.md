@@ -24,7 +24,7 @@ A clear description of what actually happened.
 
 ## Environment
 - **OS**: [e.g. Windows 11, macOS 14.0, Ubuntu 22.04]
-- **Gazelle Version**: [e.g. v0.0.8]
+- **Gazelle Version**: [e.g. v0.0.9]
 - **Installation Method**: [e.g. downloaded binary, built from source]
 - **.NET Version** (if building from source): [e.g. .NET 9.0]
 

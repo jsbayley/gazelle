@@ -2,7 +2,7 @@
 	"name": "Gazelle",
 	"runArgs": ["--name", "gazelle"],
 	"build": { "dockerfile": "Dockerfile" },
-	"privileged": true,
+	"privileged": false,
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": { "version": "2.52.0" },
     "ghcr.io/devcontainers/features/github-cli:1": { "version": "2.83.1" }
@@ -16,13 +16,12 @@
 				"bierner.markdown-preview-github-styles",
         "bierner.markdown-mermaid",
         "docker.docker",
-				"github.copilot",
+				"github.copilot-chat",
 				"github.vscode-github-actions",
 				"grapecity.gc-excelviewer",
 				"ionide.ionide-fsharp",
 				"ms-azuretools.vscode-docker",
         "ms-dotnettools.csdevkit",
-        "ms-dotnettools.dotnet-interactive-vscode",
         "ms-vscode.powershell",
         "redhat.vscode-xml",
         "ritwickdey.liveserver",
