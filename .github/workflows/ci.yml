@@ -36,5 +36,5 @@ jobs:
       - name: Run Spell Check
         run: bash ./scripts/spellcheck.sh
 
-      - name: Run Test Suite
-        run: dotnet test
+      - name: Run Test Suite with Coverage
+        run: bash ./scripts/coverage.sh
